@@ -1,0 +1,192 @@
+
+/* ============================================================
+   RIPPLE — visual.css
+   Visual dekoratif per card — background art, animasi SVG
+   ============================================================ */
+
+/* ── LAYER CARDS — ganti emoji dengan SVG dekoratif ──────── */
+.layer-emoji { display: none !important; }
+
+.layer-card {
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* Background dekoratif tiap layer card via data-layer attr */
+.layer-card::before {
+    content: "" !important;
+    position: absolute !important;
+    top: -20px !important; right: -20px !important;
+    width: 120px !important; height: 120px !important;
+    border-radius: 50% !important;
+    background: radial-gradient(circle, rgba(243,112,30,0.12) 0%, transparent 70%) !important;
+    pointer-events: none !important;
+    z-index: 0 !important;
+    animation: layerGlowPulse 3s ease-in-out infinite !important;
+    border: none !important; box-shadow: none !important;
+    top: -20px !important; left: auto !important;
+    bottom: auto !important;
+    animation-delay: var(--ld, 0s) !important;
+}
+.layer-card:nth-child(1) { --ld: 0s; }
+.layer-card:nth-child(2) { --ld: 0.6s; }
+.layer-card:nth-child(3) { --ld: 1.2s; }
+.layer-card:nth-child(4) { --ld: 1.8s; }
+.layer-card:nth-child(5) { --ld: 2.4s; }
+
+@keyframes layerGlowPulse {
+    0%,100% { opacity: 0.7; transform: scale(1); }
+    50%      { opacity: 1;   transform: scale(1.2); }
+}
+
+.layer-card > * { position: relative; z-index: 1; }
+
+/* SVG icon container untuk layer */
+.layer-svg-icon {
+    width: 80px !important;
+    height: 80px !important;
+    margin: 0 auto 20px !important;
+    display: block !important;
+}
+
+/* ── FACT CARDS — angka besar di background ───────────────── */
+.fact-card {
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.fact-bg-num {
+    position: absolute !important;
+    bottom: -8px !important;
+    right: -4px !important;
+    font-size: 80px !important;
+    font-weight: 800 !important;
+    color: rgba(243,112,30,0.055) !important;
+    line-height: 1 !important;
+    pointer-events: none !important;
+    z-index: 0 !important;
+    font-family: 'Inter', sans-serif !important;
+    letter-spacing: -4px !important;
+    user-select: none !important;
+}
+
+.fact-card-visual {
+    position: absolute !important;
+    top: 16px !important; right: 16px !important;
+    width: 48px !important; height: 48px !important;
+    opacity: 0.55 !important;
+    pointer-events: none !important;
+    z-index: 0 !important;
+}
+
+.fact-card > * { position: relative; z-index: 1; }
+
+/* ── STEP CARDS — nomor besar di background ───────────────── */
+.step-card {
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.step-bg-num {
+    position: absolute !important;
+    bottom: -20px !important; right: -10px !important;
+    font-size: 140px !important;
+    font-weight: 900 !important;
+    color: rgba(243,112,30,0.05) !important;
+    line-height: 1 !important;
+    pointer-events: none !important;
+    z-index: 0 !important;
+    font-family: 'Inter', sans-serif !important;
+    user-select: none !important;
+}
+
+.step-card-deco {
+    position: absolute !important;
+    top: 0 !important; left: 0 !important;
+    width: 100% !important; height: 100% !important;
+    pointer-events: none !important;
+    z-index: 0 !important;
+    opacity: 0.45 !important;
+}
+.step-card > * { position: relative; z-index: 1; }
+
+/* ── WORLD CARDS — rank besar di background ──────────────── */
+.world-card {
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.world-bg-rank {
+    position: absolute !important;
+    bottom: -30px !important; left: -15px !important;
+    font-size: 180px !important;
+    font-weight: 900 !important;
+    color: rgba(243,112,30,0.04) !important;
+    line-height: 1 !important;
+    pointer-events: none !important;
+    z-index: 0 !important;
+    font-family: 'Inter', sans-serif !important;
+    user-select: none !important;
+}
+
+.world-card-deco {
+    position: absolute !important;
+    top: 0 !important; right: 0 !important;
+    width: 160px !important; height: 160px !important;
+    pointer-events: none !important;
+    z-index: 0 !important;
+    opacity: 0.3 !important;
+}
+.world-card > * { position: relative; z-index: 1; }
+
+/* ── CONCEPT CARDS — corner decoration ───────────────────── */
+.concept-card-deco {
+    position: absolute !important;
+    top: 0 !important; right: 0 !important;
+    width: 120px !important; height: 120px !important;
+    pointer-events: none !important;
+    z-index: 0 !important;
+    opacity: 0.35 !important;
+}
+.concept-card > * { position: relative; z-index: 1; }
+
+/* ── ANIMASI SCROLL MASUK per section ────────────────────── */
+
+/* Semua section headings — slide dari bawah */
+.how-section > .section-label,
+.how-section > .section-heading,
+.layers-section > .section-label,
+.layers-section > .section-heading,
+.facts-section > .section-label,
+.facts-section > .section-heading,
+.world-section > .section-label,
+.world-section > .section-heading,
+.concept > .section-label {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity .6s ease, transform .6s ease;
+}
+.section-heading-visible {
+    opacity: 1 !important;
+    transform: none !important;
+}
+.section-label-visible {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+/* Horizontal line under section heading */
+.section-heading::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #f3701e, #B83A2D, transparent);
+    margin: 14px auto 0;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(243,112,30,0.4);
+    transition: width 1s cubic-bezier(.22,1,.36,1) .3s;
+}
+.section-heading-visible::after {
+    width: 120px !important;
+}

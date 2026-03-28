@@ -1,0 +1,361 @@
+/* ============================================================
+   RIPPLE — enhance.css
+   Per-section backgrounds + scroll reveal + padding lega
+   Tidak mengubah font, warna teks, atau layout
+   ============================================================ */
+
+/* ══════════════════════════════════════════════════════════
+   SCROLL REVEAL — base states
+   ══════════════════════════════════════════════════════════ */
+.rev-up {
+    opacity: 0;
+    transform: translateY(36px);
+    transition: opacity 0.65s cubic-bezier(0.22,1,0.36,1),
+                transform 0.65s cubic-bezier(0.22,1,0.36,1);
+}
+.rev-zoom {
+    opacity: 0;
+    transform: scale(0.94);
+    transition: opacity 0.6s cubic-bezier(0.22,1,0.36,1),
+                transform 0.6s cubic-bezier(0.22,1,0.36,1);
+}
+.rev-left {
+    opacity: 0;
+    transform: translateX(-32px);
+    transition: opacity 0.65s cubic-bezier(0.22,1,0.36,1),
+                transform 0.65s cubic-bezier(0.22,1,0.36,1);
+}
+.rev-right {
+    opacity: 0;
+    transform: translateX(32px);
+    transition: opacity 0.65s cubic-bezier(0.22,1,0.36,1),
+                transform 0.65s cubic-bezier(0.22,1,0.36,1);
+}
+.rev-visible {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+/* Stagger delays */
+.rev-d1 { transition-delay: 0.08s; }
+.rev-d2 { transition-delay: 0.16s; }
+.rev-d3 { transition-delay: 0.24s; }
+.rev-d4 { transition-delay: 0.32s; }
+.rev-d5 { transition-delay: 0.40s; }
+.rev-d6 { transition-delay: 0.48s; }
+
+/* ══════════════════════════════════════════════════════════
+   PADDING LEBIH LEGA — semua section
+   ══════════════════════════════════════════════════════════ */
+.how-section,
+.layers-section,
+.facts-section,
+.world-section {
+    padding-top: 130px !important;
+    padding-bottom: 130px !important;
+}
+.global-hero { padding-top: 140px !important; }
+
+/* ══════════════════════════════════════════════════════════
+   SECTION BACKGROUNDS — tiap section punya nuansa sendiri
+   ══════════════════════════════════════════════════════════ */
+
+/* CONCEPT section — orange glow kiri */
+.concept {
+    position: relative;
+    padding-top: 100px !important;
+    padding-bottom: 120px !important;
+}
+.concept::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 50% 70% at 5% 50%,
+            rgba(243,112,30,0.07) 0%, transparent 65%),
+        radial-gradient(ellipse 30% 40% at 95% 50%,
+            rgba(184,58,45,0.05) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+}
+.concept > * { position: relative; z-index: 1; }
+
+/* HOW section — diagonal gradient */
+.how-section {
+    position: relative;
+}
+.how-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 60% 50% at 80% 30%,
+            rgba(243,112,30,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 60% at 10% 70%,
+            rgba(75,96,127,0.05) 0%, transparent 55%);
+    pointer-events: none;
+    z-index: 0;
+}
+.how-section > * { position: relative; z-index: 1; }
+
+/* LAYERS section — subtle center glow */
+.layers-section {
+    position: relative;
+}
+.layers-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 70% 50% at 50% 50%,
+            rgba(243,112,30,0.05) 0%, transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+}
+.layers-section > * { position: relative; z-index: 1; }
+
+/* FACTS section — dark panel dengan top/bottom border */
+.facts-section {
+    position: relative;
+    background:
+        linear-gradient(180deg,
+            transparent 0%,
+            rgba(243,112,30,0.03) 15%,
+            rgba(10,14,26,0.4) 50%,
+            rgba(243,112,30,0.03) 85%,
+            transparent 100%) !important;
+}
+.facts-section::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 10%;
+    width: 80%; height: 1px;
+    background: linear-gradient(90deg,
+        transparent, rgba(243,112,30,0.25), transparent);
+    box-shadow: 0 0 10px rgba(243,112,30,0.2);
+}
+.facts-section::after {
+    content: "";
+    position: absolute;
+    bottom: 0; left: 10%;
+    width: 80%; height: 1px;
+    background: linear-gradient(90deg,
+        transparent, rgba(243,112,30,0.2), transparent);
+}
+
+/* WORLD section — deep dark dengan kanan glow */
+.world-section {
+    position: relative;
+}
+.world-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 40% 60% at 100% 50%,
+            rgba(184,58,45,0.06) 0%, transparent 55%),
+        radial-gradient(ellipse 30% 40% at 0% 50%,
+            rgba(243,112,30,0.05) 0%, transparent 55%);
+    pointer-events: none;
+    z-index: 0;
+}
+.world-section > * { position: relative; z-index: 1; }
+
+/* CTA section — premium dark panel */
+.cta-section {
+    background:
+        linear-gradient(135deg,
+            rgba(14,20,38,0.5) 0%,
+            rgba(10,14,26,0.7) 50%,
+            rgba(8,12,20,0.5) 100%) !important;
+    border-top: 1px solid rgba(243,112,30,0.08) !important;
+    border-bottom: 1px solid rgba(243,112,30,0.08) !important;
+    position: relative;
+}
+.cta-section::before {
+    content: "";
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    width: 600px; height: 300px;
+    background: radial-gradient(ellipse,
+        rgba(243,112,30,0.05) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* OPINION section */
+.opinion-section { position: relative; }
+.opinion-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 50% 60% at 50% 50%,
+        rgba(243,112,30,0.04) 0%, transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+}
+.opinion-section > * { position: relative; z-index: 1; }
+
+/* GLOBAL: stats-grid section background */
+.stats-grid {
+    position: relative;
+    z-index: 2;
+}
+
+/* Live feed section */
+.feed-container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Map section — dark blue glow */
+.map-section {
+    position: relative;
+}
+.map-section::before {
+    content: "";
+    position: absolute;
+    inset: -20px 0;
+    background:
+        radial-gradient(ellipse 80% 60% at 50% 50%,
+            rgba(75,96,127,0.06) 0%, transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+}
+.map-section > * { position: relative; z-index: 1; }
+
+/* Why-grid section */
+.why-grid { position: relative; z-index: 2; }
+
+/* Positioning section */
+.positioning-section {
+    position: relative;
+}
+.positioning-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 60% 50% at 50% 50%,
+            rgba(243,112,30,0.04) 0%, transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+}
+.positioning-section > * { position: relative; z-index: 1; }
+
+/* Closing section */
+.closing-section {
+    position: relative;
+}
+.closing-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 40% 60% at 50% 30%,
+            rgba(243,112,30,0.05) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+/* ══════════════════════════════════════════════════════════
+   CARD SHIMMER — top line bergerak
+   ══════════════════════════════════════════════════════════ */
+.concept-card, .step-card, .layer-card, .fact-card,
+.world-card, .stat-card, .ripple-type, .why-card,
+.positioning-card, .pos-card-anim {
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* Top shimmer line */
+.concept-card::before, .step-card::before,
+.fact-card::before, .world-card::before,
+.stat-card::before, .why-card::before,
+.layer-card::before, .pos-card-anim::before {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important; left: -60% !important;
+    right: auto !important; bottom: auto !important;
+    width: 60% !important; height: 1px !important;
+    background: linear-gradient(90deg,
+        transparent, rgba(243,112,30,0.65), rgba(255,150,60,0.9),
+        rgba(243,112,30,0.65), transparent) !important;
+    animation: shimTop 5s ease-in-out infinite !important;
+    border: none !important; border-radius: 0 !important;
+    box-shadow: 0 0 8px rgba(243,112,30,0.35) !important;
+}
+.concept-card:nth-child(2)::before { animation-delay: 1s !important; }
+.concept-card:nth-child(3)::before { animation-delay: 2s !important; }
+.concept-card:nth-child(4)::before { animation-delay: 3s !important; }
+.concept-card:nth-child(5)::before { animation-delay: 4s !important; }
+.concept-card:nth-child(6)::before { animation-delay: 0.5s !important; }
+.step-card:nth-child(2)::before    { animation-delay: 1.2s !important; }
+.step-card:nth-child(3)::before    { animation-delay: 2.4s !important; }
+.fact-card:nth-child(2)::before    { animation-delay: 0.8s !important; }
+.fact-card:nth-child(3)::before    { animation-delay: 1.6s !important; }
+.fact-card:nth-child(4)::before    { animation-delay: 2.4s !important; }
+.fact-card:nth-child(5)::before    { animation-delay: 3.2s !important; }
+.fact-card:nth-child(6)::before    { animation-delay: 0.4s !important; }
+.stat-card:nth-child(2)::before    { animation-delay: 1.5s !important; }
+.stat-card:nth-child(3)::before    { animation-delay: 3s !important; }
+.why-card:nth-child(2)::before     { animation-delay: 1.3s !important; }
+.why-card:nth-child(3)::before     { animation-delay: 2.6s !important; }
+
+@keyframes shimTop {
+    0%   { left: -60%; opacity: 0; }
+    5%   { opacity: 1; }
+    95%  { opacity: 1; }
+    100% { left: 100%; opacity: 0; }
+}
+
+/* Bottom sweep */
+.concept-card::after, .step-card::after, .fact-card::after,
+.world-card::after, .stat-card::after, .why-card::after,
+.layer-card::after, .pos-card-anim::after {
+    content: "" !important;
+    position: absolute !important;
+    bottom: 0 !important; left: -100% !important;
+    top: auto !important; right: auto !important;
+    width: 100% !important; height: 2px !important;
+    background: linear-gradient(90deg,
+        transparent, rgba(243,112,30,0.45),
+        rgba(255,140,50,0.85), rgba(243,112,30,0.45), transparent) !important;
+    box-shadow: 0 0 8px rgba(243,112,30,0.4) !important;
+    animation: shimBot 4.5s ease-in-out infinite !important;
+    border: none !important; border-radius: 0 !important;
+}
+.concept-card:nth-child(2)::after { animation-delay: 0.9s !important; }
+.concept-card:nth-child(3)::after { animation-delay: 1.8s !important; }
+.concept-card:nth-child(4)::after { animation-delay: 2.7s !important; }
+.concept-card:nth-child(5)::after { animation-delay: 3.6s !important; }
+.concept-card:nth-child(6)::after { animation-delay: 4.5s !important; }
+.step-card:nth-child(2)::after    { animation-delay: 1.5s !important; }
+.step-card:nth-child(3)::after    { animation-delay: 3s !important; }
+.fact-card:nth-child(2)::after    { animation-delay: 0.75s !important; }
+.fact-card:nth-child(3)::after    { animation-delay: 1.5s !important; }
+.fact-card:nth-child(4)::after    { animation-delay: 2.25s !important; }
+.fact-card:nth-child(5)::after    { animation-delay: 3s !important; }
+.fact-card:nth-child(6)::after    { animation-delay: 3.75s !important; }
+.stat-card:nth-child(2)::after    { animation-delay: 1.5s !important; }
+.stat-card:nth-child(3)::after    { animation-delay: 3s !important; }
+.why-card:nth-child(2)::after     { animation-delay: 1.5s !important; }
+.why-card:nth-child(3)::after     { animation-delay: 3s !important; }
+
+@keyframes shimBot {
+    0%   { left: -100%; opacity: 0; }
+    6%   { opacity: 1; }
+    94%  { opacity: 1; }
+    100% { left: 100%; opacity: 0; }
+}
+
+/* Hover lift */
+.concept-card:hover, .step-card:hover, .layer-card:hover,
+.fact-card:hover, .world-card:hover, .stat-card:hover,
+.why-card:hover, .pos-card-anim:hover {
+    transform: translateY(-7px) !important;
+    border-color: rgba(243,112,30,0.35) !important;
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.45),
+        0 0 0 1px rgba(243,112,30,0.22),
+        0 0 30px rgba(243,112,30,0.07) !important;
+}

@@ -1,0 +1,373 @@
+/* ============================================================
+   RIPPLE — fullwidth.css
+   Memenuhi kiri & kanan, font lebih besar, layout lebih padat
+   Link di <head> paling terakhir (setelah neon.css)
+   ============================================================ */
+
+/* ── RESET SEMUA max-width lama ──────────────────────────── */
+.how-section,
+.layers-section,
+.facts-section,
+.world-section,
+.concept,
+.concept-container {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 48px !important;
+    padding-right: 48px !important;
+    box-sizing: border-box !important;
+}
+
+/* Global: semua main section content memenuhi lebar */
+.global-hero {
+    padding-left: 48px !important;
+    padding-right: 48px !important;
+}
+.stats-grid,
+.ripple-totals,
+.why-grid,
+.positioning-grid,
+.map-section,
+.feed-container,
+.dual-world-section {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* ── CONCEPT CARDS — 2 kolom, benar-benar penuh ─────────── */
+.concept-container {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 32px !important;
+    padding: 0 !important;
+}
+.concept-card {
+    min-height: 380px !important;
+    padding: 64px 56px !important;
+    border-radius: 20px !important;
+}
+.concept-card h3 { font-size: 22px !important; letter-spacing: 4px !important; }
+.concept-card p  { font-size: 18px !important; line-height: 2 !important; }
+.concept-icon svg { width: 100px !important; height: 100px !important; }
+
+/* ── STEP CARDS — 3 kolom penuh ─────────────────────────── */
+.steps-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 32px !important;
+    width: 100% !important;
+}
+.step-card {
+    min-height: 380px !important;
+    padding: 60px 48px !important;
+}
+.step-card h3 { font-size: 20px !important; letter-spacing: 2px !important; }
+.step-card p  { font-size: 17px !important; line-height: 2 !important; }
+.step-number  { width: 68px !important; height: 68px !important; font-size: 26px !important; }
+
+/* ── LAYER CARDS — 5 kolom penuh ────────────────────────── */
+.layers-grid {
+    display: grid !important;
+    grid-template-columns: repeat(5, 1fr) !important;
+    gap: 24px !important;
+    width: 100% !important;
+}
+.layer-card {
+    min-height: 320px !important;
+    padding: 48px 24px !important;
+}
+.layer-card h3 { font-size: 17px !important; letter-spacing: 3px !important; }
+.layer-card p  { font-size: 14px !important; line-height: 1.9 !important; }
+.layer-emoji   { font-size: 56px !important; }
+
+/* ── FACT CARDS — 3 kolom penuh ─────────────────────────── */
+.facts-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 28px !important;
+    width: 100% !important;
+}
+.fact-card {
+    min-height: 300px !important;
+    padding: 52px 48px !important;
+}
+.fact-number   { font-size: 60px !important; }
+.fact-card h4  { font-size: 18px !important; letter-spacing: 1px !important; }
+.fact-card p   { font-size: 15px !important; line-height: 1.9 !important; }
+.fact-source   { font-size: 11px !important; }
+
+/* ── WORLD CARDS — 3 kolom penuh ────────────────────────── */
+.world-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 28px !important;
+    width: 100% !important;
+}
+.world-card {
+    min-height: 340px !important;
+    padding: 56px 52px !important;
+}
+.world-rank    { font-size: 96px !important; line-height: 1 !important; }
+.world-card h4 { font-size: 20px !important; letter-spacing: 1px !important; }
+.world-card p  { font-size: 16px !important; line-height: 1.9 !important; }
+
+/* ── HEADINGS — lebih besar ──────────────────────────────── */
+.section-heading {
+    font-size: 54px !important;
+    letter-spacing: 5px !important;
+    margin-bottom: 64px !important;
+}
+.section-label {
+    font-size: 13px !important;
+    letter-spacing: 8px !important;
+    margin-bottom: 20px !important;
+}
+.hero-title    { font-size: 120px !important; letter-spacing: 18px !important; }
+.hero-content h2 { font-size: 34px !important; }
+.hero-content p  { font-size: 20px !important; line-height: 1.9 !important; }
+
+/* ── GLOBAL HEADER ───────────────────────────────────────── */
+.global-header h1 { font-size: 88px !important; letter-spacing: 10px !important; }
+.global-header p  { font-size: 22px !important; }
+
+/* ── STATS GRID — 3 kolom penuh ─────────────────────────── */
+.stats-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 28px !important;
+}
+.stat-card {
+    min-height: 230px !important;
+    max-height: 270px !important;
+    padding: 40px 40px !important;
+}
+.stat-number { font-size: 56px !important; }
+.stat-label  { font-size: 14px !important; }
+
+/* ── RIPPLE TOTALS — 5 kolom penuh ──────────────────────── */
+.ripple-totals {
+    display: grid !important;
+    grid-template-columns: repeat(5, 1fr) !important;
+    gap: 20px !important;
+}
+.ripple-type {
+    min-height: 180px !important;
+    max-height: 210px !important;
+    padding: 32px 20px !important;
+}
+.ripple-type .emoji { font-size: 32px !important; }
+.ripple-type .count { font-size: 30px !important; }
+.ripple-type .name  { font-size: 12px !important; }
+
+/* ── WHY GRID — 3 kolom penuh ───────────────────────────── */
+.why-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 28px !important;
+}
+.why-card {
+    min-height: 300px !important;
+    max-height: 360px !important;
+    padding: 48px 44px !important;
+}
+.why-card h3 { font-size: 18px !important; }
+.why-card p  { font-size: 16px !important; line-height: 1.9 !important; }
+
+/* ── POSITIONING GRID — 3 kolom penuh ───────────────────── */
+.positioning-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 24px !important;
+}
+.positioning-card {
+    min-height: 280px !important;
+    max-height: 340px !important;
+    padding: 48px 40px !important;
+}
+.positioning-card h4 { font-size: 16px !important; }
+.positioning-card p  { font-size: 15px !important; line-height: 1.9 !important; }
+.pos-icon { font-size: 48px !important; }
+
+/* ── PETA ────────────────────────────────────────────────── */
+.map-section { padding: 0 !important; }
+.indonesia-map-wrapper { padding: 32px !important; border-radius: 14px !important; }
+#indonesia-canvas { height: 240px !important; }
+
+/* ── OPINION SECTION — lebih lebar ──────────────────────── */
+.opinion-section {
+    max-width: 100% !important;
+    padding: 120px 48px !important;
+}
+.opinion-card    { padding: 64px 72px !important; }
+.opinion-question { font-size: 22px !important; }
+
+/* ── CTA SECTION ─────────────────────────────────────────── */
+.cta-section  { padding: 120px 48px !important; }
+.cta-quote    { font-size: 36px !important; max-width: 960px !important; line-height: 1.7 !important; }
+.cta-sub      { font-size: 20px !important; }
+.cta-btn-primary, .cta-btn-secondary {
+    padding: 20px 64px !important;
+    font-size: 17px !important;
+}
+
+/* ── FEED — lebih lebar ──────────────────────────────────── */
+.feed-container { max-width: 100% !important; }
+
+/* ── HERO ─────────────────────────────────────────────────── */
+.hero { padding-top: 34px !important; }
+.map-wrapper { width: 100% !important; max-width: 100% !important; }
+
+/* ── SECTION DIVIDER ─────────────────────────────────────── */
+.section-divider { margin: 0 0 80px !important; }
+
+/* ── NEON CARD SWEEP DELAY untuk card tambahan ───────────── */
+.neon-card:nth-child(4)::after { animation-delay: 0.6s !important; }
+.neon-card:nth-child(5)::after { animation-delay: 1.2s !important; }
+.neon-card:nth-child(6)::after { animation-delay: 1.8s !important; }
+
+/* ── POSITIONING SECTION — FULL FIX ─────────────────────── */
+.positioning-section {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 60px 0 !important;
+    box-sizing: border-box !important;
+}
+
+.pos-grid-full {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 36px !important;
+    width: 100% !important;
+    max-width: none !important;
+    padding: 0 48px !important;
+    box-sizing: border-box !important;
+    margin: 0 auto !important;
+}
+
+/* Sidebar offset — agar tidak ketutup sidebar */
+body:not(.sidebar-collapsed) .pos-grid-full {
+    width: calc(100vw - 240px - 96px) !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+}
+body.sidebar-collapsed .pos-grid-full {
+    width: calc(100vw - 64px - 96px) !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+}
+
+.pos-card-anim {
+    min-height: 500px !important;
+    height: auto !important;
+    padding: 64px 48px !important;
+    border-radius: 24px !important;
+    background: rgba(6,10,20,0.94) !important;
+    border: 1px solid rgba(243,112,30,0.22) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    text-align: center !important;
+    position: relative !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+}
+
+.pos-svg-icon {
+    margin-bottom: 36px !important;
+    flex-shrink: 0 !important;
+}
+
+.pos-card-anim h4 {
+    font-size: 19px !important;
+    letter-spacing: 3px !important;
+    margin-bottom: 20px !important;
+    line-height: 1.5 !important;
+    flex-shrink: 0 !important;
+}
+
+.pos-card-anim p {
+    font-size: 17px !important;
+    line-height: 2 !important;
+    opacity: 0.72 !important;
+    margin-bottom: 28px !important;
+    flex: 1 !important;
+}
+
+.pos-card-tag {
+    margin-top: auto !important;
+    flex-shrink: 0 !important;
+}
+
+/* positioning-bottom quote */
+.positioning-bottom {
+    margin: 48px 48px 0 !important;
+    padding: 44px 60px !important;
+    border-radius: 20px !important;
+}
+.pos-tagline {
+    font-size: 22px !important;
+    line-height: 1.9 !important;
+}
+
+/* ── INDONESIA MAP — lebih besar & keren ─────────────────── */
+.map-section {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 48px !important;
+    margin: 0 auto 60px !important;
+    box-sizing: border-box !important;
+}
+.indonesia-map-wrapper {
+    padding: 0 !important;
+    border-radius: 20px !important;
+    border: 1px solid rgba(243,112,30,0.25) !important;
+    background: rgba(4,8,18,0.96) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    box-shadow:
+        0 0 0 1px rgba(243,112,30,0.1),
+        0 0 40px rgba(243,112,30,0.06),
+        inset 0 0 60px rgba(243,112,30,0.03) !important;
+}
+
+/* Label "Indonesia — Data BPS 2024" */
+.indonesia-map-wrapper::before {
+    font-size: 11px !important;
+    letter-spacing: 4px !important;
+    opacity: 0.35 !important;
+    top: 20px !important;
+    left: 28px !important;
+}
+
+/* Scan line radar pada map */
+.indonesia-map-wrapper::after {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important; left: -100% !important;
+    width: 60% !important; height: 100% !important;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(243,112,30,0.03) 40%,
+        rgba(243,112,30,0.08) 50%,
+        rgba(243,112,30,0.03) 60%,
+        transparent 100%) !important;
+    animation: mapScanH 8s linear infinite !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+}
+@keyframes mapScanH {
+    0%   { left: -60%; }
+    100% { left: 100%; }
+}
+
+#indonesia-canvas {
+    width: 100% !important;
+    height: 320px !important;
+    display: block !important;
+    position: relative !important;
+    z-index: 2 !important;
+}

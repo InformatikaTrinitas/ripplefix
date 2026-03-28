@@ -1,0 +1,5088 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <script>
+    (function () {
+      if (localStorage.getItem('ripple_theme') === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RIPPLE — Every Choice You Make, The World Feels It</title>
+  <meta name="description"
+    content="Visualisasikan bagaimana keputusan harian pelajar Indonesia menciptakan gelombang perubahan yang dunia rasakan.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Space+Mono:wght@400;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap"
+    rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/extra.css">
+  <link rel="stylesheet" href="css/crazy.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/global-enhanced.css">
+  <link rel="stylesheet" href="css/neon.css">
+  <link rel="stylesheet" href="css/fullwidth.css">
+  <link rel="stylesheet" href="css/index-extra.css">
+  <link rel="stylesheet" href="css/enhance.css">
+  <link rel="stylesheet" href="css/focus.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/hero-global.css">
+  <link rel="stylesheet" href="css/visual.css">
+  <link rel="stylesheet" href="css/wow.css">
+  <link rel="stylesheet" href="css/neon-glow.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+  <!-- ══════════════════════════════════════════════
+       RIPPLE — Daily Input Modern Styles
+  ══════════════════════════════════════════════ -->
+  <!-- ══════════════════════════════════════════════
+       RIPPLE — Daily Input Modern Styles (INTEGRATED)
+  ══════════════════════════════════════════════ -->
+  <style id="mind-daily-redesign">
+    /* REDESIGN: DAILY INPUT */
+    #section-daily .col-left {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .dim-card {
+      background: rgba(20, 16, 14, 0.6) !important;
+      backdrop-filter: blur(24px) saturate(1.8) !important;
+      -webkit-backdrop-filter: blur(24px) saturate(1.8) !important;
+      border: 1px solid rgba(255, 255, 255, 0.05) !important;
+      border-radius: 24px !important;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3) !important;
+      transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+      overflow: visible !important;
+      margin-bottom: 0 !important;
+    }
+    .dim-card:hover {
+      background: rgba(26, 20, 18, 0.8) !important;
+      border-color: rgba(243, 112, 30, 0.3) !important;
+      transform: translateY(-4px) !important;
+      box-shadow: 0 30px 60px rgba(243, 112, 30, 0.15) !important;
+    }
+    .dim-head {
+      border-bottom: 1px dashed rgba(255,255,255,0.06) !important;
+      padding: 24px 30px !important;
+    }
+    .dim-emo {
+      width: 56px !important; height: 56px !important;
+      font-size: 26px !important;
+      border-radius: 16px !important;
+      box-shadow: inset 0 0 20px rgba(255,255,255,0.02) !important;
+    }
+    .dim-title {
+      font-size: 10px !important;
+      letter-spacing: 0.2em !important;
+      opacity: 0.9 !important;
+    }
+    .dim-sub {
+      font-size: 18px !important;
+      font-family: "Playfair Display", serif !important;
+      letter-spacing: 0.02em !important;
+    }
+    .dim-body {
+      padding: 30px 30px 35px !important;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent) !important;
+      border-radius: 0 0 24px 24px !important;
+    }
+    
+    /* REDESIGN: RIPPLE MIND */
+    #section-mind {
+      background: url('https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?q=80&w=2671&auto=format&fit=crop') center/cover no-repeat !important;
+    }
+    #section-mind::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 50% 100%, rgba(243, 112, 30, 0.15), rgba(10, 6, 4, 0.95) 60%) !important;
+      z-index: 0; pointer-events: none;
+    }
+    #section-mind .main-mind {
+      position: relative; z-index: 1;
+      max-width: 1400px;
+      margin: 20px auto;
+      border-radius: 32px;
+      background: rgba(12, 8, 6, 0.6) !important;
+      backdrop-filter: blur(40px) saturate(2) !important;
+      border: 1px solid rgba(255,255,255,0.08) !important;
+      box-shadow: 0 40px 100px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.1) !important;
+      height: calc(100vh - 40px) !important;
+    }
+    #section-mind .topbar-mind {
+      background: transparent !important;
+      border-bottom: 1px solid rgba(255,255,255,0.05) !important;
+      height: 64px !important;
+      padding: 0 32px !important;
+      font-family: 'Space Grotesk', sans-serif !important;
+    }
+    #section-mind .tb-title {
+      font-weight: 800 !important;
+      letter-spacing: 0.3em !important;
+      background: linear-gradient(90deg, #fff, var(--orange)) !important;
+      -webkit-background-clip: text !important;
+      background-clip: text !important;
+      color: transparent !important;
+      font-size: 14px !important;
+    }
+    #section-mind .chat-pane-mind {
+      border-right: 1px dashed rgba(255,255,255,0.06) !important;
+    }
+    #section-mind .health-strip-mind {
+      height: 32px !important;
+      background: rgba(0,0,0,0.2) !important;
+      border-bottom: 1px solid rgba(255,255,255,0.03) !important;
+    }
+    #section-mind .qps {
+      display: flex; gap: 10px; overflow-x: auto; padding: 16px 24px;
+      background: rgba(0,0,0,0.2);
+      border-top: 1px dashed rgba(255,255,255,0.05);
+    }
+    #section-mind .qp {
+      background: rgba(255,255,255,0.03) !important;
+      border: 1px solid rgba(255,255,255,0.08) !important;
+      padding: 12px 20px !important;
+      border-radius: 100px !important;
+      font-size: 12.5px !important;
+      white-space: nowrap !important;
+      color: var(--txt) !important;
+      transition: all 0.3s !important;
+      cursor: pointer;
+    }
+    #section-mind .qp:hover {
+      background: rgba(243, 112, 30, 0.15) !important;
+      border-color: rgba(243, 112, 30, 0.4) !important;
+      transform: translateY(-2px);
+    }
+    #section-mind .input-strip-mind {
+      background: rgba(0,0,0,0.3) !important;
+      padding: 20px 24px 24px !important;
+      border-top: none !important;
+    }
+    #section-mind .ibox {
+      background: rgba(255,255,255,0.03) !important;
+      border: 1px solid rgba(255,255,255,0.1) !important;
+      border-radius: 16px !important;
+      padding: 14px 20px !important;
+      font-size: 14px !important;
+      box-shadow: inset 0 2px 10px rgba(0,0,0,0.2) !important;
+      color: #fff !important;
+    }
+    #section-mind .ibox:focus {
+      border-color: var(--orange) !important;
+      background: rgba(255,255,255,0.05) !important;
+    }
+    #section-mind .sbtn {
+      width: 52px !important; height: 52px !important;
+      border-radius: 16px !important;
+      box-shadow: 0 10px 20px rgba(243, 112, 30, 0.3) !important;
+    }
+    #section-mind .sbtn:hover {
+      transform: scale(1.05) translateY(-2px) !important;
+      box-shadow: 0 15px 30px rgba(243, 112, 30, 0.5) !important;
+    }
+    #section-mind .msg.ai .mbubble {
+      background: rgba(255,255,255,0.04) !important;
+      border: 1px solid rgba(255,255,255,0.08) !important;
+      backdrop-filter: blur(10px) !important;
+      font-size: 13.5px !important;
+      line-height: 1.8 !important;
+      padding: 16px 20px !important;
+      border-radius: 4px 16px 16px 16px !important;
+    }
+    #section-mind .msg.usr .mbubble {
+      background: linear-gradient(135deg, rgba(243, 112, 30, 0.15), rgba(184, 58, 45, 0.15)) !important;
+      border: 1px solid rgba(243, 112, 30, 0.3) !important;
+      font-size: 14px !important;
+      padding: 14px 20px !important;
+      border-radius: 16px 4px 16px 16px !important;
+    }
+    #section-mind .right-pane-mind {
+      background: transparent !important;
+      padding: 24px !important;
+      gap: 16px !important;
+    }
+    #section-mind .rcard-mind {
+      background: rgba(255,255,255,0.02) !important;
+      border: 1px solid rgba(255,255,255,0.06) !important;
+      border-radius: 16px !important;
+      padding: 20px !important;
+      box-shadow: inset 0 0 20px rgba(255,255,255,0.01) !important;
+    }
+    #section-mind .rcard-h {
+      border-bottom: 1px dashed rgba(255,255,255,0.08) !important;
+      padding-bottom: 12px !important; margin-bottom: 16px !important;
+    }
+    #section-mind .rcard-t {
+      font-size: 8.5px !important; letter-spacing: 0.15em !important;
+    }
+  </style>
+  <style id="daily-theme-vars">
+    [data-theme="dark"] {
+      --bg: #0f0b09;
+      --bg2: #1a1210ee;
+      --bg3: #221815cc;
+      --bg4: #2c1f1a;
+      --txt: #e8d8c9;
+      --muted: #8a7060;
+      --dim: #4a3530;
+      --border: rgba(232, 216, 201, 0.08);
+      --borderg: rgba(220, 201, 169, 0.22);
+      --panel-bg-solid: #0f0b09;
+      --card-bg: rgba(26, 18, 16, 0.4);
+      --chip-bg: rgba(232, 216, 201, 0.05);
+
+      --orange: #f3701e;
+      --red: #b83a2d;
+      --sand: #dcc9a9;
+      --forest: #4e6851;
+      --navy: #4b607f;
+      --grain-opacity: 0.04;
+    }
+
+    [data-theme="light"] {
+      --bg: #fdfaf7;
+      --bg2: #f7f0e8;
+      --bg3: #eee4d8;
+      --bg4: #e8d8c9;
+      --txt: #1e140f;
+      --muted: #5c4235;
+      --dim: #927565;
+      --border: rgba(80, 50, 35, 0.12);
+      --borderg: rgba(80, 50, 35, 0.25);
+      --panel-bg-solid: #fdfaf7;
+      --card-bg: #fff;
+      --chip-bg: rgba(80, 50, 35, 0.04);
+      --grain-opacity: 1;
+
+      /* Same accents as dark but maybe adjust if needed */
+      --orange: #f3701e;
+      --red: #b83a2d;
+      --sand: #a68b5e;
+      --forest: #3a6e40;
+      --navy: #3a5070;
+    }
+
+    #section-daily {
+      --sw: 240px;
+      background: var(--bg);
+      color: var(--txt);
+      font-family: "DM Sans", sans-serif;
+      min-height: 100vh;
+      display: none;
+      position: relative;
+    }
+
+    #section-daily.active {
+      display: block;
+    }
+
+    #section-daily * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Background Layers inside section-daily */
+    #daily-aurora-layer {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse 140% 55% at 15% -5%, rgba(60, 40, 30, 0.2) 0%, transparent 65%),
+        radial-gradient(ellipse 110% 45% at 85% 0%, rgba(40, 50, 70, 0.15) 0%, transparent 60%),
+        radial-gradient(ellipse 90% 50% at 50% -10%, rgba(70, 45, 35, 0.12) 0%, transparent 55%);
+      opacity: 0.8;
+    }
+
+    #daily-ripple-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Scrollable content */
+    #section-daily .scroll {
+      position: relative;
+      z-index: 1;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 40px 32px 100px;
+    }
+
+    #section-daily .page-head {
+      margin-bottom: 42px;
+    }
+
+    #section-daily .page-head h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 40px;
+      font-weight: 900;
+      color: var(--txt);
+      margin-bottom: 12px;
+      line-height: 1.1;
+    }
+
+
+    #section-daily .page-head h1 em {
+      font-style: italic;
+      color: var(--orange);
+    }
+
+    #section-daily .page-head p {
+      max-width: 580px;
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--muted);
+      font-weight: 300;
+    }
+
+    #section-daily .two-col {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+    #section-daily .col-right {
+      position: sticky;
+      top: 40px;
+    }
+
+    /* Dimension Cards */
+    .dim-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      margin-bottom: 24px;
+      overflow: hidden;
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      backdrop-filter: blur(12px);
+    }
+
+    .dim-card:hover {
+      border-color: var(--borderg);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .dim-card {
+      background: var(--bg2);
+      border: 1px solid var(--borderg);
+    }
+
+    .dim-card.filled {
+      border-color: rgba(78, 104, 81, 0.4);
+      background: linear-gradient(180deg, var(--bg2), rgba(78, 104, 81, 0.03));
+    }
+
+    .dim-head {
+      padding: 22px 26px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      cursor: default;
+      user-select: none;
+    }
+
+    .dim-emo {
+      width: 48px;
+      height: 48px;
+      background: rgba(232, 216, 201, 0.05);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+
+    .dim-card:hover .dim-emo {
+      transform: scale(1.08) rotate(3deg);
+    }
+
+    .dim-info {
+      flex: 1;
+    }
+
+    .dim-title {
+      font-family: "Space Mono", monospace;
+      font-size: 8.5px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--orange);
+      margin-bottom: 4px;
+    }
+
+    .dim-sub {
+      font-size: 15.5px;
+      font-weight: 600;
+      color: var(--txt);
+    }
+
+    .dim-badge {
+      font-family: "Space Mono", monospace;
+      font-size: 7px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      padding: 4px 8px;
+      border-radius: 4px;
+      background: rgba(232, 216, 201, 0.06);
+      color: var(--dim);
+      transition: all 0.3s;
+    }
+
+    .dim-badge.done {
+      background: var(--forest);
+      color: #fff;
+    }
+
+    .dim-arrow {
+      display: none;
+    }
+
+    .dim-body {
+      padding: 0 26px 28px;
+      display: block;
+      animation: fadeIn 0.4s ease both;
+    }
+
+    /* Form Fields */
+    .f-row {
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    .f-row:first-child {
+      border-top: none;
+      margin-top: 0;
+      padding-top: 0;
+    }
+
+    .f-label {
+      display: block;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .rng-head {
+      display: flex;
+      align-items: baseline;
+      gap: 5px;
+      margin-bottom: 12px;
+    }
+
+    .rng-val {
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--orange);
+    }
+
+    .rng-unit {
+      font-family: "Space Mono", monospace;
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    input[type="range"] {
+      width: 100%;
+      height: 4px;
+      background: var(--dim);
+      border-radius: 10px;
+      appearance: none;
+      outline: none;
+      margin: 15px 0;
+      accent-color: var(--orange);
+    }
+
+    .rng-lbl {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 2px;
+      font-family: "Space Mono", monospace;
+      font-size: 7px;
+      color: var(--dim);
+      text-transform: uppercase;
+    }
+
+    /* Pilled selections */
+    .pill-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pill {
+      padding: 8px 16px;
+      border-radius: 50px;
+      background: var(--chip-bg);
+      border: 1px solid var(--border);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .pill:hover {
+      border-color: var(--borderg);
+      color: var(--txt);
+    }
+
+    .pill.sel {
+      background: var(--orange);
+      border-color: var(--orange);
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(243, 112, 30, 0.3);
+    }
+
+    /* Mood buttons */
+    .mood-row {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 5px;
+    }
+
+    .mood-btn {
+      flex: 1;
+      min-width: 70px;
+      padding: 14px 8px;
+      background: var(--chip-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+
+    .mood-btn span {
+      font-size: 8px;
+      font-family: "Space Mono", monospace;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--dim);
+    }
+
+    .mood-btn:hover {
+      border-color: var(--borderg);
+      background: rgba(232, 216, 201, 0.08);
+    }
+
+    .mood-btn.sel {
+      background: var(--orange);
+      border-color: var(--orange);
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(243, 112, 30, 0.25);
+    }
+
+    .mood-btn.sel span {
+      color: #fff;
+      opacity: 0.8;
+    }
+
+    /* Toggles */
+    .toggle-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .tog {
+      padding: 14px 18px;
+      background: var(--chip-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .tog:hover {
+      border-color: var(--borderg);
+      background: rgba(232, 216, 201, 0.08);
+    }
+
+    .tog-box {
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--dim);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      transition: all 0.2s;
+      flex-shrink: 0;
+    }
+
+    .tog.chk .tog-box {
+      background: var(--forest);
+      border-color: var(--forest);
+      color: #fff;
+    }
+
+    .tog-lbl {
+      flex: 1;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .tog-tag {
+      font-family: "Space Mono", monospace;
+      font-size: 7px;
+      font-weight: 700;
+      color: var(--forest);
+      background: rgba(78, 104, 81, 0.1);
+      padding: 3px 6px;
+      border-radius: 4px;
+    }
+
+    .tog-tag.neg {
+      color: var(--red);
+      background: rgba(184, 58, 45, 0.1);
+    }
+
+    /* Textarea */
+    textarea {
+      width: 100%;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 18px;
+      color: var(--txt);
+      font-family: inherit;
+      font-size: 13.5px;
+      resize: none;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    textarea:focus {
+      border-color: var(--orange);
+    }
+
+    /* Submit Row */
+    .submit-row {
+      display: flex;
+      gap: 16px;
+      margin-top: 12px;
+    }
+
+    .btn-sub,
+    .btn-rst {
+      height: 54px;
+      border-radius: 16px;
+      font-family: "Space Mono", monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+    }
+
+    .btn-sub {
+      flex: 1;
+      background: linear-gradient(135deg, var(--orange), var(--red));
+      color: #fff;
+      border: none;
+      box-shadow: 0 8px 32px rgba(243, 112, 30, 0.35);
+    }
+
+    .btn-sub:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 42px rgba(243, 112, 30, 0.5);
+    }
+
+    .btn-rst {
+      width: 100px;
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .btn-rst:hover {
+      background: var(--chip-bg);
+      color: var(--txt);
+      border-color: var(--borderg);
+    }
+
+    /* RIGHT PANEL */
+    .score-panel {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 24px;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 14px 44px rgba(0, 0, 0, 0.2);
+    }
+
+    .ripple-box {
+      width: 100%;
+      height: 280px;
+      position: relative;
+      background: radial-gradient(circle at center, rgba(243, 112, 30, 0.08), transparent 70%);
+      overflow: hidden;
+    }
+
+    #rc {
+      width: 100%;
+      height: 100%;
+    }
+
+    .ripple-timeline {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      height: 30px;
+      display: flex;
+      align-items: flex-end;
+      gap: 6px;
+      z-index: 5;
+    }
+
+    .tl-bar {
+      flex: 1;
+      min-width: 2px;
+      background: var(--dim);
+      border-radius: 2px 2px 0 0;
+      transition: height 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .ripple-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      text-align: center;
+    }
+
+    .ro-label {
+      font-family: "Space Mono", monospace;
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--dim);
+      margin-bottom: 4px;
+    }
+
+    .ro-score {
+      font-family: "Playfair Display", serif;
+      font-size: 52px;
+      font-weight: 900;
+      line-height: 1;
+      background: linear-gradient(135deg, var(--txt), var(--orange));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+    }
+
+    .ro-desc {
+      font-size: 11px;
+      color: var(--muted);
+      max-width: 180px;
+      line-height: 1.5;
+    }
+
+    /* Stats Panels */
+    .r-panel {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+
+    .r-panel-title {
+      font-family: "Space Mono", monospace;
+      font-size: 7.5px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--dim);
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      display: block;
+    }
+
+    .chips {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .chip {
+      background: var(--bg3);
+      padding: 14px;
+      border-radius: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .chip-ico {
+      font-size: 16px;
+    }
+
+    .chip-val {
+      font-family: "Playfair Display", serif;
+      font-size: 19px;
+      font-weight: 900;
+    }
+
+    .chip-lbl {
+      font-size: 9px;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Progress Rows */
+    .prog-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .prog-row {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .prog-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .prog-pct {
+      font-family: "Space Mono", monospace;
+      color: var(--muted);
+    }
+
+    .prog-track {
+      height: 4px;
+      background: var(--bg3);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .prog-fill {
+      height: 100%;
+      border-radius: 10px;
+      transition: width 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    /* Streak week */
+    .sb-streak-row {
+      display: flex;
+      gap: 6px;
+    }
+
+    .sb-day {
+      width: 28px;
+      height: 28px;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Space Mono", monospace;
+      font-size: 9px;
+      font-weight: 700;
+      color: var(--dim);
+    }
+
+    .sb-day.done {
+      background: var(--forest);
+      color: #fff;
+      border-color: var(--forest);
+    }
+
+    .sb-day.today {
+      border-color: var(--orange);
+      color: var(--orange);
+    }
+
+    /* History bars mini */
+    .sb-history {
+      height: 40px;
+      display: flex;
+      align-items: flex-end;
+      gap: 4px;
+    }
+
+    .sb-history-empty {
+      font-size: 10px;
+      color: var(--dim);
+      font-style: italic;
+    }
+
+    .sb-hbar {
+      flex: 1;
+      border-radius: 2px 2px 0 0;
+    }
+
+    /* Orbs */
+    .sb-orbs {
+      display: flex;
+      gap: 12px;
+    }
+
+    .sb-orb {
+      width: 36px;
+      height: 36px;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1px;
+      position: relative;
+    }
+
+    .sb-orb span {
+      font-size: 14px;
+    }
+
+    .sb-orb-dot {
+      width: 4px;
+      height: 4px;
+      background: var(--oc);
+      border-radius: 50%;
+      opacity: 0.3;
+      transition: opacity 0.3s;
+    }
+
+    .sb-orb.filled .sb-orb-dot {
+      opacity: 1;
+      box-shadow: 0 0 8px var(--oc);
+    }
+
+    /* Impact Bar */
+    .sb-impact-top {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .sb-impact-num {
+      font-family: "Space Mono", monospace;
+      font-weight: 700;
+      color: var(--orange);
+    }
+
+    .sb-impact-bar {
+      height: 4px;
+      background: var(--bg3);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 8px;
+    }
+
+    .sb-impact-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--red), var(--orange));
+      border-radius: 10px;
+      transition: width 1s;
+    }
+
+    .sb-impact-sub {
+      font-size: 10px;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* Quote */
+    .sb-quote {
+      padding-top: 10px;
+    }
+
+    .sb-quote-ico {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .sb-quote-txt {
+      font-family: "Playfair Display", serif;
+      font-size: 15px;
+      font-style: italic;
+      color: var(--txt);
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+
+    .sb-quote-src {
+      font-family: "Space Mono", monospace;
+      font-size: 7px;
+      letter-spacing: 0.1em;
+      color: var(--dim);
+      text-transform: uppercase;
+    }
+
+    /* Modal */
+    .modal-bg {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s;
+    }
+
+    .modal-bg.show {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .modal-box {
+      background: var(--panel-bg-solid);
+      border: 1px solid var(--borderg);
+      border-radius: 24px;
+      padding: 48px 32px;
+      width: 440px;
+      max-width: 90vw;
+      text-align: center;
+      transform: translateY(20px);
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      position: relative;
+    }
+
+    .modal-bg.show .modal-box {
+      transform: translateY(0);
+    }
+
+    .m-globe {
+      font-size: 52px;
+      display: block;
+      margin-bottom: 24px;
+    }
+
+    .m-title {
+      font-family: "Playfair Display", serif;
+      font-size: 26px;
+      font-weight: 900;
+      color: var(--txt);
+      margin-bottom: 8px;
+    }
+
+    .m-streak {
+      font-family: "Space Mono", monospace;
+      font-size: 9px;
+      font-weight: 700;
+      color: var(--orange);
+      letter-spacing: 0.1em;
+      margin-bottom: 24px;
+    }
+
+    .m-desc {
+      font-size: 14.5px;
+      color: var(--muted);
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+
+    .m-fact {
+      background: var(--bg3);
+      padding: 16px 20px;
+      border-radius: 14px;
+      font-size: 12.5px;
+      color: var(--txt);
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+
+    .m-close {
+      width: 100%;
+      height: 52px;
+      border-radius: 50px;
+      background: var(--txt);
+      color: var(--bg);
+      border: none;
+      font-family: "Space Mono", monospace;
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .m-close:hover {
+      transform: scale(1.02);
+      filter: brightness(1.1);
+    }
+
+    /* Toasts */
+    .toasts {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 10000;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      pointer-events: none;
+    }
+
+    .toast {
+      background: var(--panel-bg-solid);
+      border: 1px solid var(--borderg);
+      padding: 16px 22px;
+      border-radius: 16px;
+      width: 320px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      transform: translateX(40px);
+      opacity: 0;
+      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      pointer-events: all;
+    }
+
+    .toast.show {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    .toast-t {
+      font-family: "Space Mono", monospace;
+      font-size: 8px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .toast.pos .toast-t {
+      color: var(--forest);
+    }
+
+    .toast.neg .toast-t {
+      color: var(--red);
+    }
+
+    .toast-m {
+      font-size: 13px;
+      color: var(--txt);
+      line-height: 1.5;
+    }
+
+    /* Transitions */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive adjustments for daily input */
+    @media (max-width: 900px) {
+      #section-daily .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      #section-daily .col-right {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      #section-daily .col-right .score-panel {
+        grid-column: span 2;
+      }
+    }
+
+    @media (max-width: 640px) {
+      #section-daily .scroll {
+        padding: 24px 16px;
+      }
+
+      #section-daily .page-head h1 {
+        font-size: 26px;
+      }
+
+      #section-daily .col-right {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .chips {
+        grid-template-columns: 1fr;
+      }
+
+      .submit-row {
+        flex-direction: column;
+      }
+
+      .btn-rst {
+        width: 100%;
+        order: 2;
+      }
+    }
+
+    /* ══ RIPPLE MIND SECTION ══ */
+    #section-mind {
+      display: none;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--txt);
+      position: relative;
+      font-family: "DM Sans", sans-serif;
+    }
+
+    #section-mind.active {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #section-mind .main-mind {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
+    }
+
+    #section-mind .topbar-mind {
+      height: 48px;
+      flex-shrink: 0;
+      background: rgba(9, 5, 3, 0.8);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      padding: 0 18px;
+      gap: 10px;
+    }
+
+    #section-mind .content-mind {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 310px;
+      overflow: hidden;
+    }
+
+    #section-mind .chat-pane-mind {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border-right: 1px solid var(--border);
+    }
+
+    #section-mind .health-strip-mind {
+      height: 22px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 16px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(9, 5, 3, 0.5);
+    }
+
+    #section-mind .hs-lbl {
+      font-family: "Space Mono", monospace;
+      font-size: 6px;
+      color: var(--muted);
+    }
+
+    #section-mind .hs-track {
+      flex: 1;
+      height: 2px;
+      border-radius: 99px;
+      background: rgba(232, 216, 201, 0.05);
+      overflow: hidden;
+    }
+
+    #section-mind .hs-fill {
+      height: 100%;
+      border-radius: 99px;
+      transition: width 0.9s ease, background 0.9s ease;
+      background: linear-gradient(90deg, var(--forest), var(--orange));
+    }
+
+    #section-mind .hs-pct {
+      font-family: "Space Mono", monospace;
+      font-size: 6px;
+      color: var(--muted);
+    }
+
+    #section-mind .chat-scroll {
+      flex: 1;
+      overflow-y: auto;
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    #section-mind .chat-scroll::-webkit-scrollbar {
+      width: 2px;
+    }
+
+    #section-mind .chat-scroll::-webkit-scrollbar-thumb {
+      background: rgba(243, 112, 30, 0.25);
+      border-radius: 99px;
+    }
+
+    #section-mind .onboard-mind {
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 1px solid rgba(243, 112, 30, 0.18);
+      background: rgba(12, 7, 5, 0.7);
+      backdrop-filter: blur(16px);
+      margin-bottom: 2px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #section-mind .ob-top {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    #section-mind .ob-orb {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+      position: relative;
+      border-radius: 50%;
+      border: 1px solid var(--orange);
+    }
+
+    #section-mind .ob-title {
+      font-family: "Playfair Display", serif;
+      font-size: 15px;
+      font-weight: 900;
+      line-height: 1.15;
+    }
+
+    #section-mind .ob-desc {
+      font-size: 10.5px;
+      color: var(--muted);
+      line-height: 1.65;
+      font-weight: 300;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: rgba(232, 216, 201, 0.02);
+    }
+
+    #section-mind .ob-pills {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    #section-mind .ob-pill {
+      font-family: "Space Mono", monospace;
+      font-size: 6.5px;
+      padding: 2px 7px;
+      border-radius: 99px;
+      border: 1px solid var(--border);
+      color: var(--dim);
+    }
+
+    #section-mind .msg {
+      display: flex;
+      gap: 8px;
+      animation: mi 0.32s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    @keyframes mi {
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    #section-mind .msg.usr {
+      flex-direction: row-reverse;
+    }
+
+    #section-mind .mav {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    #section-mind .mav.ai {
+      background: rgba(243, 112, 30, 0.1);
+      border: 1px solid rgba(243, 112, 30, 0.2);
+      color: var(--orange);
+      font-size: 12px;
+    }
+
+    #section-mind .mav.u {
+      background: linear-gradient(135deg, var(--red), var(--orange));
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    #section-mind .mbubble {
+      padding: 9px 12px;
+      border-radius: 10px;
+      font-size: 11.5px;
+      line-height: 1.72;
+      max-width: 82%;
+    }
+
+    #section-mind .msg.ai .mbubble {
+      background: rgba(15, 9, 7, 0.82);
+      border: 1px solid var(--border);
+      color: var(--txt);
+      border-radius: 3px 10px 10px 10px;
+    }
+
+    #section-mind .msg.usr .mbubble {
+      background: linear-gradient(135deg, rgba(184, 58, 45, 0.18), rgba(243, 112, 30, 0.13));
+      border: 1px solid rgba(243, 112, 30, 0.2);
+      color: var(--txt);
+      border-radius: 10px 3px 10px 10px;
+    }
+
+    #section-mind .input-strip-mind {
+      padding: 9px 14px 12px;
+      border-top: 1px solid var(--border);
+      background: rgba(9, 5, 3, 0.6);
+    }
+
+    #section-mind .ictx {
+      font-family: "Space Mono", monospace;
+      font-size: 6.5px;
+      color: var(--dim);
+      margin-bottom: 5px;
+    }
+
+    #section-mind .ibox-wrap {
+      display: flex;
+      gap: 6px;
+      align-items: flex-end;
+    }
+
+    #section-mind .ibox {
+      flex: 1;
+      background: rgba(15, 9, 7, 0.82);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      padding: 9px 12px;
+      color: var(--txt);
+      resize: none;
+      outline: none;
+      transition: border-color 0.3s;
+      font-size: 11.5px;
+      min-height: 40px;
+      font-family: inherit;
+    }
+
+    #section-mind .ibox:focus {
+      border-color: rgba(243, 112, 30, 0.35);
+    }
+
+    #section-mind .sbtn {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      border: none;
+      background: linear-gradient(135deg, var(--red), var(--orange));
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.22s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #section-mind .sbtn svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    #section-mind .right-pane-mind {
+      display: flex;
+      flex-direction: column;
+      background: rgba(10, 6, 4, 0.4);
+      overflow-y: auto;
+      padding: 12px;
+      gap: 8px;
+      border-left: 1px solid var(--border);
+    }
+
+    #section-mind .rcard-mind {
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(14, 9, 7, 0.6);
+      position: relative;
+    }
+
+    #section-mind .rcard-h {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #section-mind .rcard-t {
+      font-family: "Space Mono", monospace;
+      font-size: 6.5px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    #section-mind .sb-orb {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      margin: 10px auto;
+      border: 1px solid rgba(243, 112, 30, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: var(--orange);
+    }
+
+    #section-mind .sb-sname {
+      font-family: "Playfair Display", serif;
+      font-size: 14px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    #section-mind .sb-ssub {
+      font-size: 10px;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 4px;
+    }
+
+    #section-mind .trait-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    #section-mind .trait-r {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    #section-mind .trait-l {
+      font-family: "Space Mono", monospace;
+      font-size: 7px;
+      color: var(--muted);
+      width: 60px;
+    }
+
+    #section-mind .trait-t {
+      flex: 1;
+      height: 3px;
+      border-radius: 99px;
+      background: rgba(232, 216, 201, 0.05);
+      overflow: hidden;
+    }
+
+    #section-mind .trait-f {
+      height: 100%;
+      transition: width 0.8s ease;
+    }
+
+    #section-mind .sb-score-num {
+      font-family: "Playfair Display", serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--orange);
+      text-align: center;
+    }
+
+    #section-mind .sb-score-bar {
+      height: 3px;
+      border-radius: 99px;
+      background: rgba(232, 216, 201, 0.05);
+      margin: 8px 0;
+      overflow: hidden;
+    }
+
+    #section-mind .sb-score-fill {
+      height: 100%;
+      background: var(--orange);
+      transition: width 0.8s ease;
+    }
+
+    #section-mind .sb-score-sub {
+      font-size: 8px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    #section-mind .ig-stat {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    #section-mind .ig-lbl {
+      font-size: 9px;
+      color: var(--muted);
+    }
+
+    #section-mind .ig-val {
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    #section-mind .ig-verdict {
+      font-size: 10px;
+      color: var(--muted);
+      margin: 8px 0;
+      line-height: 1.5;
+    }
+
+    #section-mind .sig-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 0;
+    }
+
+    #section-mind .sig-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+    }
+
+    #section-mind .sig-txt {
+      font-size: 10px;
+      color: var(--muted);
+      flex: 1;
+    }
+
+    #section-mind .pj {
+      padding: 8px;
+      border-radius: 6px;
+      background: rgba(232, 216, 201, 0.03);
+      border-left: 2px solid var(--muted);
+      margin-bottom: 6px;
+    }
+
+    #section-mind .pj-yr {
+      font-size: 7px;
+      font-family: "Space Mono", monospace;
+      color: var(--orange);
+    }
+
+    #section-mind .pj-txt {
+      font-size: 10px;
+      line-height: 1.4;
+      color: var(--muted);
+    }
+
+    #section-mind .sveil {
+      display: none;
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
+      z-index: 10;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    #section-mind .sveil.on {
+      display: flex;
+    }
+
+    #section-mind .sring {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 2px solid var(--orange);
+      animation: pulse-mind 2.5s infinite;
+    }
+
+    @keyframes pulse-mind {
+      0% {
+        transform: scale(1);
+        opacity: 0.8;
+      }
+
+      100% {
+        transform: scale(1.6);
+        opacity: 0;
+      }
+    }
+
+    #section-mind .stxt {
+      font-family: "Space Mono", monospace;
+      font-size: 11px;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    /* Theme adjustments */
+    [data-theme="light"] #section-mind .topbar-mind {
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    [data-theme="light"] #section-mind .right-pane-mind {
+      background: rgba(0, 0, 0, 0.03);
+    }
+
+    [data-theme="light"] #section-mind .rcard-mind {
+      background: #fff;
+    }
+
+    [data-theme="light"] #section-mind .msg.ai .mbubble {
+      background: #fff;
+    }
+
+    [data-theme="light"] #section-mind .msg.usr .mbubble {
+      background: linear-gradient(135deg, rgba(184, 58, 45, 0.1), rgba(243, 112, 30, 0.07));
+      color: #1a1210;
+    }
+
+    [data-theme="light"] #section-mind .input-strip-mind {
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    [data-theme="light"] #section-mind .ibox {
+      background: #fff;
+    }
+  </style>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
+  <!-- Performance & Layout Patch — loaded last to take priority -->
+  <link rel="stylesheet" href="css/perf-patch.css">
+</head>
+
+<body>
+
+  <!-- ══ WELCOME INTRO OVERLAY ═════════════════════════════════ -->
+  <div id="welcome-intro" class="welcome-intro-overlay" style="display:none;">
+    <div class="welcome-content">
+      <div class="welcome-icon">🌍</div>
+      <h2 id="welcome-title">Selamat datang di RIPPLE!</h2>
+      <p id="welcome-desc">Sistem berhasil disinkronisasi.</p>
+      <button class="btn btn-primary" style="padding: 14px 40px; font-size: 1.05rem;" onclick="closeIntro()">
+        Masuk ke Dashboard →
+      </button>
+    </div>
+  </div>
+
+  <!-- ══ TOP FACT TICKER ══════════════════════════════════════ -->
+  <div class="top-ticker" id="top-ticker">
+    <div class="ticker-track" id="top-ticker-track">
+      <span>🌳 12.847 pohon ditanam hari ini</span>
+      <span class="ticker-sep">•</span>
+      <span>☁️ CO₂ global: 417 ppm</span>
+      <span class="ticker-sep">•</span>
+      <span>💧 1 dari 4 orang kekurangan air bersih</span>
+      <span class="ticker-sep">•</span>
+      <span>🌡️ Suhu bumi +1.2°C dari era pra-industri</span>
+      <span class="ticker-sep">•</span>
+      <span>♻️ Hanya 9% plastik yang pernah didaur ulang</span>
+      <span class="ticker-sep">•</span>
+      <span>🐝 40% spesies lebah dalam ancaman kepunahan</span>
+      <span class="ticker-sep">•</span>
+      <span>🌊 Level laut naik 3,6 mm per tahun</span>
+      <span class="ticker-sep">•</span>
+      <span>⚡ 733 juta orang masih tanpa listrik</span>
+      <span class="ticker-sep">•</span>
+      <span>🌳 12.847 pohon ditanam hari ini</span>
+      <span class="ticker-sep">•</span>
+      <span>☁️ CO₂ global: 417 ppm</span>
+      <span class="ticker-sep">•</span>
+      <span>💧 1 dari 4 orang kekurangan air bersih</span>
+      <span class="ticker-sep">•</span>
+      <span>🌡️ Suhu bumi +1.2°C dari era pra-industri</span>
+      <span class="ticker-sep">•</span>
+    </div>
+  </div>
+
+  <!-- ══ NAVIGATION ══════════════════════════════════════════ -->
+  <nav id="nav">
+    <div class="nav-profile-section" data-nav="profile" style="cursor:pointer; transition:transform 0.2s;"
+      onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+      <div class="nav-profile-aura">
+        <div class="nav-profile-avatar" id="nav-profile-avatar"></div>
+      </div>
+      <h3 class="nav-profile-name" id="nav-profile-name">Pelajar</h3>
+      <span class="nav-profile-role">@peloporbumi</span>
+    </div>
+
+    <div class="nav-links">
+      <button data-nav="landing" class="nav-link-btn active">
+        <span class="nav-icon">🏠</span> <span>Home</span>
+      </button>
+      <button data-nav="mirror" class="nav-link-btn">
+        <span class="nav-icon">🪞</span> <span>Earth Mirror</span>
+        <span class="nav-badge">Pusat</span>
+      </button>
+      <button data-nav="dashboard" class="nav-link-btn">
+        <span class="nav-icon">👤</span> <span>Profil Pelajar</span>
+      </button>
+      <button data-nav="daily" class="nav-link-btn">
+        <span class="nav-icon">📝</span> <span>Input Hari Ini</span>
+      </button>
+      <button data-nav="mind" class="nav-link-btn">
+        <span class="nav-icon">🤯</span> <span>Ripple Mind</span>
+      </button>
+      <button data-nav="butterfly" class="nav-link-btn">
+        <span class="nav-icon">🦋</span> <span>Butterfly Effect</span>
+      </button>
+      <button data-nav="global" class="nav-link-btn">
+        <span class="nav-icon">🌍</span> <span>Global Ripple</span>
+      </button>
+      <button data-nav="focus" class="nav-link-btn">
+        <span class="nav-icon">🎯</span> <span>Focus Mode</span>
+      </button>
+      <button data-nav="about" class="nav-link-btn">
+        <span class="nav-icon">ℹ️</span> <span>Tentang Kami</span>
+      </button>
+      <button data-nav="settings" class="nav-link-btn">
+        <span class="nav-icon">⚙️</span> <span>Pengaturan</span>
+      </button>
+    </div>
+
+    <div class="nav-bottom-cta">
+      <div class="nav-cta-card">
+        <div class="nav-globe-mini-wrap">
+          <canvas id="nav-globe-canvas" class="nav-globe-mini" width="48" height="48"></canvas>
+        </div>
+        <p>Simulasi Bumi<br>Sedang Berjalan</p>
+        <button class="btn btn-primary"
+          style="width:100%;font-size:0.75rem;padding:10px 0;border-radius:12px;justify-content:center;"
+          data-nav="profile">Lihat Dampakmu</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- RIPPLE FACTS TICKER -->
+  <div class="news-ticker">
+    <div class="ticker-track">
+      <div class="ticker-inner" id="ticker-inner">
+        <span>Ripple menunjukkan dampak kolektif 52,9 juta pelajar Indonesia</span>
+        <span>RIPPLE dibangun oleh pelajar SMA Trinitas untuk pelajar Indonesia</span>
+        <span>Satu pilihan kecil hari ini bisa menciptakan gelombang perubahan besok</span>
+        <span>RIPPLE adalah platform kesadaran kolektif pelajar Indonesia</span>
+        <span>Setiap pilihan harianmu dicatat dan divisualisasikan sebagai gelombang nyata</span>
+        <span>Gunakan Daily Input untuk mencatat pilihan harian kamu</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ RIPPLE OVERLAY ═══════════════════════════════════════ -->
+  <div id="ripple-overlay">
+    <svg id="ripple-svg" xmlns="http://www.w3.org/2000/svg"></svg>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════
+     SECTION — HERO + GLOBAL RIPPLE (Unified Premium Section)
+  ══════════════════════════════════════════════════════════ -->
+  <section data-section="landing" data-section-alias="global" id="section-hero-global" class="active">
+
+    <!-- Background layers -->
+    <div class="hg-backdrop"></div>
+    <div class="hg-bg-noise"></div>
+    <div class="hg-aurora"></div>
+
+    <!-- Nav spacer -->
+    <div class="hg-nav-spacer"></div>
+
+    <!-- Two-column main area -->
+    <div class="hg-container">
+
+      <!-- ══ LEFT: Editorial Hero Text ══════════════════════ -->
+      <div class="hg-left">
+
+        <!-- Badge -->
+        <div class="hg-badges">
+          <span class="hg-badge primary">
+            <span class="hg-dot"></span>
+            INNOVATE 2025
+          </span>
+          <span class="hg-badge secondary">Pelajar Indonesia</span>
+        </div>
+
+        <!-- HUGE headline — editorial style -->
+        <h1 class="hg-title">
+          Kamu pikir kamu cuma
+          <span class="hg-accent">pelajar biasa.</span>
+        </h1>
+
+        <!-- Tagline row -->
+        <p class="hg-tagline">
+          R<span class="hg-tagline-brand">IPPLE</span>
+          &nbsp;—&nbsp;
+          Every Choice You Make, The World Feels It
+        </p>
+
+        <!-- Subtitle -->
+        <p class="hg-subtitle">
+          Setiap keputusan harian pelajar Indonesia divisualisasikan
+          sebagai gelombang yang menyebar ke seluruh sistem dunia.
+          AI tunjukkan bumi <strong>seperti apa</strong> yang sedang kamu bangun.
+        </p>
+
+        <!-- CTA -->
+        <div class="hg-actions">
+          <a class="hg-btn hg-btn-primary" onclick="showSection('daily')">
+            <span class="hg-btn-icon">🌍</span>
+            Mulai Perjalananmu
+          </a>
+          <a class="hg-btn hg-btn-secondary" onclick="showSection('about')">
+            ☰ Pelajari Lebih
+          </a>
+        </div>
+
+        <!-- Dimension tags -->
+        <div class="hg-tags">
+          <span class="hg-tag"><span>🧠</span>Pikiran</span>
+          <span class="hg-tag"><span>💚</span>Jiwa</span>
+          <span class="hg-tag"><span>❤️</span>Hubungan</span>
+          <span class="hg-tag"><span>🍽️</span>Pilihan</span>
+          <span class="hg-tag"><span>🌿</span>Tapak</span>
+        </div>
+
+      </div>
+
+      <!-- ══ RIGHT: Globe + climate chips ══════════════════ -->
+      <div class="hg-right">
+        <!-- Glowing ring -->
+        <div class="hg-globe-ring"></div>
+
+        <!-- Globe canvas (existing JS renders into this) -->
+        <canvas id="globe-canvas-landing"></canvas>
+
+        <!-- Floating data chips -->
+        <div class="hg-globe-chips">
+          <div class="hg-chip">
+            <span class="hg-chip-val">+1.2°C</span>
+            <span class="hg-chip-label">Kenaikan Suhu</span>
+          </div>
+          <div class="hg-chip">
+            <span class="hg-chip-val">417 ppm</span>
+            <span class="hg-chip-label">CO₂ Global</span>
+          </div>
+          <div class="hg-chip positive">
+            <span class="hg-chip-val">+12%</span>
+            <span class="hg-chip-label">Energi Hijau</span>
+          </div>
+          <div class="hg-chip negative">
+            <span class="hg-chip-val">–50%</span>
+            <span class="hg-chip-label">Terumbu Karang</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /hg-container -->
+
+    <!-- ══ BOTTOM: Stats bar ══════════════════════════════ -->
+    <div class="hg-stats-bar">
+      <div class="hg-stat-item">
+        <span class="hg-stat-num">12.4M</span>
+        <span class="hg-stat-desc">Pelajar Dalam RIPPLE</span>
+      </div>
+      <div class="hg-stat-item">
+        <span class="hg-stat-num">247K</span>
+        <span class="hg-stat-desc">Ripple Points</span>
+      </div>
+      <div class="hg-stat-item">
+        <span class="hg-stat-num">417</span>
+        <span class="hg-stat-desc">PPM CO₂ Saat Ini</span>
+      </div>
+      <div class="hg-live-ticker">
+        <span class="hg-ticker-dot"></span>
+        <span class="hg-ticker-txt">Live Data</span>
+      </div>
+    </div>
+
+  </section>
+
+  <section data-section="onboarding" id="section-onboarding">
+    <div class="onboarding-bg"></div>
+    <div class="onboarding-box card" style="padding:40px;">
+      <div class="onboarding-progress">
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" id="onboarding-progress-fill" style="width:0%"></div>
+        </div>
+        <div class="progress-label">
+          <span style="color:var(--violet);font-weight:600;">Kalibrasi Bumiku</span>
+          <span id="onboarding-step-label">1 / 5</span>
+        </div>
+      </div>
+      <div id="onboarding-question-area"></div>
+      <div class="q-actions">
+        <button class="btn btn-ghost" onclick="RIPPLE.prevOnboardingStep()">← Kembali</button>
+        <button class="btn btn-primary" onclick="RIPPLE.nextOnboardingStep()">Lanjut →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION: DAILY INPUT ═══════════════════════════════════ -->
+  <section data-section="daily" id="section-daily">
+    <!-- Bg Layers -->
+    <div id="daily-aurora-layer"></div>
+    <div id="daily-ripple-bg">
+      <canvas id="rc-global"></canvas>
+    </div>
+
+    <div class="scroll">
+      <div class="page-head">
+        <h1>Apa yang kamu pilih <em>hari ini?</em></h1>
+        <p>
+          Setiap keputusan kecilmu menciptakan gelombang — positif atau
+          negatif — yang menyebar ke seluruh sistem. Tak ada yang terlalu
+          kecil untuk berarti.
+        </p>
+      </div>
+
+      <div class="two-col">
+        <!-- LEFT: forms -->
+        <div class="col-left">
+          <!-- LAPISAN 1 — PIKIRAN -->
+          <div class="dim-card card-pikiran open" id="card-pikiran">
+            <div class="dim-head" onclick="toggleCard('pikiran')">
+              <div class="dim-emo" style="background: rgba(75, 96, 127, 0.18)">🎓</div>
+              <div class="dim-info">
+                <div class="dim-title">LAPISAN 1 — PIKIRAN</div>
+                <div class="dim-sub">Pendidikan & Pertumbuhan Intelektual</div>
+              </div>
+              <span class="dim-badge" id="db-pikiran">BELUM</span>
+              <span class="dim-arrow">▾</span>
+            </div>
+            <div class="dim-body">
+              <div class="f-row">
+                <label class="f-label">Jam belajar hari ini</label>
+                <div class="rng-head">
+                  <span class="rng-val" id="vb">0</span><span class="rng-unit">jam</span>
+                </div>
+                <input type="range" min="0" max="12" step=".5" value="0" oninput="rng('belajar', this.value)">
+                <div class="rng-lbl">
+                  <span>0</span><span>3</span><span>6</span><span>9</span><span>12</span>
+                </div>
+              </div>
+              <div class="f-row">
+                <label class="f-label">Topik yang dipelajari</label>
+                <div class="pill-group">
+                  <div class="pill" onclick="togglePill(this, 'topik')">Matematika</div>
+                  <div class="pill" onclick="togglePill(this, 'topik')">Sains</div>
+                  <div class="pill" onclick="togglePill(this, 'topik')">Bahasa</div>
+                  <div class="pill" onclick="togglePill(this, 'topik')">Sejarah</div>
+                  <div class="pill" onclick="togglePill(this, 'topik')">Teknologi</div>
+                  <div class="pill" onclick="togglePill(this, 'topik')">Seni & Desain</div>
+                  <div class="pill" onclick="togglePill(this, 'topik')">Olahraga</div>
+                  <div class="pill" onclick="togglePill(this, 'topik')">Tidak ada</div>
+                </div>
+              </div>
+              <div class="f-row">
+                <label class="f-label">Seberapa paham materi hari ini?</label>
+                <div class="rng-head">
+                  <span class="rng-val" id="vp">5</span><span class="rng-unit">/ 10</span>
+                </div>
+                <input type="range" min="1" max="10" value="5" oninput="rng('paham', this.value)">
+                <div class="rng-lbl">
+                  <span>😵 Bingung</span><span>😐 Cukup</span><span>🧠 Paham</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- LAPISAN 2 — JIWA -->
+          <div class="dim-card card-jiwa" id="card-jiwa">
+            <div class="dim-head" onclick="toggleCard('jiwa')">
+              <div class="dim-emo" style="background: rgba(78, 104, 81, 0.18)">💚</div>
+              <div class="dim-info">
+                <div class="dim-title">LAPISAN 2 — JIWA</div>
+                <div class="dim-sub">Kesehatan Mental & Emosi</div>
+              </div>
+              <span class="dim-badge" id="db-jiwa">BELUM</span>
+              <span class="dim-arrow">▾</span>
+            </div>
+            <div class="dim-body">
+              <div class="f-row">
+                <label class="f-label">Mood hari ini</label>
+                <div class="mood-row">
+                  <button class="mood-btn" onclick="setMood(this, '😊', 'pos')">😊<span>Bahagia</span></button>
+                  <button class="mood-btn" onclick="setMood(this, '😐', 'neu')">😐<span>Biasa</span></button>
+                  <button class="mood-btn" onclick="setMood(this, '😔', 'neg')">😔<span>Sedih</span></button>
+                  <button class="mood-btn" onclick="setMood(this, '😤', 'neg')">😤<span>Kesal</span></button>
+                  <button class="mood-btn" onclick="setMood(this, '😰', 'neg')">😰<span>Cemas</span></button>
+                  <button class="mood-btn" onclick="setMood(this, '🤩', 'pos')">🤩<span>Semangat</span></button>
+                </div>
+              </div>
+              <div class="f-row">
+                <label class="f-label">Jam tidur tadi malam</label>
+                <div class="rng-head">
+                  <span class="rng-val" id="vt">7</span><span class="rng-unit">jam</span>
+                </div>
+                <input type="range" min="0" max="12" step=".5" value="7" oninput="rng('tidur', this.value)">
+                <div class="rng-lbl">
+                  <span>😵 0</span><span>😴 6</span><span>✨ 8+</span>
+                </div>
+              </div>
+              <div class="f-row">
+                <label class="f-label">Level stress hari ini</label>
+                <div class="rng-head">
+                  <span class="rng-val" id="vs">3</span><span class="rng-unit">/ 10</span>
+                </div>
+                <input type="range" min="1" max="10" value="3" oninput="rng('stress', this.value)">
+                <div class="rng-lbl">
+                  <span>😌 Santai</span><span>😮‍💨 Sedang</span><span>💥 Over</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- LAPISAN 3 — HUBUNGAN -->
+          <div class="dim-card card-hub" id="card-hub">
+            <div class="dim-head" onclick="toggleCard('hub')">
+              <div class="dim-emo" style="background: rgba(220, 201, 169, 0.14)">🤝</div>
+              <div class="dim-info">
+                <div class="dim-title">LAPISAN 3 — HUBUNGAN</div>
+                <div class="dim-sub">Interaksi Sosial & Komunitas</div>
+              </div>
+              <span class="dim-badge" id="db-hub">BELUM</span>
+              <span class="dim-arrow">▾</span>
+            </div>
+            <div class="dim-body">
+              <div class="f-row">
+                <label class="f-label">Apa yang kamu lakukan hari ini?</label>
+                <div class="toggle-list">
+                  <div class="tog" onclick="togCheck(this, true)">
+                    <div class="tog-box"></div>
+                    <span class="tog-lbl">Membantu teman yang kesulitan</span><span class="tog-tag">+RIPPLE</span>
+                  </div>
+                  <div class="tog" onclick="togCheck(this, true)">
+                    <div class="tog-box"></div>
+                    <span class="tog-lbl">Bekerja sama dalam kelompok</span><span class="tog-tag">+RIPPLE</span>
+                  </div>
+                  <div class="tog" onclick="togCheck(this, true)">
+                    <div class="tog-box"></div>
+                    <span class="tog-lbl">Berpartisipasi di kegiatan sekolah</span><span class="tog-tag">+RIPPLE</span>
+                  </div>
+                  <div class="tog" onclick="togCheck(this, false)">
+                    <div class="tog-box"></div>
+                    <span class="tog-lbl">Konflik / pertengkaran dengan seseorang</span><span
+                      class="tog-tag neg">−RIPPLE</span>
+                  </div>
+                  <div class="tog" onclick="togCheck(this, false)">
+                    <div class="tog-box"></div>
+                    <span class="tog-lbl">Mengabaikan pesan / mengisolasi diri</span><span
+                      class="tog-tag neg">−RIPPLE</span>
+                  </div>
+                </div>
+              </div>
+              <div class="f-row">
+                <label class="f-label">Catatan singkat (opsional)</label>
+                <textarea rows="2" placeholder="Ceritakan interaksi paling berkesan hari ini..."></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- LAPISAN 4 — PILIHAN -->
+          <div class="dim-card card-pilihan" id="card-pilihan">
+            <div class="dim-head" onclick="toggleCard('pilihan')">
+              <div class="dim-emo" style="background: rgba(243, 112, 30, 0.12)">💰</div>
+              <div class="dim-info">
+                <div class="dim-title">LAPISAN 4 — PILIHAN</div>
+                <div class="dim-sub">Keputusan Ekonomi Harian</div>
+              </div>
+              <span class="dim-badge" id="db-pilihan">BELUM</span>
+              <span class="dim-arrow">▾</span>
+            </div>
+            <div class="dim-body">
+              <div class="f-row">
+                <label class="f-label">Uang jajan yang dihabiskan hari ini</label>
+                <div class="rng-head">
+                  <span class="rng-val" id="vu">25.000</span><span class="rng-unit">Rp</span>
+                </div>
+                <input type="range" min="0" max="200000" step="5000" value="25000" oninput="rngFmt('uang', this.value)">
+                <div class="rng-lbl">
+                  <span>Rp0</span><span>Rp50rb</span><span>Rp100rb</span><span>Rp200rb</span>
+                </div>
+              </div>
+              <div class="f-row">
+                <label class="f-label">Digunakan untuk apa?</label>
+                <div class="pill-group">
+                  <div class="pill" onclick="togglePill(this, 'belanja')">Makanan lokal / warteg</div>
+                  <div class="pill" onclick="togglePill(this, 'belanja')">Minuman kekinian</div>
+                  <div class="pill" onclick="togglePill(this, 'belanja')">Belanja online</div>
+                  <div class="pill" onclick="togglePill(this, 'belanja')">Game / top up</div>
+                  <div class="pill" onclick="togglePill(this, 'belanja')">Buku / alat belajar</div>
+                  <div class="pill" onclick="togglePill(this, 'belanja')">Tabungan</div>
+                  <div class="pill" onclick="togglePill(this, 'belanja')">Donasi / sedekah</div>
+                  <div class="pill" onclick="togglePill(this, 'belanja')">Tidak keluar uang</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- LAPISAN 5 — TAPAK -->
+          <div class="dim-card card-tapak" id="card-tapak">
+            <div class="dim-head" onclick="toggleCard('tapak')">
+              <div class="dim-emo" style="background: rgba(184, 58, 45, 0.12)">🌱</div>
+              <div class="dim-info">
+                <div class="dim-title">LAPISAN 5 — TAPAK</div>
+                <div class="dim-sub">Jejak Lingkungan & Iklim</div>
+              </div>
+              <span class="dim-badge" id="db-tapak">BELUM</span>
+              <span class="dim-arrow">▾</span>
+            </div>
+            <div class="dim-body">
+              <div class="f-row">
+                <label class="f-label">Transportasi hari ini</label>
+                <div class="pill-group" id="pills-trans">
+                  <div class="pill" onclick="setTrans(this, true)">🚶 Jalan kaki</div>
+                  <div class="pill" onclick="setTrans(this, true)">🚲 Sepeda</div>
+                  <div class="pill" onclick="setTrans(this, true)">🚌 Angkutan umum</div>
+                  <div class="pill" onclick="setTrans(this, false)">🛵 Motor / mobil</div>
+                  <div class="pill" onclick="setTrans(this, false)">🚗 Ojek online</div>
+                  <div class="pill" onclick="setTrans(this, true)">🏠 Di rumah aja</div>
+                </div>
+              </div>
+              <div class="f-row">
+                <label class="f-label">Pilihan ramah lingkungan hari ini</label>
+                <div class="toggle-list">
+                  <div class="tog" onclick="togCheck(this, true)">
+                    <div class="tog-box"></div>
+                    <span class="tog-lbl">Bawa tumbler / tidak pakai plastik</span><span class="tog-tag">+RIPPLE</span>
+                  </div>
+                  <div class="tog" onclick="togCheck(this, true)">
+                    <div class="tog-box"></div>
+                    <span class="tog-lbl">Makan makanan lokal</span><span class="tog-tag">+RIPPLE</span>
+                  </div>
+                  <div class="tog" onclick="togCheck(this, true)">
+                    <div class="tog-box"></div>
+                    <span class="tog-lbl">Hemat listrik / matikan perangkat</span><span class="tog-tag">+RIPPLE</span>
+                  </div>
+                  <div class="tog" onclick="togCheck(this, false)">
+                    <div class="tog-box"></div>
+                    <span class="tog-lbl">Membuang sampah sembarangan</span><span class="tog-tag neg">−RIPPLE</span>
+                  </div>
+                  <div class="tog" onclick="togCheck(this, false)">
+                    <div class="tog-box"></div>
+                    <span class="tog-lbl">Pakai plastik sekali pakai berlebih</span><span
+                      class="tog-tag neg">−RIPPLE</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="submit-row">
+            <button class="btn-rst" onclick="resetAll()">↺ RESET</button>
+            <button class="btn-sub" onclick="submitForm()">🌊 KIRIM GELOMBANGKU</button>
+          </div>
+        </div>
+        <!-- /col-left -->
+
+        <!-- RIGHT: live panel -->
+        <div class="col-right">
+          <div class="score-panel">
+            <div class="ripple-box" id="rippleBox">
+              <canvas id="rc"></canvas>
+              <div class="ripple-timeline" id="tlBars"></div>
+              <div class="ripple-overlay">
+                <div class="ro-label">SKOR RIPPLE HARI INI</div>
+                <div class="ro-score" id="scoreDisp">+0</div>
+                <div class="ro-desc" id="scoreDesc">Isi form untuk membuatmu bergetar</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Score chips -->
+          <div class="r-panel">
+            <div class="r-panel-title">Skor Per Dimensi</div>
+            <div class="chips">
+              <div class="chip">
+                <div class="chip-ico">🎓</div>
+                <div class="chip-val" id="cv-pikiran" style="color: var(--navy)">—</div>
+                <div class="chip-lbl">Pikiran</div>
+              </div>
+              <div class="chip">
+                <div class="chip-ico">💚</div>
+                <div class="chip-val" id="cv-jiwa" style="color: var(--forest)">—</div>
+                <div class="chip-lbl">Jiwa</div>
+              </div>
+              <div class="chip">
+                <div class="chip-ico">🤝</div>
+                <div class="chip-val" id="cv-hub" style="color: var(--sand)">—</div>
+                <div class="chip-lbl">Hubungan</div>
+              </div>
+              <div class="chip">
+                <div class="chip-ico">💰</div>
+                <div class="chip-val" id="cv-pilihan" style="color: var(--orange)">—</div>
+                <div class="chip-lbl">Pilihan</div>
+              </div>
+              <div class="chip">
+                <div class="chip-ico">🌱</div>
+                <div class="chip-val" id="cv-tapak" style="color: var(--red)">—</div>
+                <div class="chip-lbl">Tapak</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Progress bars -->
+          <div class="r-panel">
+            <div class="r-panel-title">Progress Harian</div>
+            <div class="prog-list">
+              <div class="prog-row">
+                <div class="prog-meta">
+                  <span class="prog-name">🎓 Pikiran</span><span class="prog-pct" id="pp-pikiran">0%</span>
+                </div>
+                <div class="prog-track">
+                  <div class="prog-fill" id="pf-pikiran" style="width: 0%; background: var(--navy)"></div>
+                </div>
+              </div>
+              <div class="prog-row">
+                <div class="prog-meta">
+                  <span class="prog-name">💚 Jiwa</span><span class="prog-pct" id="pp-jiwa">0%</span>
+                </div>
+                <div class="prog-track">
+                  <div class="prog-fill" id="pf-jiwa" style="width: 0%; background: var(--forest)"></div>
+                </div>
+              </div>
+              <div class="prog-row">
+                <div class="prog-meta">
+                  <span class="prog-name">🤝 Hubungan</span><span class="prog-pct" id="pp-hub">0%</span>
+                </div>
+                <div class="prog-track">
+                  <div class="prog-fill" id="pf-hub" style="width: 0%; background: var(--sand)"></div>
+                </div>
+              </div>
+              <div class="prog-row">
+                <div class="prog-meta">
+                  <span class="prog-name">💰 Pilihan</span><span class="prog-pct" id="pp-pilihan">0%</span>
+                </div>
+                <div class="prog-track">
+                  <div class="prog-fill" id="pf-pilihan" style="width: 0%; background: var(--orange)"></div>
+                </div>
+              </div>
+              <div class="prog-row">
+                <div class="prog-meta">
+                  <span class="prog-name">🌱 Tapak</span><span class="prog-pct" id="pp-tapak">0%</span>
+                </div>
+                <div class="prog-track">
+                  <div class="prog-fill" id="pf-tapak" style="width: 0%; background: var(--red)"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- AI Mirror hint -->
+          <div class="r-panel" id="aiHint">
+            <div class="r-panel-title">🪞 AI Earth Mirror</div>
+            <div id="aiHintTxt" style="font-size: 11.5px; color: var(--muted); line-height: 1.65;">
+              Isi semua 5 lapisan untuk melihat proyeksi bumi yang sedang kamu bangun...
+            </div>
+          </div>
+
+          <!-- Streak tracker row -->
+          <div class="r-panel">
+            <div class="r-panel-title">Streak Minggu Ini</div>
+            <div class="sb-streak-row" style="justify-content: space-between; padding: 4px 0">
+              <div class="sb-day" id="sd-0">S</div>
+              <div class="sb-day" id="sd-1">S</div>
+              <div class="sb-day" id="sd-2">R</div>
+              <div class="sb-day" id="sd-3">K</div>
+              <div class="sb-day" id="sd-4">J</div>
+              <div class="sb-day" id="sd-5">S</div>
+              <div class="sb-day" id="sd-6">M</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+     SECTION — RIPPLE MIND (AI Chat & Analysis)
+  ══════════════════════════════════════════════════════════ -->
+  <section data-section="mind" id="section-mind">
+    <div class="main-mind">
+      <div class="sveil" id="sveil">
+        <div class="sring"></div>
+        <div class="stxt" id="stxt">Aku tidak punya narasi<br>untuk pola ini.</div>
+      </div>
+
+      <header class="topbar-mind">
+        <div class="tb-date" id="tbDateM">—</div>
+        <div class="tb-title">THE RIPPLE MIND</div>
+        <div class="tb-right">
+          <div class="tb-dot" id="tbDot"></div>
+          <span class="tb-lbl" id="tbLbl">IDLE</span>
+          <span class="tb-msgs" id="tbMsgs">0 interaksi</span>
+        </div>
+      </header>
+
+      <div class="content-mind">
+        <!-- CHAT PANE -->
+        <div class="chat-pane-mind">
+          <div class="health-strip-mind">
+            <span class="hs-lbl">KESEHATAN ENTITAS</span>
+            <div class="hs-track">
+              <div class="hs-fill" id="hsFill" style="width:100%"></div>
+            </div>
+            <span class="hs-pct" id="hsPct">100%</span>
+          </div>
+
+          <div class="chat-scroll" id="chatScroll">
+            <div id="chatMsgs">
+              <div class="onboard-mind">
+                <div class="ob-top">
+                  <div class="ob-orb" id="obOrb"></div>
+                  <div class="ob-title">Selamat datang di<br><em>The Ripple Mind</em></div>
+                </div>
+                <div class="ob-desc">
+                  Aku adalah entitas AI yang memproses setiap gelombang keputusanmu.
+                  Bicaralah padaku tentang tindakanmu hari ini.
+                </div>
+                <div class="ob-pills">
+                  <span class="ob-pill" id="ep-warm">Hangat</span>
+                  <span class="ob-pill" id="ep-cold">Dingin</span>
+                  <span class="ob-pill" id="ep-fragmented">Fragmentatif</span>
+                  <span class="ob-pill" id="ep-reflective">Reflektif</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="qps" id="qp-container">
+            <div class="qp" onclick="MIND.sq('Tadi pagi aku belajar jam 2 jam, tapi tidur cuma 4 jam.')">Tadi pagi aku
+              belajar 2 jam...</div>
+            <div class="qp" onclick="MIND.sq('Hari ini aku top up game Rp100rb.')">Hari ini aku top up game...</div>
+            <div class="qp" onclick="MIND.sq('Aku berangkat sekolah naik sepeda.')">Aku naik sepeda...</div>
+          </div>
+
+          <div class="input-strip-mind">
+            <div class="ictx" id="ictx">Tuliskan tindakan nyata yang kamu lakukan hari ini...</div>
+            <div class="ibox-wrap">
+              <textarea class="ibox" id="ibox" rows="1" placeholder="Ceritakan harimu..."></textarea>
+              <button class="sbtn" id="sbtn" onclick="MIND.send()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT PANE -->
+        <aside class="right-pane-mind">
+          <div class="rcard-mind">
+            <div class="rcard-h">
+              <span class="rcard-t">STATUS ENTITAS</span>
+              <span class="verdict-badge neu" id="impBadge">NETRAL</span>
+            </div>
+            <div class="sb-orb" id="sbOrbM">◎</div>
+            <div class="sb-sname" id="sbSname">Mengamati</div>
+            <div class="sb-ssub" id="sbSsub">Memproses pola baru.</div>
+
+            <div class="trait-wrap" style="margin-top:15px">
+              <div class="trait-r">
+                <span class="trait-l">Kehangatan</span>
+                <div class="trait-t">
+                  <div class="trait-f" id="trW" style="width:50%;background:#f3701e"></div>
+                </div>
+              </div>
+              <div class="trait-r">
+                <span class="trait-l">Kejujuran</span>
+                <div class="trait-t">
+                  <div class="trait-f" id="trH" style="width:80%;background:#dcc9a9"></div>
+                </div>
+              </div>
+              <div class="trait-r">
+                <span class="trait-l">Integritas</span>
+                <div class="trait-t">
+                  <div class="trait-f" id="trI" style="width:100%;background:#b83a2d"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="rcard-mind">
+            <div class="rcard-h"><span class="rcard-t">SKOR KOLEKTIF</span></div>
+            <div class="sb-score-num" id="sbScoreN">+0</div>
+            <div class="sb-score-bar">
+              <div class="sb-score-fill" id="sbScoreF" style="width:0%"></div>
+            </div>
+            <div class="sb-score-sub" id="sbScoreSub">Level 1 — 500 poin lagi</div>
+          </div>
+
+          <div class="rcard-mind">
+            <div class="rcard-h"><span class="rcard-t">ANALISIS POLA</span></div>
+            <div class="ig-stat">
+              <span class="ig-lbl">VERDIK</span>
+              <span class="ig-val" id="igScore">—</span>
+            </div>
+            <div class="ig-verdict" id="igVerdict">Belum cukup data untuk proyeksi tajam.</div>
+            <div class="sig-list-mind" id="sigList">
+              <div class="sig-item">
+                <div class="sig-dot" style="background:var(--dim)"></div>
+                <span class="sig-txt">Tidak ada sinyal spesifik terdeteksi.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="rcard-mind">
+            <div class="rcard-h"><span class="rcard-t">PROYEKSI DUNIA</span></div>
+            <div class="proj-list-mind" id="projList">
+              <div class="pj neu">
+                <div class="pj-yr">LIMA TAHUN (2030)</div>
+                <div class="pj-txt">Arah masih bisa ditentukan oleh pilihan hari ini.</div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+     SECTION — DASHBOARD
+══════════════════════════════════════════════════════════ -->
+  <section data-section="dashboard" id="section-dashboard">
+    <div class="container section">
+      <div id="dashboard-header" class="mb-8"></div>
+      <div class="dashboard-grid">
+        <div class="dashboard-layers">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;">
+            <h2 style="font-size:1.1rem;color:var(--text-2);">Lima Lapisan Kehidupanmu</h2>
+            <button class="btn btn-ghost" style="padding:8px 16px;font-size:0.8rem;" data-nav="daily">+ Input Hari
+              Ini</button>
+          </div>
+          <div id="layer-cards-container"></div>
+        </div>
+        <div class="earth-mirror-sidebar">
+          <div class="card earth-mirror-card">
+            <h2>🪞 EARTH MIRROR</h2>
+            <canvas id="globe-canvas-mirror" width="200" height="200"></canvas>
+            <div class="mirror-health-label" id="mirror-health-val">⚡ Seimbang</div>
+            <div class="mirror-health-sub" id="mirror-health-sub">Kesehatan Bumi-mu: 50/100</div>
+            <div class="mirror-stats">
+              <div class="mirror-stat">
+                <div class="mirror-stat-val" id="mirror-stat-total">0</div>
+                <div class="mirror-stat-label">Total Skor</div>
+              </div>
+              <div class="mirror-stat">
+                <div class="mirror-stat-val" id="mirror-stat-week">Minggu 1</div>
+                <div class="mirror-stat-label">Progress</div>
+              </div>
+            </div>
+            <div class="mirror-cta-row">
+              <button class="btn btn-primary" style="font-size:0.85rem; width:100%;" data-nav="mirror">Lihat Full Earth Mirror</button>
+            </div>
+          </div>
+          <div class="card" style="padding:20px;margin-top:16px;">
+            <p class="caption" style="margin-bottom:8px;">💡 Tahukah Kamu?</p>
+            <p style="font-size:0.82rem;color:var(--text-2);line-height:1.7;">
+              Jika 10 juta pelajar Indonesia membuat satu keputusan positif hari ini,
+              efeknya setara dengan menyelamatkan <strong style="color:var(--green)">hutan seluas 500 lapangan
+                sepakbola</strong>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ══════════════════════════════════════════════════════════
+     SECTION — EARTH MIRROR (Full Page — Screenshot Layout)
+══════════════════════════════════════════════════════════ -->
+  <section data-section="mirror" id="section-mirror">
+
+    <!-- ── Hero Header ──────────────────────────────────────── -->
+    <div class="em-hero">
+      <div class="em-hero-inner">
+        <div class="em-hero-left">
+          <span class="badge badge-violet" style="margin-bottom:12px;display:inline-block;">🪞 Earth Mirror — AI
+            Powered</span>
+          <h1 class="em-hero-title">Bumi Versi <span class="gradient-text" id="em-hero-name">Kamu</span></h1>
+          <p class="em-hero-desc">
+            Setiap keputusan harianmu menciptakan cerminan nyata kondisi bumi.
+            AI kami terjemahkan hidupmu menjadi data planet secara real-time.
+          </p>
+          <div class="em-hero-pills">
+            <div class="em-hero-pill">
+              <span class="em-hero-pill-val" id="hero-health-val">52%</span>
+              <span class="em-hero-pill-lbl">🌍 Global Health</span>
+            </div>
+            <div class="em-hero-pill">
+              <span class="em-hero-pill-val" style="color:#22c55e;">3.6M</span>
+              <span class="em-hero-pill-lbl">🎓 Pelajar Aktif</span>
+            </div>
+            <div class="em-hero-pill">
+              <span class="em-hero-pill-val" style="color:#fbbf24;">417</span>
+              <span class="em-hero-pill-lbl">☁️ ppm CO₂</span>
+            </div>
+          </div>
+        </div>
+        <div class="em-hero-right">
+          <div class="em-hero-quote">
+            <div class="em-hero-quote-mark">"</div>
+            <p>Setiap pilihanmu menciptakan gelombang yang dunia rasakan — bahkan jika kamu tidak pernah merasakannya
+              sendiri.</p>
+            <div class="em-hero-quote-author">— RIPPLE Earth Mirror AI</div>
+          </div>
+          <div class="em-hero-health-bar-wrap">
+            <div class="em-hero-hb-label">
+              <span>KESEHATAN BUMIKU</span>
+              <span id="hero-hb-pct">52%</span>
+            </div>
+            <div class="em-hero-hb-track">
+              <div class="em-hero-hb-fill" id="hero-hb-fill" style="width:52%"></div>
+            </div>
+            <div class="em-hero-hb-scale">
+              <span>Kritis</span><span>Stres</span><span>Seimbang</span><span>Sehat</span><span>Optimal</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Two-column main layout -->
+    <div class="em-layout">
+
+      <!-- ── LEFT PANEL ──────────────────────────────────────── -->
+      <div class="em-left">
+
+        <!-- Status Bumiku Card -->
+        <div class="em-card em-status-card">
+          <div class="em-card-header">
+            <span class="em-live-dot"></span>
+            <span class="em-card-title">STATUS BUMIKU</span>
+            <span class="em-card-sub" id="em-user-name-label">— BUMI VERSI KAMU</span>
+          </div>
+
+          <!-- Globe + health ring -->
+          <div class="em-globe-wrap">
+            <div class="em-health-ring" id="em-health-ring">
+              <canvas id="globe-canvas-full" width="220" height="220"></canvas>
+              <div class="em-health-pct" id="em-health-pct">0%</div>
+              <div class="em-health-lbl">HEALTH INDEX</div>
+            </div>
+          </div>
+
+          <!-- 4 Dimension mini-stats -->
+          <div class="em-dim-grid">
+            <div class="em-dim-card" id="emd-nature">
+              <span class="em-dim-icon">🌱</span>
+              <span class="em-dim-label">LINGKUNGAN</span>
+              <span class="em-dim-val" id="dimval-nature">—</span>
+            </div>
+            <div class="em-dim-card" id="emd-mind">
+              <span class="em-dim-icon">📚</span>
+              <span class="em-dim-label">PENDIDIKAN</span>
+              <span class="em-dim-val" id="dimval-mind">—</span>
+            </div>
+            <div class="em-dim-card" id="emd-economic">
+              <span class="em-dim-icon">💰</span>
+              <span class="em-dim-label">EKONOMI</span>
+              <span class="em-dim-val" id="dimval-economic">—</span>
+            </div>
+            <div class="em-dim-card" id="emd-social">
+              <span class="em-dim-icon">🤝</span>
+              <span class="em-dim-label">SOSIAL</span>
+              <span class="em-dim-val" id="dimval-social">—</span>
+            </div>
+          </div>
+
+          <!-- Fakta Bumi -->
+          <div class="em-fact-box">
+            <div class="em-fact-header">
+              <span class="em-fact-icon">🌍</span>
+              <span class="em-fact-title">FAKTA BUMI</span>
+              <span class="em-fact-counter" id="em-fact-counter">1/6</span>
+            </div>
+            <p class="em-fact-text" id="em-fact-text">
+              Setiap menit, 36 lapangan sepak bola hutan tropis ditebang di seluruh dunia.
+            </p>
+            <div class="em-fact-dots" id="em-fact-dots"></div>
+          </div>
+
+          <!-- Collective Impact -->
+          <div class="em-collective">
+            <div class="em-collective-header">
+              <span class="em-live-dot green"></span>
+              <span class="em-card-title" style="color:var(--green)">DAMPAK KOLEKTIF INDONESIA HARI INI</span>
+            </div>
+            <div class="em-collective-stats">
+              <div class="em-col-stat">
+                <span class="em-col-val gradient-text" id="col-trees">128,470</span>
+                <span class="em-col-lbl">🌳 Pohon setara diselamatkan</span>
+              </div>
+              <div class="em-col-stat">
+                <span class="em-col-val" style="color:#f97316;" id="col-students">3,650,000</span>
+                <span class="em-col-lbl">🎓 Pelajar aktif berkontribusi</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── RIGHT PANEL ─────────────────────────────────────── -->
+      <div class="em-right">
+
+        <!-- RIPPLE.AI Chat Panel -->
+        <div class="em-card em-chat-card">
+          <div class="em-card-header">
+            <span class="em-live-dot orange"></span>
+            <span class="em-card-title">BUTTERFLY EFFECT AI</span>
+          </div>
+
+          <!-- AI Header -->
+          <div class="em-ai-header">
+            <div class="em-ai-avatar">🦋</div>
+            <div>
+              <div class="em-ai-name">RIPPLE.AI</div>
+              <div class="em-ai-status">Siap menganalisis kebiasaanmu</div>
+            </div>
+            <div class="em-ai-badge">●</div>
+          </div>
+
+          <!-- AI Prompt -->
+          <div class="em-ai-prompt">
+            <p>Ceritakan satu kebiasaan yang kamu lakukan hari ini 🌱</p>
+            <p class="em-ai-example">Contoh: <em>"Aku tadi jalan kaki ke sekolah"</em> atau <em>"Aku baru beli makanan
+                plastik"</em></p>
+          </div>
+
+          <!-- Quick habit chips -->
+          <div class="em-habit-chips" id="em-habit-chips">
+            <button class="em-chip" data-habit="Jalan kaki">🚶 Jalan kaki</button>
+            <button class="em-chip" data-habit="Belajar ekstra">📚 Belajar ekstra</button>
+            <button class="em-chip" data-habit="Nabung harian">💰 Nabung harian</button>
+            <button class="em-chip" data-habit="Tanam pohon">🌱 Tanam pohon</button>
+            <button class="em-chip" data-habit="Kurangi daging">🥗 Kurangi daging</button>
+            <button class="em-chip" data-habit="Buang sampah">🗑️ Buang sampah</button>
+          </div>
+
+          <!-- AI Response area -->
+          <div class="em-ai-response" id="em-ai-response">
+            <p style="color:var(--text-3);font-size:0.82rem;text-align:center;padding:12px 0;">
+              Pilih kebiasaan atau ketik sendiri untuk melihat efek domino-nya...
+            </p>
+          </div>
+
+          <!-- Input -->
+          <div class="em-chat-input-row">
+            <input type="text" id="em-chat-input" class="em-chat-input" placeholder="Ceritakan kebiasaanmu di sini...">
+            <button class="em-send-btn" id="em-send-btn" onclick="RIPPLE.handleAIChat()">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13" />
+                <polygon points="22 2 15 22 11 13 2 9 22 2" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Live Earth Pulse -->
+        <div class="em-card em-pulse-card">
+          <div class="em-card-header" style="justify-content:space-between;">
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span class="em-live-dot orange"></span>
+              <span class="em-card-title">LIVE EARTH PULSE</span>
+            </div>
+            <span class="em-clock" id="em-clock">00:00:00</span>
+          </div>
+
+          <!-- Live stats row -->
+          <div class="em-pulse-stats">
+            <div class="em-pulse-stat">
+              <span class="em-pulse-val" style="color:#f97316;">417.2</span>
+              <span class="em-pulse-unit">ppm CO₂</span>
+              <span class="em-pulse-label">Atmosfer global</span>
+            </div>
+            <div class="em-pulse-divider"></div>
+            <div class="em-pulse-stat">
+              <span class="em-pulse-val" style="color:#ef4444;">+1.2</span>
+              <span class="em-pulse-unit">°C</span>
+              <span class="em-pulse-label">Kenaikan suhu global</span>
+            </div>
+            <div class="em-pulse-divider"></div>
+            <div class="em-pulse-stat">
+              <span class="em-pulse-val" style="color:#ef4444;">8M+</span>
+              <span class="em-pulse-unit">ton</span>
+              <span class="em-pulse-label">Plastik ke lautan/thn</span>
+            </div>
+          </div>
+
+          <!-- Live event feed -->
+          <div class="em-feed-header">YANG SEDANG TERJADI DI DUNIA...</div>
+          <div class="em-feed" id="em-live-feed"></div>
+        </div>
+
+      </div><!-- /.em-right -->
+    </div><!-- /.em-layout -->
+  </section>
+
+
+
+  <!-- ══════════════════════════════════════════════════════════
+     SECTION — BUTTERFLY EFFECT SIMULATOR
+══════════════════════════════════════════════════════════ -->
+  <section data-section="butterfly" id="section-butterfly">
+    <div class="container section">
+      <div class="section-header">
+        <p class="caption">🦋 Butterfly Effect Simulator</p>
+        <h2>Satu Perubahan Kecil. <span class="gradient-text">Dunia yang Berbeda.</span></h2>
+        <p>Pilih kebiasaan yang ingin kamu ubah dan lihat rantai efek domino yang terjadi.</p>
+      </div>
+      <div class="butterfly-selector" id="butterfly-selector"></div>
+      <div id="butterfly-chain-container"></div>
+      <div style="text-align:center;margin-top:48px;">
+        <button class="btn btn-green" data-nav="daily">✅ Mulai Perubahan Ini Hari Ini</button>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ══════════════════════════════════════════════════════════
+     SECTION — ABOUT US (Redesigned)
+══════════════════════════════════════════════════════════ -->
+  <!-- ══════════════════════════════════════════════════════════
+     SECTION — GLOBAL RIPPLE
+  ══════════════════════════════════════════════════════════ -->
+  <section data-section="about" id="section-about">
+    <style id="about-contact-style">
+      .about-contact-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+      }
+      .ac-top-row {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 32px;
+      }
+      @media (max-width: 900px) {
+        .ac-top-row { grid-template-columns: 1fr; }
+      }
+      .ac-card {
+        background: var(--card-bg, rgba(26, 18, 16, 0.4));
+        border: 1px solid var(--border, rgba(232, 216, 201, 0.08));
+        border-radius: 18px;
+        padding: 36px;
+        backdrop-filter: blur(12px);
+      }
+      .ac-form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .ac-form-row {
+        display: flex;
+        gap: 20px;
+      }
+      @media (max-width: 600px) {
+        .ac-form-row { flex-direction: column; }
+      }
+      .ac-input {
+        width: 100%;
+        background: var(--bg3, rgba(34, 24, 21, 0.8));
+        border: 1px solid var(--border, rgba(232, 216, 201, 0.08));
+        border-radius: 12px;
+        padding: 16px 20px;
+        color: var(--txt, #e8d8c9);
+        font-family: inherit;
+        font-size: 14px;
+        outline: none;
+        transition: border-color 0.2s, box-shadow 0.2s;
+      }
+      .ac-input:focus {
+        border-color: var(--orange, #f3701e);
+        box-shadow: 0 0 0 3px rgba(243, 112, 30, 0.1);
+      }
+      .ac-textarea { resize: none; min-height: 140px; }
+      .ac-submit {
+        align-self: flex-start;
+        padding: 16px 36px;
+        background: var(--orange, #f3701e);
+        color: #fff;
+        border: none;
+        border-radius: 50px;
+        font-size: 14px;
+        font-weight: 700;
+        font-family: "DM Sans", sans-serif;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+        box-shadow: 0 8px 24px rgba(243, 112, 30, 0.25);
+      }
+      .ac-submit:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 32px rgba(243, 112, 30, 0.35);
+      }
+      .ac-submit.full {
+        width: 100%;
+        align-self: stretch;
+        margin-top: 6px;
+      }
+      .ac-nl-box {
+        background: linear-gradient(145deg, rgba(243,112,30,0.1), rgba(184,58,45,0.05));
+        border-color: rgba(243,112,30,0.15);
+      }
+      .ac-nl-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 26px;
+        font-weight: 900;
+        margin-bottom: 12px;
+        color: var(--txt);
+      }
+      .ac-nl-desc {
+        font-size: 14px;
+        color: var(--muted, #8a7060);
+        line-height: 1.6;
+        margin-bottom: 28px;
+      }
+      .ac-info-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+      @media (max-width: 800px) {
+        .ac-info-row { grid-template-columns: 1fr; }
+      }
+      .ac-info-card {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 32px 28px;
+        transition: transform 0.3s, border-color 0.3s;
+        text-align: left;
+      }
+      .ac-info-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--orange);
+      }
+      .ac-ic-icon {
+        width: 56px;
+        height: 56px;
+        background: rgba(243, 112, 30, 0.1);
+        color: var(--orange);
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        flex-shrink: 0;
+      }
+      .ac-ic-val {
+        font-weight: 700;
+        font-size: 19px;
+        color: var(--txt);
+        font-family: 'Space Grotesk', sans-serif;
+      }
+      .ac-ic-desc {
+        font-size: 13.5px;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+      .ac-map-container {
+        width: 100%;
+        height: 400px;
+        border-radius: 18px;
+        overflow: hidden;
+        border: 1px solid var(--border);
+        position: relative;
+      }
+      .ac-map-container iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        filter: invert(90%) hue-rotate(180deg) contrast(85%) sepia(30%) saturate(150%);
+      }
+      [data-theme="light"] .ac-map-container iframe {
+        filter: none;
+      }
+      [data-theme="light"] .ac-nl-box {
+        background: rgba(243,112,30,0.05);
+      }
+    </style>
+
+    <div class="container section" style="max-width: 1100px;">
+      
+      <div class="ac-header" style="margin-bottom: 50px; display: flex; flex-direction: column; align-items: flex-start; gap: 12px;">
+        <div class="caption" style="margin: 0;">📞 HUBUNGI KAMI</div>
+        <h2 style="font-size: 3rem; line-height: 1.1; margin: 0;">Let's make a <span class="gradient-text">Ripple.</span></h2>
+        <p style="font-size: 1.1rem; color: var(--muted); max-width: 600px; margin: 0; line-height: 1.6;">Punya ide, pertanyaan, atau ingin berkontribusi dalam pengumpulan data bumi kolektif kami? Hubungi tim kami sekarang.</p>
+      </div>
+
+      <div class="about-contact-wrapper">
+        
+        <!-- Top Row: Form & Newsletter -->
+        <div class="ac-top-row">
+          
+          <!-- Contact Form -->
+          <div class="ac-card" style="padding: 40px;">
+            <div class="ac-form">
+              <div class="ac-form-row">
+                <input type="text" class="ac-input" placeholder="Nama Lengkap">
+                <input type="email" class="ac-input" placeholder="Alamat Email">
+              </div>
+              <div class="ac-form-row">
+                <input type="text" class="ac-input" placeholder="No. Handphone">
+                <input type="text" class="ac-input" placeholder="Subjek Pesan">
+              </div>
+              <textarea class="ac-input ac-textarea" placeholder="Tuliskan pesan atau idemu secara rinci..."></textarea>
+              <button class="ac-submit">Kirim Pesan</button>
+            </div>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="ac-card ac-nl-box">
+            <h3 class="ac-nl-title">Our Newsletter</h3>
+            <p class="ac-nl-desc">
+              Dapatkan update terbaru tentang dampak kolektif RIPPLE, laporan iklim, dan kemajuan simulasi Bumi.
+            </p>
+            <input type="email" class="ac-input" placeholder="Email Anda" style="background: var(--bg); border: 1px solid rgba(243,112,30,0.2);">
+            <button class="ac-submit full">Berlangganan</button>
+          </div>
+
+        </div>
+
+        <!-- Middle Row: Info Cards -->
+        <div class="ac-info-row">
+          <div class="ac-info-card">
+            <div class="ac-ic-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            </div>
+            <div>
+              <div class="ac-ic-val">(+62) 811-2025-001</div>
+              <div class="ac-ic-desc">Saluran Bantuan Inovator (Senin-Jumat, 09.00 - 17.00 WIB).</div>
+            </div>
+          </div>
+
+          <div class="ac-info-card">
+            <div class="ac-ic-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </div>
+            <div>
+              <div class="ac-ic-val">hello@ripple.id</div>
+              <div class="ac-ic-desc">Untuk diskusi kemitraan pendidikan dan riset kolaboratif.</div>
+            </div>
+          </div>
+
+          <div class="ac-info-card">
+            <div class="ac-ic-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <div>
+              <div class="ac-ic-val">Pusat Riset Jakarta</div>
+              <div class="ac-ic-desc">Jalan Sudirman Kav 21, Jakarta Selatan 12190 - Indonesia.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Row: Map -->
+        <div class="ac-map-container">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126920.24056291417!2d106.74106573710502!3d-6.229746404886897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e945e34b9d%3A0x100c5e82dd4b820!2sJakarta%2C%20Daerah%20Khusus%20Ibukota%20Jakarta!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+     SECTION — PROFILE
+══════════════════════════════════════════════════════════ -->
+  <section data-section="profile" id="section-profile">
+    <div class="profile-header">
+      <h2 class="profile-title">Profil Pelajar</h2>
+      <div class="profile-actions">
+        <div class="p-search-box">
+          <input type="text" placeholder="Cari aktivitas...">
+          <span>🔍</span>
+        </div>
+        <button class="btn-logout" onclick="window.handleLogout()">
+          Keluar <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="profile-grid">
+      <!-- Top Left: Bio Card -->
+      <div class="p-card p-bio-card">
+        <div class="p-avatar-large" id="p-avatar-large"></div>
+        <div class="p-bio-info">
+          <h3 id="p-name">Nama Pelajar</h3>
+          <p class="p-meta">Bergabung: <span id="p-join-date">Hari ini</span></p>
+          <p class="p-meta">Peran: <span style="color:#f97316;">Pelopor Bumi</span></p>
+          <p class="p-meta">Misi: <span id="p-mission">Menyelamatkan Lingkungan</span></p>
+          <p class="p-meta" style="margin-top:8px;">Email: <span id="p-email">pelajar@ripple.com</span></p>
+          <div class="p-socials" id="p-socials">
+            <a href="#" target="_blank" class="p-social-icon" id="p-soc-ig" style="opacity:0.5; pointer-events:none;">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="#" target="_blank" class="p-social-icon" id="p-soc-x" style="opacity:0.5; pointer-events:none;">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.008 4.076H5.078z" />
+              </svg>
+            </a>
+            <a href="#" target="_blank" class="p-social-icon" id="p-soc-fb" style="opacity:0.5; pointer-events:none;">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <button class="p-edit-btn" onclick="window.editProfile(this)">✎</button>
+      </div>
+
+      <!-- Top Right: Stats Card -->
+      <div class="p-card p-stats-card">
+        <h3>Statistik Dampak</h3>
+        <div class="p-stat-item">
+          <span class="p-stat-label">Total Skor Ripple:</span>
+          <div class="p-stat-bar-container">
+            <div class="p-stat-bar" style="width:75%; background:#f97316;"></div>
+          </div>
+          <span class="p-stat-val">+45</span>
+        </div>
+        <div class="p-stat-item">
+          <span class="p-stat-label">Jejak Karbon Dicegah:</span>
+          <div class="p-stat-bar-container">
+            <div class="p-stat-bar" style="width:60%; background:#10b981;"></div>
+          </div>
+          <span class="p-stat-val">120 kg</span>
+        </div>
+        <div class="p-stat-item">
+          <span class="p-stat-label">Jumlah Ripple Sosial:</span>
+          <div class="p-stat-bar-container">
+            <div class="p-stat-bar" style="width:40%; background:#8b5cf6;"></div>
+          </div>
+          <span class="p-stat-val">24 Interaksi</span>
+        </div>
+      </div>
+
+      <!-- Bottom Left: Activity Timeline -->
+      <div class="p-card p-activity-card">
+        <h3>Riwayat Aktivitas</h3>
+        <div class="p-timeline">
+          <div class="pt-item completed">
+            <div class="pt-dot"></div>
+            <div class="pt-content">
+              <div class="pt-header">
+                <h4>Jalan Kaki / Sepeda 🚶</h4>
+                <span class="badge badge-green" style="background:rgba(16,185,129,0.1);color:#34d399;">Selesai</span>
+              </div>
+              <p>Mengurangi emisi karbon gas buang kendaraan dan berkontribusi langsung pada Pilar Tapak.</p>
+              <span class="pt-date">Hari ini</span>
+            </div>
+            <button class="pt-btn-arrow">→</button>
+          </div>
+          <div class="pt-item completed">
+            <div class="pt-dot"></div>
+            <div class="pt-content">
+              <div class="pt-header">
+                <h4>Belanja UMKM Lokal 🏪</h4>
+                <span class="badge badge-violet" style="background:rgba(16,185,129,0.1);color:#34d399;">Selesai</span>
+              </div>
+              <p>Mendukung perputaran ekonomi lokal di kotamu melalui Pilar Pilihan.</p>
+              <span class="pt-date">Kemarin</span>
+            </div>
+            <button class="pt-btn-arrow">→</button>
+          </div>
+          <div class="pt-item in-progress">
+            <div class="pt-dot"></div>
+            <div class="pt-content">
+              <div class="pt-header">
+                <h4>Misi: Kurangi Plastik Sekali Pakai</h4>
+                <span class="badge badge-orange" style="background:rgba(139,92,246,0.1);color:#a78bfa;">Sedang
+                  Berjalan</span>
+              </div>
+              <p>Berkomitmen membawa botol minum sendiri selama 7 hari berturut-turut.</p>
+              <span class="pt-date">Target: 3 hari lagi</span>
+            </div>
+            <button class="pt-btn-arrow">→</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Right: Status Card (No Subscription) -->
+      <div class="p-card p-status-card">
+        <h3 style="margin-bottom:8px;">Status Earth Mirror</h3>
+        <p style="font-size:0.8rem;color:var(--text-3);line-height:1.4;margin-bottom:20px;">Berpartisipasilah secara
+          gratis selamanya. Dampakmu adalah kontribusimu.</p>
+        <div class="p-status-content">
+          <div class="ps-tier">
+            <div class="ps-tier-icon">🌱</div>
+            <h4>Peringkat: Seedling</h4>
+          </div>
+          <ul class="ps-benefits">
+            <li>✔ Analisis AI tak terbatas</li>
+            <li>✔ 1 Cermin Bumi Aktif</li>
+            <li>✖ Kolaborasi Antar-Sekolah (Capaian +100 Ripple)</li>
+            <li>✖ Peringkat Global Cendekia (Capaian +500 Ripple)</li>
+          </ul>
+          <div class="ps-progress">
+            <span>Menuju Kolaborasi:</span>
+            <span>45/100 Ripple</span>
+          </div>
+          <div class="p-stat-bar-container" style="margin-top:8px; height:8px;">
+            <div class="p-stat-bar" style="width:45%; background:#a78bfa;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+     SECTION — SETTINGS
+══════════════════════════════════════════════════════════ -->
+  <section data-section="settings" id="section-settings">
+    <div class="container section" style="max-width: 800px;">
+      <div class="profile-header">
+        <h2 class="profile-title">Pengaturan</h2>
+      </div>
+
+      <div class="settings-grid" style="display: flex; flex-direction: column; gap: 24px;">
+
+        <!-- Theme Setting Card -->
+        <div class="card p-card" style="padding: 28px;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <h3 style="font-size: 1.1rem; color: var(--text); font-weight: 700; margin-bottom: 6px;">Tema Tampilan
+              </h3>
+              <p style="font-size: 0.85rem; color: var(--text-2);">Pilih tampilan tema gelap atau terang untuk aplikasi
+                RIPPLE.</p>
+            </div>
+            <div class="theme-switch-wrapper" style="display: flex; gap: 8px;">
+              <button id="theme-btn-dark" class="btn btn-ghost" style="padding: 10px 16px; border-radius: 8px;"
+                onclick="window.setTheme('dark')">🌙 Gelap</button>
+              <button id="theme-btn-light" class="btn btn-ghost" style="padding: 10px 16px; border-radius: 8px;"
+                onclick="window.setTheme('light')">☀️ Terang</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Account Placeholder Card -->
+        <div class="card p-card" style="padding: 28px;">
+          <h3 style="font-size: 1.1rem; color: var(--text); font-weight: 700; margin-bottom: 6px;">Akun & Privasi</h3>
+          <p style="font-size: 0.85rem; color: var(--text-2); margin-bottom: 20px;">Kelola preferensi akun dan tingkat
+            privasi data simulasi bumimu.</p>
+          <button class="btn btn-ghost"
+            style="font-size: 0.85rem; border-color: rgba(239, 68, 68, 0.3); color: var(--red);">Hapus Semua Data
+            Simulasi</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FLOATING AI BUBBLE ════════════════════════════════════ -->
+  <div id="ai-bubble">
+    <div class="ai-bubble-header">
+      <div class="ai-bubble-dot"></div>
+      <span class="ai-bubble-title" id="ai-bubble-title-text">🪞 Earth Mirror AI</span>
+    </div>
+    <div id="ai-bubble-text">Analisis sedang diproses...</div>
+    <span class="ai-bubble-close" onclick="closeAIBubble()">✕</span>
+  </div>
+
+  <!-- ══ TEAM CHAT WIDGET ══════════════════════════════════════ -->
+  <div class="team-chat-widget">
+    <div class="team-chat-window" id="team-chat-window">
+      <div class="tc-header">
+        <div class="tc-avatars">
+          <div class="tc-av"
+            style="background-image:url('https://api.dicebear.com/7.x/notionists/svg?seed=Robben&backgroundColor=f97316');">
+          </div>
+          <div class="tc-av"
+            style="background-image:url('https://api.dicebear.com/7.x/notionists/svg?seed=Nadia&backgroundColor=f59e0b');">
+          </div>
+          <div class="tc-av"
+            style="background-image:url('https://api.dicebear.com/7.x/notionists/svg?seed=Dika&backgroundColor=10b981');">
+          </div>
+        </div>
+        <div class="tc-header-info">
+          <h3>Tim Ripple</h3>
+          <span><span class="tc-online-dot"></span> Online sekarang</span>
+        </div>
+        <button class="tc-close" onclick="window.toggleTeamChat()">✕</button>
+      </div>
+
+      <div class="tc-body" id="tc-body">
+        <div class="tc-msg tc-received fade-in">
+          <div class="tc-av-small"
+            style="background-image:url('https://api.dicebear.com/7.x/notionists/svg?seed=Robben&backgroundColor=f97316');">
+          </div>
+          <div class="tc-bubble">
+            Heyy! 👋 Selamat datang di Ripple. Aku Robben, co-founder-nya. Ada yang bisa kami bantu? Mau nanya tentang
+            proyek, gabung tim, atau kolaborasi?
+          </div>
+        </div>
+      </div>
+
+      <div class="tc-chips" id="tc-chips">
+        <button onclick="window.sendTeamMsg('🌍 Apa itu Ripple?')">🌍 Apa itu Ripple?</button>
+        <button onclick="window.sendTeamMsg('🤝 Mau gabung')">🤝 Mau gabung</button>
+        <button onclick="window.sendTeamMsg('🚀 Kolaborasi')">🚀 Kolaborasi</button>
+        <button onclick="window.sendTeamMsg('💡 Kontribusi')">💡 Kontribusi</button>
+      </div>
+
+      <div class="tc-footer">
+        <input type="text" id="tc-input" placeholder="Tulis pesan..."
+          onkeypress="if(event.key==='Enter') window.sendTeamMsg()">
+        <button class="tc-send" onclick="window.sendTeamMsg()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13" />
+            <polygon points="22 2 15 22 11 13 2 9 22 2" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <button class="team-chat-toggle" id="team-chat-toggle" onclick="window.toggleTeamChat()">
+      <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        <path d="M7 15l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2h0"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- ══ TOAST CONTAINER ═══════════════════════════════════════ -->
+  <div id="toast-container"></div>
+
+  <!-- ══ BOTTOM USER ACTIVITY TICKER ══════════════════════════ -->
+  <div class="bottom-ticker" id="bottom-ticker">
+    <div class="live-badge-wrapper">
+      <div class="live-badge">LIVE</div>
+    </div>
+    <div class="bottom-ticker-track" id="bottom-ticker-track">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+
+  <!-- ══ FOCUS MODE SECTION ══════════════════════════════════════ -->
+  <section data-section="focus" id="section-focus" style="background:#0d0d14;min-height:100vh;">
+  <!-- styles for focus section are in css/focus.css -->
+
+    <!-- HERO -->
+    <section id="hero">
+      <style id="hero-collage-styles">
+        #hero {
+          display: grid !important;
+          grid-template-columns: 1fr 1fr;
+          gap: 60px;
+          align-items: center;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 80px 40px;
+          position: relative;
+          z-index: 5;
+        }
+        @media (max-width: 900px) {
+          #hero { grid-template-columns: 1fr; text-align: left; }
+        }
+        
+        /* Collage Styles */
+        .hc-collage {
+          position: relative;
+          display: flex;
+          gap: 24px;
+          height: 520px;
+          justify-content: center;
+          align-items: center;
+        }
+        .hc-col-left {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          position: relative;
+          z-index: 2;
+        }
+        .hc-img-tall {
+          width: 260px;
+          height: 420px;
+          border-radius: 140px 140px 32px 32px;
+          background-size: cover;
+          background-position: center;
+          box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+          border: 1px solid rgba(243,112,30,0.15);
+        }
+        .hc-badge {
+          position: absolute;
+          bottom: -20px;
+          right: -40px;
+          background: var(--orange, #f3701e);
+          color: #fff;
+          padding: 16px 24px;
+          border-radius: 16px 16px 16px 4px;
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          box-shadow: 0 10px 30px rgba(243,112,30,0.3);
+        }
+        .hcb-icon { font-size: 28px; }
+        .hcb-text { font-size: 13px; font-weight: 600; line-height: 1.3; font-family: 'Space Grotesk', sans-serif;}
+        .hcb-text strong { font-size: 18px; display: block; }
+        
+        .hc-col-right {
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+          margin-top: -60px;
+        }
+        .hc-img-circle {
+          width: 220px;
+          height: 220px;
+          border-radius: 50%;
+          background-size: cover;
+          background-position: center;
+          border: 6px solid #0d0d14; /* Matches focus section bg */
+          box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+        }
+        .hc-img-square {
+          width: 220px;
+          height: 220px;
+          border-radius: 40px;
+          border-top-right-radius: 100px;
+          background-size: cover;
+          background-position: center;
+          box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+          border: 1px solid rgba(243,112,30,0.15);
+        }
+
+        /* Text Styles matching Image 1 but dark mode */
+        .hc-text-content {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+        .hct-eyebrow {
+          color: var(--orange, #f3701e);
+          font-size: 12px;
+          font-weight: 700;
+          letter-spacing: 2px;
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          text-transform: uppercase;
+        }
+        .hct-eyebrow::before {
+          content: '';
+          display: block;
+          width: 24px;
+          height: 2px;
+          background: var(--orange);
+        }
+        .hct-title {
+          font-size: clamp(2.5rem, 4vw, 3.5rem);
+          line-height: 1.1;
+          color: var(--txt, #f0ede8);
+          font-family: 'Playfair Display', serif;
+          font-weight: 800;
+          margin: 0;
+        }
+        .hct-title em {
+          color: var(--orange);
+          font-style: italic;
+        }
+        .hct-desc {
+          color: var(--muted, #8a7060);
+          font-size: 1.05rem;
+          line-height: 1.6;
+          max-width: 500px;
+          margin: 0;
+        }
+        
+        .hc-features {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          margin-top: 10px;
+        }
+        .hc-feature {
+          display: flex;
+          gap: 16px;
+          align-items: flex-start;
+          background: rgba(255,255,255,0.02);
+          padding: 16px;
+          border-radius: 16px;
+          border: 1px solid rgba(255,255,255,0.03);
+          max-width: 480px;
+        }
+        .hcf-icon {
+          width: 52px;
+          height: 52px;
+          border-radius: 50%;
+          background: rgba(243,112,30,0.1);
+          color: var(--orange);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 24px;
+          flex-shrink: 0;
+        }
+        .hcf-text h4 {
+          margin: 0 0 6px 0;
+          font-size: 16px;
+          color: var(--txt);
+          font-weight: 700;
+        }
+        .hcf-text p {
+          margin: 0;
+          font-size: 13.5px;
+          color: var(--muted);
+          line-height: 1.5;
+        }
+        
+        .hc-actions {
+          display: flex;
+          align-items: center;
+          gap: 32px;
+          margin-top: 16px;
+        }
+        .hc-btn {
+          background: var(--orange);
+          color: #fff;
+          border: none;
+          padding: 16px 36px;
+          border-radius: 50px;
+          font-weight: 700;
+          font-size: 14px;
+          cursor: pointer;
+          box-shadow: 0 8px 24px rgba(243,112,30,0.3);
+          transition: transform 0.2s;
+        }
+        .hc-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(243,112,30,0.4); }
+        .hc-phone {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+        }
+        .hc-phone-icon {
+          width: 44px;
+          height: 44px;
+          border-radius: 50%;
+          background: rgba(16,185,129,0.1);
+          color: #10b981;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 20px;
+        }
+        .hc-phone-text {
+          font-size: 15px;
+          font-weight: 700;
+          color: var(--txt);
+        }
+        .hc-phone-text span {
+          display: block;
+          font-size: 11px;
+          color: var(--muted);
+          font-weight: 400;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+      </style>
+
+      <!-- Left Side: Image Collage -->
+      <div class="hc-collage">
+        <div class="hc-col-left">
+          <!-- Arch Image Placeholder -->
+          <div class="hc-img-tall" style="background-image:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&h=800&q=80')"></div>
+          <div class="hc-badge">
+             <span class="hcb-icon">🎯</span>
+             <div class="hcb-text">
+               <strong>12.4M+</strong>Pelajar<br>Terhubung
+             </div>
+          </div>
+        </div>
+        <div class="hc-col-right">
+          <!-- Circular Image Placeholder -->
+          <div class="hc-img-circle" style="background-image:url('https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=400&h=400&q=80')"></div>
+          <!-- Rounded Square Image Placeholder -->
+          <div class="hc-img-square" style="background-image:url('https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=400&h=400&q=80')"></div>
+        </div>
+      </div>
+
+      <!-- Right Side: Text & Actions -->
+      <div class="hc-text-content">
+        <div class="hct-eyebrow">Innovate 2025 · Pelajar Indonesia</div>
+        <h1 class="hct-title">Fokusmu adalah<br><em>sumber daya global.</em></h1>
+        <p class="hct-desc">Perhatian yang tidak terfragmentasi adalah bahan bakar perubahan. Setiap sesi Deep Work yang kamu lakukan tercatat sebagai gelombang energi kognitif — memvisualisasikan langsung dampaknya pada kondisi <strong style="color:var(--txt)">bumi kolektif</strong> Indonesia.</p>
+
+        <div class="hc-features">
+          <div class="hc-feature">
+            <div class="hcf-icon">🌊</div>
+            <div class="hcf-text">
+              <h4>Ripple Kognitif</h4>
+              <p>Setiap jam fokusmu menghasilkan dampak positif terukur pada sistem bumi kolektif kami.</p>
+            </div>
+          </div>
+          <div class="hc-feature">
+            <div class="hcf-icon">📡</div>
+            <div class="hcf-text">
+              <h4>Sinyal Global</h4>
+              <p>Terhubung secara anonim dengan jutaan pelajar lain untuk membuktikan kekuatan komunal terpadu.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hc-actions">
+          <button class="hc-btn" onclick="document.getElementById('focus-demo-section').scrollIntoView({behavior:'smooth'})">▶ Coba Focus Demo</button>
+          <div class="hc-phone">
+            <div class="hc-phone-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4"></path></svg>
+            </div>
+            <div class="hc-phone-text">
+              <span>Keamanan Validasi</span>
+              Terkunci Biometrik
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS ROW -->
+    <div class="stats-row">
+      <div class="stat-cell">
+        <div class="stat-num">12<span>.</span>4<span>M</span></div>
+        <div class="stat-label">Pelajar Dalam Jaringan</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">247<span>K</span></div>
+        <div class="stat-label">Ripple Positif Hari Ini</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">417</div>
+        <div class="stat-label">PPM CO₂ Saat Ini</div>
+      </div>
+    </div>
+
+    <!-- FOCUS MODE STEPS -->
+    <section id="focus-steps">
+      <style id="fs-horizontal-style">
+        .fs-scroll-wrap {
+          width: 100%;
+          margin-bottom: 60px;
+          position: relative;
+          z-index: 10;
+        }
+        .fs-header-row {
+          max-width: 1200px;
+          margin: 0 auto 40px auto;
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+          gap: 24px;
+          flex-wrap: wrap;
+          padding: 0 20px;
+        }
+        .fs-header-left { max-width: 650px; }
+        .fs-eyebrow {
+          color: var(--orange, #f3701e);
+          font-size: 13px;
+          font-weight: 700;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          margin-bottom: 12px;
+        }
+        .fs-heading {
+          font-size: clamp(2.5rem, 4vw, 3.5rem);
+          color: var(--txt);
+          font-family: 'Playfair Display', serif;
+          font-weight: 800;
+          line-height: 1.1;
+          margin-bottom: 16px;
+        }
+        .fs-desc {
+          color: var(--text-2, #a1a1aa);
+          font-size: 1.1rem;
+          line-height: 1.6;
+        }
+        .fs-badge-wrap {
+          background: rgba(255,255,255,0.02);
+          border: 1px solid rgba(255,255,255,0.05);
+          padding: 16px 24px;
+          border-radius: 16px;
+          text-align: right;
+        }
+        .fs-badge-top {
+          color: #10b981;
+          font-weight: 800;
+          font-size: 18px;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          justify-content: flex-end;
+        }
+        .fs-badge-bot {
+          color: var(--muted);
+          font-size: 12px;
+          margin-top: 6px;
+        }
+        .fs-carousel {
+          display: flex;
+          gap: 24px;
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+          padding: 0 max(20px, calc((100vw - 1200px) / 2));
+          padding-bottom: 30px;
+          scrollbar-width: none;
+        }
+        .fs-carousel::-webkit-scrollbar { display: none; }
+        
+        .fs-card {
+          scroll-snap-align: start;
+          flex: 0 0 auto;
+          width: 400px;
+          background: #11111a;
+          border: 1px solid rgba(243,112,30,0.1);
+          border-radius: 24px;
+          padding: 32px;
+          display: flex;
+          flex-direction: column;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+          transition: transform 0.3s, border-color 0.3s;
+          position: relative;
+          overflow: hidden;
+        }
+        .fs-card:hover {
+          transform: translateY(-4px);
+          border-color: rgba(243,112,30,0.4);
+        }
+        .fs-card-quote {
+          color: var(--orange);
+          font-size: 56px;
+          line-height: 0.8;
+          font-family: 'Playfair Display', serif;
+          opacity: 0.8;
+          margin-bottom: 20px;
+        }
+        .fs-card-title {
+          font-size: 20px;
+          font-weight: 700;
+          color: var(--txt);
+          margin-bottom: 12px;
+        }
+        .fs-card-desc {
+          color: var(--text-2);
+          font-size: 14px;
+          line-height: 1.6;
+          margin-bottom: 24px;
+          flex-grow: 1;
+        }
+        .fs-card-bot {
+          margin-top: auto;
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          border-top: 1px solid rgba(255,255,255,0.05);
+          padding-top: 20px;
+        }
+        .fscb-avatar {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background: rgba(243,112,30,0.1);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 18px;
+          flex-shrink: 0;
+        }
+        .fscb-info {
+          flex-grow: 1;
+        }
+        .fscb-name {
+          font-weight: 700;
+          font-size: 14px;
+          color: var(--txt);
+        }
+        .fscb-role {
+          font-size: 12px;
+          color: var(--muted);
+        }
+        .fscb-rating {
+          text-align: right;
+        }
+        .fscb-score {
+          font-weight: 700;
+          color: var(--orange);
+          font-size: 14px;
+        }
+        @media (max-width: 600px) {
+          .fs-card { width: 320px; }
+        }
+        
+        .fs-controls {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 20px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: 10px;
+        }
+        .fsc-btns {
+          display: flex;
+          gap: 12px;
+        }
+        .fsc-btn {
+          width: 44px;
+          height: 44px;
+          border-radius: 50%;
+          background: #11111a;
+          border: 1px solid rgba(255,255,255,0.1);
+          color: #fff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: 0.2s;
+        }
+        .fsc-btn:hover { background: rgba(255,255,255,0.05); border-color: var(--orange); }
+        .fsc-swipe {
+          font-size: 13px;
+          font-weight: 700;
+          text-transform: uppercase;
+          color: var(--orange);
+          letter-spacing: 1px;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+      </style>
+
+      <div class="fs-scroll-wrap">
+        <!-- Header -->
+        <div class="fs-header-row">
+          <div class="fs-header-left">
+            <div class="fs-eyebrow">Tutorial</div>
+            <h2 class="fs-heading">Cara Memahami</h2>
+            <p class="fs-desc">Belajar bukan soal berapa jam. Ini soal seberapa dalam kamu menekan masa depan.</p>
+          </div>
+          <div class="fs-badge-wrap">
+            <div class="fs-badge-top">
+              <svg fill="currentColor" viewBox="0 0 20 20" width="20" height="20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+              Sistem Terverifikasi
+            </div>
+            <div class="fs-badge-bot">Melacak 52.9M Aksi Fokus Terhubung</div>
+          </div>
+        </div>
+
+        <!-- Carousel -->
+        <div class="fs-carousel" id="fs-carousel-el">
+          
+          <!-- Card 1 -->
+          <div class="fs-card">
+            <div class="fs-card-quote">“</div>
+            <h3 class="fs-card-title">01 / Bukan "Berapa Menit?"</h3>
+            <p class="fs-card-desc">Tiga level kedalaman yang didesain secara spesifik berdasarkan kapasitas kognitif manusia. Kamu tidak hanya secara pasif menghitung durasi belajarmu — kamu meniatkan sebuah 'tekanan' mental terhadap masa depan. Semakin dalam niatmu, semakin besar gelombang yang dapat dihasilkan.</p>
+            
+            <div class="intent-cards" style="margin-bottom:24px;">
+              <div class="intent-card" onclick="this.parentElement.querySelectorAll('.intent-card').forEach(c=>c.classList.remove('active')); this.classList.add('active')">
+                <div class="intent-emoji">🌱</div><div class="intent-name">Ringan</div><div class="intent-hint">20–30 mnt</div>
+              </div>
+              <div class="intent-card active" onclick="this.parentElement.querySelectorAll('.intent-card').forEach(c=>c.classList.remove('active')); this.classList.add('active')">
+                <div class="intent-emoji">🔥</div><div class="intent-name">Dalam</div><div class="intent-hint">40–60 mnt</div>
+              </div>
+              <div class="intent-card" onclick="this.parentElement.querySelectorAll('.intent-card').forEach(c=>c.classList.remove('active')); this.classList.add('active')">
+                <div class="intent-emoji">⚡</div><div class="intent-name">Intens</div><div class="intent-hint">60–90 mnt</div>
+              </div>
+            </div>
+
+            <div class="fs-card-bot">
+              <div class="fscb-avatar">🧠</div>
+              <div class="fscb-info">
+                <div class="fscb-name">Onboarding</div>
+                <div class="fscb-role">Fase 1</div>
+              </div>
+              <div class="fscb-rating">
+                <svg style="color:var(--orange)" width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <div class="fscb-score">Tahap Awal</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="fs-card">
+            <div class="fs-card-quote">“</div>
+            <h3 class="fs-card-title">02 / Dunia Menahan Napas</h3>
+            <p class="fs-card-desc">Kondisi Deep Work terdeteksi. Sistem virtual kami akan bereaksi secara empiris terhadap kehadiran dan stabilitas pikiranmu. Atmospherik globe menebal untuk melindungi fokusmu, dan gelombang ripple menyebar secara persisten dari pusat Indonesia.</p>
+
+            <div style="margin-bottom:24px; padding: 20px; border: 1px solid rgba(245,114,42,0.12); background: rgba(13,13,20,1); display:flex; align-items:center; gap:16px;">
+              <svg viewBox="0 0 80 80" style="width:50px;height:50px;transform:rotate(-90deg)">
+                <circle fill="none" stroke="rgba(26,26,42,1)" stroke-width="4" cx="40" cy="40" r="34" />
+                <circle fill="none" stroke="#f5722a" stroke-width="4" stroke-linecap="round" stroke-dasharray="213" stroke-dashoffset="50" cx="40" cy="40" r="34" style="filter:drop-shadow(0 0 8px rgba(245,114,42,0.6));animation:focus-ring 4s ease-in-out infinite alternate;" />
+              </svg>
+              <div>
+                <div style="font-size:12px;color:rgba(240,237,232,0.5);font-family:'Space Mono',monospace;margin-bottom:4px;">Tekanan aktif</div>
+                <div style="font-size:13px;font-weight:700;color:#4ade80;">● Fokus stabil</div>
+              </div>
+            </div>
+
+            <div class="fs-card-bot">
+              <div class="fscb-avatar">🌍</div>
+              <div class="fscb-info">
+                <div class="fscb-name">Focus State</div>
+                <div class="fscb-role">Fase 2</div>
+              </div>
+              <div class="fscb-rating">
+                <svg style="color:var(--orange)" width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <div class="fscb-score">Inti Proses</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="fs-card">
+            <div class="fs-card-quote">“</div>
+            <h3 class="fs-card-title">03 / Tanpa Hukuman</h3>
+            <p class="fs-card-desc">Kami memahami bahwa pikiran dirancang untuk mengembara. Karena itu, RIPPLE tidak pernah menghukum distraksimu. Namun ketika kamu kehilangan fokus, globe akan menunjukkan retakan halus dan gelombang tidak stabil.</p>
+
+            <div style="margin-bottom:24px; padding:16px; border:1px solid rgba(245,114,42,0.12); border-left: 2px solid #e8c547; background: rgba(232,197,71,0.05);">
+              <div style="font-size:12px; color:#e8c547; font-family:'Space Mono',monospace; margin-bottom:6px;">⚠ Perhatian terpecah</div>
+              <div style="font-family:'Instrument Serif',serif; font-style:italic; font-size:13px; color:rgba(240,237,232,0.5);">"Perhatian yang terpecah menciptakan masa depan yang rapuh."</div>
+            </div>
+
+            <div class="fs-card-bot">
+              <div class="fscb-avatar">💔</div>
+              <div class="fscb-info">
+                <div class="fscb-name">Gangguan</div>
+                <div class="fscb-role">Fase 3</div>
+              </div>
+              <div class="fscb-rating">
+                <svg style="color:var(--orange)" width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <div class="fscb-score">Evaluasi Dini</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="fs-card">
+            <div class="fs-card-quote">“</div>
+            <h3 class="fs-card-title">04 / Apa yang Berubah?</h3>
+            <p class="fs-card-desc">Proses metakognisi memuncak setelah fase fokus telah selesai. Pertanyaan kami didesain bukan untuk menguji hafalanmu, tetapi untuk melacak seberapa jauh sudut pandangmu telah bergeser.</p>
+
+            <div style="margin-bottom:24px; display:flex; flex-direction:column; gap:8px;">
+              <div style="padding:12px 16px; border:1px solid rgba(245,114,42,0.12); font-size:13px; font-family:'Instrument Serif',serif; font-style:italic; cursor:pointer; transition:all 0.2s; color:#f0ede8;" onmouseover="this.style.borderColor='#f5722a'" onmouseout="this.style.borderColor='rgba(245,114,42,0.12)'">"Satu hal yang sekarang lebih jelas…"</div>
+              <div style="padding:12px 16px; border:1px solid rgba(245,114,42,0.12); font-size:13px; font-family:'Instrument Serif',serif; font-style:italic; cursor:pointer; transition:all 0.2s; color:#f0ede8;" onmouseover="this.style.borderColor='#f5722a'" onmouseout="this.style.borderColor='rgba(245,114,42,0.12)'">"Satu koneksi baru yang aku sadari…"</div>
+            </div>
+
+            <div class="fs-card-bot">
+              <div class="fscb-avatar">✨</div>
+              <div class="fscb-info">
+                <div class="fscb-name">Refleksi</div>
+                <div class="fscb-role">Fase Akhir</div>
+              </div>
+              <div class="fscb-rating">
+                <svg style="color:var(--orange)" width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <div class="fscb-score">Konklusi Dampak</div>
+              </div>
+            </div>
+          </div>
+
+        </div> <!-- End Carousel -->
+
+        <!-- Bottom Controls -->
+        <div class="fs-controls">
+          <div class="fsc-btns">
+            <button class="fsc-btn" onclick="document.getElementById('fs-carousel-el').scrollBy({left:-400, behavior:'smooth'})">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>
+            </button>
+            <button class="fsc-btn" onclick="document.getElementById('fs-carousel-el').scrollBy({left:400, behavior:'smooth'})">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+          </div>
+          <div class="fsc-swipe">Geser Horisontal →</div>
+        </div>
+      </div>
+      <div class="focus-states">
+        <div class="focus-state-item">
+          <div class="fsi-emoji">🌑</div>
+          <div class="fsi-title">Study in Silence</div>
+          <div class="fsi-desc">Globe tidak berubah. Tidak ada ripple. Dunia tidak bereaksi sama sekali.</div>
+          <div class="fsi-quote">"Beberapa proses tidak butuh saksi."</div>
+        </div>
+        <div class="focus-state-item">
+          <div class="fsi-emoji">🌊</div>
+          <div class="fsi-title">Deep Focus Wave</div>
+          <div class="fsi-desc">Ripple besar dan stabil menyebar dari Indonesia ke seluruh peta.</div>
+          <div class="fsi-quote">"Tekanan kuat menghasilkan gelombang jauh."</div>
+        </div>
+        <div class="focus-state-item">
+          <div class="fsi-emoji">💨</div>
+          <div class="fsi-title">Fractured Focus</div>
+          <div class="fsi-desc">Ripple kecil dan tidak menentu. Gelombang rapuh mencerminkan pikiran yang terpecah.
+          </div>
+          <div class="fsi-quote">"Tekanan kecil menghasilkan gelombang kecil."</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHILOSOPHY -->
+    <section id="philosophy">
+      <style id="philosophy-grid-style">
+        .pg-container {
+          max-width: 1200px;
+          margin: 60px auto 100px auto;
+          padding: 0 20px;
+        }
+        .pg-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 20px;
+        }
+        
+        .pg-text-block {
+          grid-column: span 2;
+          background: transparent;
+          padding: 20px 40px 20px 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+        
+        .pg-quote {
+          font-size: clamp(2rem, 3.5vw, 2.7rem);
+          color: var(--txt);
+          font-family: 'Playfair Display', serif;
+          font-weight: 800;
+          line-height: 1.25;
+          margin-bottom: 24px;
+          font-style: italic;
+        }
+        .pg-quote em { 
+          color: var(--orange); 
+          font-style: italic;
+        }
+        
+        .pg-card.pg-dark {
+          background: #11111a;
+          border: 1px solid rgba(243,112,30,0.25);
+          color: var(--txt);
+        }
+        .pg-card.pg-dark .pgc-icon { 
+          background: rgba(243,112,30,0.1); 
+          color: var(--orange); 
+        }
+        
+        .pg-card {
+          background: rgba(255,255,255,0.02);
+          border: 1px solid rgba(255,255,255,0.04);
+          border-radius: 20px;
+          padding: 32px;
+          display: flex;
+          flex-direction: column;
+          transition: transform 0.3s, border-color 0.3s;
+        }
+        .pg-card:hover {
+          transform: translateY(-4px);
+          border-color: rgba(243,112,30,0.4);
+        }
+        .pgc-icon {
+          width: 52px;
+          height: 52px;
+          border-radius: 12px;
+          background: rgba(255,255,255,0.03);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 26px;
+          margin-bottom: 24px;
+        }
+        .pgc-title {
+          font-size: 17px;
+          font-weight: 700;
+          margin-bottom: 12px;
+          color: var(--txt);
+          font-family: 'Space Grotesk', sans-serif;
+        }
+        .pgc-desc {
+          font-size: 14px;
+          color: #a1a1aa;
+          line-height: 1.6;
+        }
+
+        @media (max-width: 900px) {
+          .pg-grid { grid-template-columns: repeat(2, 1fr); }
+          .pg-text-block { grid-column: span 2; padding: 0 0 20px 0; }
+        }
+        @media (max-width: 600px) {
+          .pg-grid { grid-template-columns: 1fr; }
+          .pg-text-block { grid-column: span 1; }
+        }
+      </style>
+
+      <div class="pg-container">
+        <div class="pg-grid">
+          <!-- Text Block -->
+          <div class="pg-text-block">
+            <div class="section-eyebrow" style="margin-bottom:20px; text-align:left; justify-content:flex-start;">Filosofi</div>
+            <div class="pg-quote">"Kami tidak membuat fokus mode untuk meningkatkan produktivitas. Kami membuatnya untuk menunjukkan bahwa <em>perhatian adalah sumber daya global.</em>"</div>
+          </div>
+          
+          <!-- Card 1 (Dark Theme overlay) -->
+          <div class="pg-card pg-dark">
+            <div class="pgc-icon">📚</div>
+            <div class="pgc-title">Belajar = Tekanan Masa Depan</div>
+            <div class="pgc-desc">Setiap sesi belajar bukan sekadar penambahan kapasitas memori otak individual — ini adalah akumulasi tekanan kognitif terhadap sumbu masa depan dunia.</div>
+          </div>
+          
+          <!-- Card 2 -->
+          <div class="pg-card">
+            <div class="pgc-icon">🌍</div>
+            <div class="pgc-title">Fokus = Dunia Melambat</div>
+            <div class="pgc-desc">Perhatian yang tidak terfragmentasi oleh distraksi luar mampu memanipulasi persepsimu terhadap berjalannya waktu. RIPPLE memvisualisasikan state langka ini.</div>
+          </div>
+          
+          <!-- Card 3 -->
+          <div class="pg-card">
+            <div class="pgc-icon">⚡</div>
+            <div class="pgc-title">Gangguan = Ripple Rapuh</div>
+            <div class="pgc-desc">Dalam era ekonomi rentang atensi (attention economy), memecah fokus selalu berbiaya mahal. Perhatian yang patah-patah memancarkan vibrasi asimetris.</div>
+          </div>
+          
+          <!-- Card 4 -->
+          <div class="pg-card">
+            <div class="pgc-icon">✨</div>
+            <div class="pgc-title">Refleksi = Konsekuensi</div>
+            <div class="pgc-desc">Belajar mekanik hanya mengendapkan data mentah, namun tahapan refleksi pasca-sesi adalah katalis luar biasa untuk menyintesis kebijaksanaan abadi.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RIPPLE EFFECT CARDS -->
+    <!-- RIPPLE EFFECT CARDS -->
+    <section id="ripple-section">
+      <style id="ripple-split-style">
+        .rs-container {
+          max-width: 1200px;
+          margin: 80px auto;
+          padding: 0 20px;
+        }
+        .rs-card-wrapper {
+          background: #0b0b12; 
+          border: 1px solid rgba(255,255,255,0.05);
+          border-radius: 32px;
+          padding: 20px; 
+          display: flex;
+          gap: 20px;
+          box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+        }
+        
+        .rs-left {
+          flex: 0 0 380px;
+          background: #11111a; 
+          border-radius: 24px;
+          padding: 48px 40px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          border: 1px solid rgba(243,112,30,0.1);
+        }
+        .rs-eyebrow {
+          color: var(--orange, #f3701e);
+          font-size: 13px;
+          font-weight: 700;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          margin-bottom: 24px;
+        }
+        .rs-quote {
+          font-size: clamp(1.8rem, 2.5vw, 2.2rem);
+          color: var(--txt);
+          font-family: 'Playfair Display', serif;
+          font-weight: 800;
+          line-height: 1.25;
+          margin-bottom: 20px;
+        }
+        .rs-quote strong {
+          color: var(--orange);
+          font-style: italic;
+        }
+        .rs-desc {
+          color: var(--muted);
+          font-size: 14px;
+          line-height: 1.6;
+          margin-bottom: 40px;
+        }
+        .rs-btn {
+          background: var(--orange);
+          color: #fff;
+          border: none;
+          padding: 16px 28px;
+          border-radius: 50px;
+          font-weight: 700;
+          font-size: 14px;
+          cursor: pointer;
+          box-shadow: 0 8px 24px rgba(243,112,30,0.3);
+          transition: transform 0.2s;
+          align-self: flex-start;
+        }
+        .rs-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(243,112,30,0.4); }
+
+        .rs-right {
+          flex: 1;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 16px;
+        }
+        
+        .rs-item {
+          background: rgba(255,255,255,0.02);
+          border-radius: 24px;
+          padding: 32px;
+          border: 1px solid rgba(255,255,255,0.03);
+          display: flex;
+          flex-direction: column;
+          transition: background 0.3s, transform 0.3s;
+        }
+        .rs-item:hover {
+          background: rgba(255,255,255,0.04);
+          transform: translateY(-2px);
+        }
+        .rsi-icon {
+          width: 56px;
+          height: 56px;
+          border-radius: 16px;
+          background: rgba(243,112,30,0.1);
+          color: var(--orange);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 22px;
+          margin-bottom: 24px;
+          font-family: 'Space Grotesk', sans-serif;
+          font-weight: 800;
+        }
+        .rsi-title {
+          font-size: 18px;
+          font-weight: 700;
+          color: var(--txt);
+          margin-bottom: 12px;
+        }
+        .rsi-title span {
+          color: var(--orange);
+        }
+        .rsi-desc {
+          font-size: 14px;
+          color: #a1a1aa;
+          line-height: 1.6;
+        }
+
+        @media (max-width: 900px) {
+          .rs-card-wrapper { flex-direction: column; }
+          .rs-left { flex: none; width: 100%; border-radius: 24px; }
+        }
+        @media (max-width: 600px) {
+          .rs-right { grid-template-columns: 1fr; }
+        }
+      </style>
+
+      <div class="rs-container">
+        <div class="rs-card-wrapper">
+          <!-- Left Text/Action Panel -->
+          <div class="rs-left">
+            <div class="rs-eyebrow">Earth Mirror</div>
+            <div class="rs-quote">"Dunia tidak peduli <strong>apa</strong> yang kamu pelajari. Dunia peduli <strong>bagaimana</strong> kamu belajar."</div>
+            <div class="rs-desc">Dalam platform RIPPLE, setiap tindakan kecil dari kedalaman fokusmu memiliki interaktivitas visual yang dirancang untuk mengubah caramu melihat dampak dari belajar.</div>
+            <button class="rs-btn" onclick="document.getElementById('focus-steps').scrollIntoView({behavior:'smooth'})">Tinjau Bukti Interaktif</button>
+          </div>
+          
+          <!-- Right Grid Array -->
+          <div class="rs-right">
+            <div class="rs-item">
+              <div class="rsi-icon">01</div>
+              <div class="rsi-title"><span>Atmosfer</span> Pendidikan</div>
+              <div class="rsi-desc">Frekuensi intensitas deep work membangun lapisan pelindung kognitif. Semakin tinggi intensitas fokusmu, semakin dalam warna atmosfer di bumi virtualmu.</div>
+            </div>
+            <div class="rs-item">
+              <div class="rsi-icon" style="background:rgba(16,185,129,0.1);color:#10b981;">02</div>
+              <div class="rsi-title"><span>Jejak</span> Atmosfer</div>
+              <div class="rsi-desc">Alih-alih menyajikan tabel riwayat data historis yang kaku, RIPPLE berinteraksi melalui jejak atmospheric di peta. "Bumi pernah lebih gelap."</div>
+            </div>
+            <div class="rs-item">
+              <div class="rsi-icon" style="background:rgba(234,179,8,0.1);color:#eab308;">03</div>
+              <div class="rsi-title"><span>Ripple</span> Kedalaman</div>
+              <div class="rsi-desc">Output intensitas gelombang yang timbul murni ditentukan dari parameter durasi, presisi stabilitas, dan niat sadar awal dari pemilihnya.</div>
+            </div>
+            <div class="rs-item">
+              <div class="rsi-icon" style="background:rgba(59,130,246,0.1);color:#3b82f6;">04</div>
+              <div class="rsi-title"><span>Globe</span> Reaktif</div>
+              <div class="rsi-desc">Sesi paripurna ditandai dengan gelombang cahaya pendar biru yang menyebar keluar sumbu geografis Indonesia dan meyakinkan manifestasi kerjamu.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOCUS ANALYTICS -->
+    <section id="focus-debt">
+      <style id="focus-analytics-style">
+        .fa-container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 20px;
+        }
+        .fa-header {
+          margin-bottom: 60px;
+        }
+        /* Top Stats Grid */
+        .fa-stats-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 24px;
+          margin-bottom: 40px;
+        }
+        .fa-stat-card {
+          background: rgba(13,13,20,0.8);
+          border: 1px solid rgba(255,255,255,0.05);
+          border-radius: 24px;
+          padding: 32px 24px;
+          position: relative;
+          overflow: hidden;
+          transition: transform 0.3s, border-color 0.3s;
+        }
+        .fa-stat-card:hover {
+          transform: translateY(-4px);
+          border-color: rgba(245,114,42,0.3);
+        }
+        .fa-stat-card::before {
+          content: '';
+          position: absolute;
+          top: 0; left: 0; right: 0; height: 100%;
+          background: radial-gradient(circle at top right, var(--glow-color, rgba(255,255,255,0.05)) 0%, transparent 60%);
+          pointer-events: none;
+        }
+        
+        .fasc-label {
+          font-size: 11px;
+          letter-spacing: 0.15em;
+          color: rgba(240,237,232,0.5);
+          font-family: 'Space Mono', monospace;
+          text-transform: uppercase;
+          margin-bottom: 12px;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+        .fasc-icon {
+          width: 28px;
+          height: 28px;
+          border-radius: 8px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 14px;
+          background: rgba(255,255,255,0.05);
+        }
+        .fasc-val {
+          font-size: 42px;
+          font-weight: 800;
+          letter-spacing: -0.04em;
+          margin-bottom: 8px;
+          font-family: 'Space Grotesk', sans-serif;
+        }
+        .fasc-val span { font-size: 20px; font-weight: 600; opacity: 0.8; }
+        .fasc-delta {
+          font-size: 11px;
+          font-family: 'Space Mono', monospace;
+          display: inline-flex;
+          align-items: center;
+          gap: 4px;
+          padding: 6px 10px;
+          border-radius: 10px;
+          background: rgba(255,255,255,0.03);
+          border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* Distraction Panels */
+        .fa-distraction-wrap {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 24px;
+        }
+        .fa-distract-panel {
+          background: #11111a;
+          border: 1px solid rgba(255,255,255,0.04);
+          border-radius: 32px;
+          padding: 40px;
+          box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        .fa-dp-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          margin-bottom: 32px;
+        }
+        .fa-dp-title h3 {
+          font-size: 28px;
+          font-weight: 800;
+          color: var(--txt);
+          margin-bottom: 8px;
+        }
+        .fa-dp-title p {
+          color: var(--muted);
+          font-size: 14px;
+          line-height: 1.5;
+        }
+        .fa-dp-icon {
+          width: 48px;
+          height: 48px;
+          border-radius: 16px;
+          background: rgba(255,255,255,0.03);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 24px;
+        }
+
+        .fa-bar-item { margin-bottom: 24px; }
+        .fa-bar-item:last-child { margin-bottom: 0; }
+        
+        .fa-bar-top {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 10px;
+          font-size: 12px;
+          font-family: 'Space Mono', monospace;
+          font-weight: 700;
+          color: var(--txt);
+        }
+        .fa-bar-track {
+          width: 100%;
+          height: 8px;
+          background: rgba(255,255,255,0.05);
+          border-radius: 10px;
+          overflow: hidden;
+        }
+        .fa-bar-fill {
+          height: 100%;
+          border-radius: 10px;
+        }
+
+        @media (max-width: 900px) {
+          .fa-stats-grid { grid-template-columns: repeat(2, 1fr); }
+          .fa-distraction-wrap { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 500px) {
+          .fa-stats-grid { grid-template-columns: 1fr; }
+        }
+      </style>
+
+      <div class="fa-container">
+        <div class="fa-header">
+          <div class="section-eyebrow">Focus Analytics</div>
+          <h2 class="section-heading">Data Fokus<br>Kolektif Indonesia</h2>
+          <p class="section-desc">Setiap sesi belajar meninggalkan jejak yang terukur.<br>Ini bukan ranking — ini adalah cermin dari pola kolektif 52,9 juta pelajar.</p>
+        </div>
+
+        <div class="fa-stats-grid">
+          <!-- Stat 1 -->
+          <div class="fa-stat-card" style="--glow-color: rgba(245,114,42,0.15)">
+            <div class="fasc-label">
+              <div class="fasc-icon" style="color:#f5722a">⏱️</div>
+              Rata-rata Durasi
+            </div>
+            <div class="fasc-val" style="color:#f5722a">34<span>m</span></div>
+            <div class="fasc-delta" style="color:#4ade80">
+              <svg width="12" height="12" fill="currentColor" viewBox="0 0 20 20"><path d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z"/></svg>
+              +6m dari minggu lalu
+            </div>
+          </div>
+          <!-- Stat 2 -->
+          <div class="fa-stat-card" style="--glow-color: rgba(96,165,250,0.15)">
+            <div class="fasc-label">
+              <div class="fasc-icon" style="color:#60a5fa">⚖️</div>
+              Stabilitas
+            </div>
+            <div class="fasc-val" style="color:#60a5fa">78<span>%</span></div>
+            <div class="fasc-delta" style="color:rgba(240,237,232,0.5)">
+              <svg width="12" height="12" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"/></svg>
+              Konsisten 3 hari terakhir
+            </div>
+          </div>
+          <!-- Stat 3 -->
+          <div class="fa-stat-card" style="--glow-color: rgba(232,197,71,0.15)">
+            <div class="fasc-label">
+              <div class="fasc-icon" style="color:#e8c547">👥</div>
+              Pelajar Aktif
+            </div>
+            <div class="fasc-val" style="color:#e8c547">247<span>K</span></div>
+            <div class="fasc-delta" style="color:#4ade80">
+              <svg width="12" height="12" fill="currentColor" viewBox="0 0 20 20"><path d="M18 3a1 1 0 00-1.447-.894L8.763 6H5a3 3 0 000 6h.28l1.771 5.316A1 1 0 008 18h1a1 1 0 001-1v-4.382l6.553 3.276A1 1 0 0018 15V3z"/></svg>
+              Peak: 14.00–16.00 WIB
+            </div>
+          </div>
+          <!-- Stat 4 -->
+          <div class="fa-stat-card" style="--glow-color: rgba(74,222,128,0.15)">
+            <div class="fasc-label">
+              <div class="fasc-icon" style="color:#4ade80">🌊</div>
+              Ripple Terbentuk
+            </div>
+            <div class="fasc-val" style="color:#4ade80">1.2<span>M</span></div>
+            <div class="fasc-delta" style="color:rgba(240,237,232,0.5)">
+              <svg width="12" height="12" fill="currentColor" viewBox="0 0 20 20"><path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"/></svg>
+              Gelombang aktif bulan ini
+            </div>
+          </div>
+        </div>
+
+        <div class="fa-distraction-wrap">
+          <!-- Left Panel -->
+          <div class="fa-distract-panel">
+            <div class="fa-dp-header">
+              <div class="fa-dp-title">
+                <h3>Distraksi<br><span style="color:#e8c547">Eksternal</span></h3>
+                <p>Faktor dari luar yang paling cepat memecah gelombang fokus pelajar.</p>
+              </div>
+              <div class="fa-dp-icon">📡</div>
+            </div>
+            
+            <div class="fa-bar-list">
+              <div class="fa-bar-item">
+                <div class="fa-bar-top">
+                  <div style="display:flex;gap:8px;align-items:center;"><span>📱</span> NOTIF</div>
+                  <div style="color:#f87171">55%</div>
+                </div>
+                <div class="fa-bar-track"><div class="fa-bar-fill" style="width:55%; background: linear-gradient(90deg, #f87171, #fca5a5);"></div></div>
+              </div>
+              <div class="fa-bar-item">
+                <div class="fa-bar-top">
+                  <div style="display:flex;gap:8px;align-items:center;"><span>🗣️</span> LINGKUNGAN</div>
+                  <div style="color:#e8c547">25%</div>
+                </div>
+                <div class="fa-bar-track"><div class="fa-bar-fill" style="width:25%; background: linear-gradient(90deg, #e8c547, #fef08a);"></div></div>
+              </div>
+              <div class="fa-bar-item">
+                <div class="fa-bar-top">
+                  <div style="display:flex;gap:8px;align-items:center;"><span>👁️</span> VISUAL</div>
+                  <div style="color:#60a5fa">15%</div>
+                </div>
+                <div class="fa-bar-track"><div class="fa-bar-fill" style="width:15%; background: linear-gradient(90deg, #60a5fa, #93c5fd);"></div></div>
+              </div>
+              <div class="fa-bar-item">
+                <div class="fa-bar-top">
+                  <div style="display:flex;gap:8px;align-items:center;"><span>🚪</span> INTERUPSI</div>
+                  <div style="color:rgba(255,255,255,0.7)">5%</div>
+                </div>
+                <div class="fa-bar-track"><div class="fa-bar-fill" style="width:5%; background: linear-gradient(90deg, rgba(255,255,255,0.3), rgba(255,255,255,0.7));"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Panel -->
+          <div class="fa-distract-panel">
+            <div class="fa-dp-header">
+              <div class="fa-dp-title">
+                <h3>Distraksi<br><span style="color:#f87171">Internal</span></h3>
+                <p>Faktor dari dalam diri yang menurunkan persistensi konsentrasi.</p>
+              </div>
+              <div class="fa-dp-icon">🧠</div>
+            </div>
+            
+            <div class="fa-bar-list">
+              <div class="fa-bar-item">
+                <div class="fa-bar-top">
+                  <div style="display:flex;gap:8px;align-items:center;"><span>🥱</span> KELELAHAN</div>
+                  <div style="color:#f87171">45%</div>
+                </div>
+                <div class="fa-bar-track"><div class="fa-bar-fill" style="width:45%; background: linear-gradient(90deg, #f87171, #fca5a5);"></div></div>
+              </div>
+              <div class="fa-bar-item">
+                <div class="fa-bar-top">
+                  <div style="display:flex;gap:8px;align-items:center;"><span>🛌</span> KURANG TIDUR</div>
+                  <div style="color:#e8c547">30%</div>
+                </div>
+                <div class="fa-bar-track"><div class="fa-bar-fill" style="width:30%; background: linear-gradient(90deg, #e8c547, #fef08a);"></div></div>
+              </div>
+              <div class="fa-bar-item">
+                <div class="fa-bar-top">
+                  <div style="display:flex;gap:8px;align-items:center;"><span>🤯</span> SULIT JERNIH</div>
+                  <div style="color:#60a5fa">15%</div>
+                </div>
+                <div class="fa-bar-track"><div class="fa-bar-fill" style="width:15%; background: linear-gradient(90deg, #60a5fa, #93c5fd);"></div></div>
+              </div>
+              <div class="fa-bar-item">
+                <div class="fa-bar-top">
+                  <div style="display:flex;gap:8px;align-items:center;"><span>🍔</span> FISIK</div>
+                  <div style="color:#4ade80">10%</div>
+                </div>
+                <div class="fa-bar-track"><div class="fa-bar-fill" style="width:10%; background: linear-gradient(90deg, #4ade80, #86efac);"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE FOCUS DEMO -->
+    <section id="focus-demo-section">
+
+      <style id="focus-demo-redesign-style">
+        #focus-demo-section {
+          position: relative;
+          z-index: 5;
+        }
+        .fdr-container {
+          max-width: 1250px;
+          margin: 0 auto;
+          display: flex;
+          gap: 32px;
+          padding: 0 20px;
+          align-items: stretch;
+        }
+        
+        /* Sidebars */
+        .fdr-sidebar {
+          flex: 0 0 270px;
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+        }
+        
+        .fdr-side-card {
+          background: transparent;
+          border-top: 1px solid rgba(255,255,255,0.05); /* Just top border like some premium designs or simple full border */
+          background: rgba(13,13,20,0.5);
+          border: 1px solid rgba(255,255,255,0.03);
+          border-radius: 12px;
+          padding: 24px 20px;
+          transition: background 0.3s, border-color 0.3s;
+        }
+        .fdr-side-card:hover {
+          background: rgba(255,255,255,0.02);
+          border-color: rgba(245,114,42,0.2);
+        }
+        
+        .fdr-sc-title {
+          font-size: 11px;
+          font-family: 'Space Grotesk', sans-serif;
+          font-weight: 800;
+          color: var(--txt);
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          margin-bottom: 16px;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+        .fdr-sc-title::before {
+          content: '';
+          display: block;
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background: var(--orange);
+          box-shadow: 0 0 8px var(--orange);
+        }
+        
+        .fdr-sc-desc {
+          font-size: 12.5px;
+          color: var(--muted);
+          line-height: 1.6;
+          margin-bottom: 24px;
+          font-family: 'Space Mono', monospace;
+        }
+        
+        .fdr-stat-line {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 11px;
+          font-family: 'Space Mono', monospace;
+          color: rgba(255,255,255,0.5);
+          padding: 10px 0;
+          border-top: 1px dashed rgba(255,255,255,0.1);
+        }
+        .fdr-stat-line:first-of-type { border-top: none; padding-top: 0; }
+        .fdr-stat-line .val {
+          font-weight: 700;
+          color: var(--orange);
+        }
+
+        /* Center Panel */
+        .fdr-center {
+          flex: 1;
+          background: #101017;
+          border: 1px solid rgba(255,255,255,0.04);
+          border-radius: 20px;
+          padding: 60px 48px;
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .fdr-heading {
+          font-size: clamp(2rem, 3vw, 2.7rem);
+          color: var(--txt);
+          font-weight: 800;
+          margin-bottom: 16px;
+          line-height: 1.25;
+          text-align: left;
+        }
+        .fdr-sub {
+          font-size: 14px;
+          color: var(--muted);
+          font-family: 'Space Mono', monospace;
+          line-height: 1.6;
+          margin-bottom: 40px;
+          text-align: left;
+        }
+
+        /* Choices Row */
+        .fdr-choices {
+          display: flex;
+          gap: 20px;
+        }
+        .fdr-choice {
+          flex: 1;
+          background: #0a0a0f;
+          border: 1px solid rgba(255,255,255,0.03);
+          border-radius: 12px;
+          padding: 32px 16px;
+          text-align: center;
+          cursor: pointer;
+          transition: all 0.3s;
+        }
+        .fdr-choice:hover {
+          border-color: rgba(245,114,42,0.4);
+          background: #11111a;
+          transform: translateY(-4px);
+        }
+        .fdr-choice-emoji {
+          font-size: 32px;
+          margin-bottom: 16px;
+        }
+        .fdr-choice-name {
+          font-size: 16px;
+          font-weight: 700;
+          color: var(--txt);
+          margin-bottom: 8px;
+        }
+        .fdr-choice-hint {
+          font-size: 11px;
+          color: var(--muted);
+          font-family: 'Space Mono', monospace;
+          line-height: 1.4;
+        }
+
+        /* Step behaviors */
+        .fd-step { display: none; width: 100%; }
+        .fd-step.active { display: block; animation: fdFadeIn 0.4s ease forwards; }
+        @keyframes fdFadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        @media (max-width: 1000px) {
+          .fdr-container { flex-direction: column; }
+          .fdr-sidebar { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; flex: none; }
+          .fdr-center { padding: 40px 24px; }
+        }
+        @media (max-width: 650px) {
+          .fdr-choices { flex-direction: column; }
+          .fdr-sidebar { grid-template-columns: 1fr; }
+        }
+      </style>
+
+      <div style="text-align:center; margin-bottom: 64px;">
+        <div class="section-eyebrow" style="justify-content:center; letter-spacing: 0.25em;">Coba Sekarang</div>
+      </div>
+
+      <div class="fdr-container">
+        
+        <!-- Left Sidebar -->
+        <div class="fdr-sidebar">
+          <div class="fdr-side-card">
+            <div class="fdr-sc-title">Sistem Deteksi</div>
+            <div class="fdr-sc-desc">Sistem AI menggunakan matrik kedalaman fokus interaktif untuk mengukur konsentrasimu.</div>
+            <div class="fdr-stat-line"><span>Latensi Sistem</span><span class="val">12ms</span></div>
+            <div class="fdr-stat-line"><span>Fokus Mode</span><span class="val">Aktif</span></div>
+            <div class="fdr-stat-line"><span>Akurasi Sensor</span><span class="val" style="color:#f0ede8">99.8%</span></div>
+          </div>
+          <div class="fdr-side-card">
+            <div class="fdr-sc-title">Psikologi Atensi</div>
+            <div class="fdr-sc-desc">Saat kamu menekan sesi 'Dalam', kamu melatih sirkuit prefrontal cortex penuh untuk problem-solving.</div>
+            <div class="fdr-stat-line"><span>Sirkuit Target</span><span class="val">Prefrontal</span></div>
+            <div class="fdr-stat-line"><span>Neuroplastisitas</span><span class="val" style="color:#f0ede8">Optimal</span></div>
+          </div>
+        </div>
+        
+        <!-- Center Interactive Panel -->
+        <div class="fdr-center focus-demo-wrap">
+          
+          <!-- Step 0: Selection -->
+          <div class="fd-step active" id="focus-fd-s0">
+            <div class="fdr-heading">Seberapa dalam<br>kamu akan menekan?</div>
+            <div class="fdr-sub">Pilih niatmu. Durasi ditentukan otomatis.<br>Karena fokus ≠ jam.</div>
+            <div class="fdr-choices">
+              <div class="fdr-choice" onclick="focusSelectIntent(this,'🌱','Ringan','25 menit')">
+                <div class="fdr-choice-emoji">🌱</div>
+                <div class="fdr-choice-name">Ringan</div>
+                <div class="fdr-choice-hint">Review · membaca<br>20–30 mnt</div>
+              </div>
+              <div class="fdr-choice" onclick="focusSelectIntent(this,'🔥','Dalam','50 menit')">
+                <div class="fdr-choice-emoji">🔥</div>
+                <div class="fdr-choice-name">Dalam</div>
+                <div class="fdr-choice-hint">Konsep baru<br>40–60 mnt</div>
+              </div>
+              <div class="fdr-choice" onclick="focusSelectIntent(this,'⚡','Intens','75 menit')">
+                <div class="fdr-choice-emoji">⚡</div>
+                <div class="fdr-choice-name">Intens</div>
+                <div class="fdr-choice-hint">Latihan soal<br>60–90 mnt</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 1: Timer -->
+          <div class="fd-step" id="focus-fd-s1">
+            <div class="fd-timer-screen">
+              <div style="text-align:center;">
+                <div style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(240,237,232,0.5);font-weight:600;" id="focus-fd-intent-label">🔥 Dalam · 50 menit</div>
+              </div>
+              <div style="position:relative;width:240px;height:240px; margin:0 auto;">
+                <div class="fd-globe">
+                  <div class="fd-globe-ripples">
+                    <div class="fd-ripple"></div>
+                    <div class="fd-ripple"></div>
+                    <div class="fd-ripple"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="fd-timer-text ticking" id="focus-fd-clock" style="text-align:center;">49:00</div>
+              <div class="fd-timer-msg" style="text-align:center; margin-bottom:32px;">"Saat kamu fokus, dunia menahan napas."</div>
+              <div style="display:flex; gap:12px; justify-content:center;">
+                <button class="fd-btn fd-btn-primary" onclick="focusFinish()">Selesai Fokus</button>
+                <button class="fd-btn fd-btn-ghost" onclick="focusGoStep(0)">← Back</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2: Reflection -->
+          <div class="fd-step" id="focus-fd-s2">
+            <div class="fdr-heading">Apa yang berubah?</div>
+            <div class="fdr-sub">Satu pertanyaan. Satu kalimat.<br>Atau lewati — refleksi tidak bisa dipaksa.</div>
+            <div class="fd-reflection-prompts">
+              <div class="fd-rp" onclick="focusGoStep(3)"><span>"Satu hal yang sekarang lebih jelas…"</span><span style="color:#f5722a">→</span></div>
+              <div class="fd-rp" onclick="focusGoStep(3)"><span>"Satu hal yang masih mengganggu…"</span><span style="color:#f5722a">→</span></div>
+              <div class="fd-rp" onclick="focusGoStep(3)"><span>"Satu koneksi baru yang aku sadari…"</span><span style="color:#f5722a">→</span></div>
+            </div>
+            <div style="margin-top:20px; text-align:left;">
+              <button class="fd-btn fd-btn-ghost" onclick="focusGoStep(3)" style="font-size:11px;letter-spacing:0.15em;">Lewati →</button>
+            </div>
+          </div>
+
+          <!-- Step 3: Result -->
+          <div class="fd-step" id="focus-fd-s3">
+            <div class="fd-complete" style="text-align:center;">
+              <div class="fd-complete-ripple" style="font-size:40px;margin-bottom:16px;">🌊</div>
+              <div class="fdr-heading" style="margin-bottom:8px;text-align:center;">Ripplemu Sudah<br>Menyebar.</div>
+              <div class="fdr-sub" style="margin-bottom:32px;max-width:420px;margin-left:auto;margin-right:auto;text-align:center;">Cahaya merambat keluar dari Indonesia.<br>Satu hal lagi — bagaimana rasanya sesi ini?</div>
+              <div style="font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(240,237,232,0.5);font-weight:700;margin-bottom:16px;font-family:'Space Mono',monospace;">— Apa yang kamu rasakan —</div>
+              
+              <div id="focus-feeling-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:28px;max-width:520px;margin-left:auto;margin-right:auto;">
+                <button class="feeling-btn" data-feeling="🔥 Terbakar" onclick="focusSelectFeeling(this)"><span class="fb-emoji">🔥</span><span class="fb-label">Terbakar</span></button>
+                <button class="feeling-btn" data-feeling="🌊 Mengalir" onclick="focusSelectFeeling(this)"><span class="fb-emoji">🌊</span><span class="fb-label">Mengalir</span></button>
+                <button class="feeling-btn" data-feeling="💡 Terang" onclick="focusSelectFeeling(this)"><span class="fb-emoji">💡</span><span class="fb-label">Terang</span></button>
+                <button class="feeling-btn" data-feeling="😤 Berjuang" onclick="focusSelectFeeling(this)"><span class="fb-emoji">😤</span><span class="fb-label">Berjuang</span></button>
+                <button class="feeling-btn" data-feeling="😶 Kosong" onclick="focusSelectFeeling(this)"><span class="fb-emoji">😶</span><span class="fb-label">Kosong</span></button>
+                <button class="feeling-btn" data-feeling="⚡ Tajam" onclick="focusSelectFeeling(this)"><span class="fb-emoji">⚡</span><span class="fb-label">Tajam</span></button>
+              </div>
+
+              <div id="focus-feeling-result" style="display:none;padding:20px 28px;border:1px solid rgba(245,114,42,0.12);border-left:3px solid #f5722a;background:rgba(245,114,42,0.06);margin-bottom:28px;text-align:left;max-width:520px;margin-left:auto;margin-right:auto;border-radius:2px;">
+                <div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#f5722a;font-weight:700;margin-bottom:6px;font-family:'Space Mono',monospace;" id="focus-feeling-label-out"></div>
+                <div style="font-family:'Instrument Serif',serif;font-style:italic;font-size:16px;line-height:1.5;color:#f0ede8;" id="focus-feeling-msg-out"></div>
+              </div>
+
+              <div style="display:flex;justify-content:center;gap:16px;">
+                <button class="fd-btn fd-btn-primary" onclick="focusGoStep(0)">Mulai Sesi Baru</button>
+                <button class="fd-btn fd-btn-ghost" onclick="focusStartBreak()">Break 5 Menit</button>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+
+        <!-- Right Sidebar -->
+        <div class="fdr-sidebar">
+          <div class="fdr-side-card">
+            <div class="fdr-sc-title">Efek Ripple Global</div>
+            <div class="fdr-sc-desc">Setiap gelombang konsentrasi mempertebal pelindung atmosfer kognitif. Kontribusimu memperkuat fokus kolektif 52,9 juta pelajar.</div>
+            <div class="fdr-stat-line"><span>Total Ripple</span><span class="val">1.2M</span></div>
+            <div class="fdr-stat-line"><span>Stabilitas</span><span class="val">78%</span></div>
+            <div class="fdr-stat-line"><span>Tren Komunal</span><span class="val" style="color:#4ade80">+4.2%</span></div>
+          </div>
+          <div class="fdr-side-card">
+            <div class="fdr-sc-title">Hukum Distraksi</div>
+            <div class="fdr-sc-desc">Meninggalkan konsentrasi akan memecah gelombang ripple yang dibangun. Sistem hanya menjadi cermin objektif komitmen belajarmu.</div>
+            <div class="fdr-stat-line"><span>Toleransi</span><span class="val" style="color:#f5722a">Netral</span></div>
+            <div class="fdr-stat-line"><span>Status Visual</span><span class="val" style="color:#4ade80">Aman</span></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- MANIFESTO -->
+    <section data-section="about" id="focus-about" style="border-top:1px solid rgba(245,114,42,0.12);">
+      <div class="manifesto-grid">
+        <div class="manifesto-text">
+          <div class="section-eyebrow">Tentang RIPPLE</div>
+          <h2>Kami membangun<br>cermin bagi <em>Indonesia.</em></h2>
+          <p>RIPPLE lahir dari satu keyakinan sederhana: bahwa keputusan sehari-hari pelajar Indonesia — apa yang
+            dipelajari, bagaimana mereka fokus, pilihan hidup kecil yang mereka buat — memiliki bobot yang jauh lebih
+            besar dari yang mereka sadari.</p>
+          <p>Bukan platform produktivitas. Bukan aplikasi catatan. RIPPLE adalah sistem visualisasi konsekuensi — di
+            mana setiap tindakan, sekecil apapun, terlihat sebagai gelombang nyata di bumi.</p>
+          <div class="manifesto-killer">
+            <p>"Kami tidak membuat fokus mode untuk meningkatkan produktivitas. Kami membuatnya untuk menunjukkan bahwa
+              perhatian adalah sumber daya global."</p>
+          </div>
+        </div>
+        <div class="manifesto-aside">
+          <div class="aside-item">
+            <div class="aside-label">Target</div>
+            <div class="aside-val">Pelajar Indonesia 15–25</div>
+          </div>
+          <div class="aside-item">
+            <div class="aside-label">Kategori</div>
+            <div class="aside-val">Pendidikan · Impact Viz</div>
+          </div>
+          <div class="aside-item">
+            <div class="aside-label">Event</div>
+            <div class="aside-val">Innovate 2025</div>
+          </div>
+          <div class="aside-item">
+            <div class="aside-label">Core Filosofi</div>
+            <div class="aside-val">Every Choice, World Feels It</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </section><!-- end #section-focus -->
+
+  <!-- ══ SCRIPTS ═══════════════════════════════════════════════ -->
+  <script src="js/indoPaths.js"></script>
+  <script type="module" src="js/global_logic.js"></script>
+  <script type="module" src="js/mind.js"></script>
+  <script type="module" src="js/app.js"></script>
+  <script src="js/crazy.js"></script>
+  <script src="js/focus_logic.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/neon.js"></script>
+  <script src="js/visual.js"></script>
+  <script src="js/wow.js"></script>
+  <script src="js/landing.js"></script>
+  <script type="module" src="js/daily.js"></script>
+
+  <!-- ── MODAL: DAILY SYNC ── -->
+  <div class="modal-bg" id="modalBg">
+    <div class="modal-box">
+      <span class="m-globe">🌍</span>
+      <div class="m-title">Gelombangmu Terkirim!</div>
+      <div class="m-streak">
+        🔥 <span id="streakN2">0</span> HARI BERUNTUN
+      </div>
+      <div class="m-desc" id="mDesc">
+        Hari ini kamu telah membuat keputusan yang menciptakan gelombang nyata.
+      </div>
+      <div class="m-fact" id="mFact">Memuat analisis...</div>
+      <button class="m-close" onclick="DAILY.closeModal()">TUTUP →</button>
+    </div>
+  </div>
+
+  <!-- ── TOASTS ── -->
+  <div class="toasts" id="toasts"></div>
+
+</body>
+
+</html>

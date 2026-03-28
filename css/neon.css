@@ -1,0 +1,935 @@
+/* ============================================================
+   RIPPLE — neon.css  (v3 — bigger cards + kapital + optimized)
+   ============================================================ */
+
+/* ── FONT PREMIUM ─────────────────────────────────────────── */
+/* fonts loaded via HTML link tag */
+
+/* Judul pakai Orbitron — futuristik, cocok banget sama RIPPLE */
+
+
+
+
+
+
+/* ── KAPITAL SEMUA JUDUL ──────────────────────────────────── */
+.concept-card h3,
+.step-card h3,
+.layer-card h3,
+.world-card h4,
+.why-card h3,
+.positioning-card h4,
+.section-heading,
+.section-label,
+.section-title,
+.global-header h1,
+.hero-title,
+.stat-label,
+.layer-tag,
+.ticker-label {
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+}
+
+/* ── BODY BACKGROUND NEON ────────────────────────────────── */
+body {
+    background: #050709 !important;
+}
+#ripple-aurora { display: none !important; }
+
+/* Grid neon */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(243,112,30,0.10) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(243,112,30,0.10) 1px, transparent 1px);
+    background-size: 90px 90px;
+    mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black 20%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black 20%, transparent 100%);
+}
+
+/* Radial glow — CSS only, tidak butuh JS */
+body::after {
+    content: "" !important;
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 0 !important;
+    pointer-events: none !important;
+    background:
+        radial-gradient(ellipse 60% 40% at 50% 0%, rgba(243,112,30,0.18) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 30% at 15% 85%, rgba(184,58,45,0.14) 0%, transparent 60%),
+        radial-gradient(ellipse 35% 25% at 85% 75%, rgba(243,112,30,0.10) 0%, transparent 60%) !important;
+    opacity: 1 !important;
+    background-size: 100% 100% !important;
+}
+
+/* ── SECTION PADDING LEBIH LEGA ──────────────────────────── */
+.concept { padding: 100px 0 !important; }
+.how-section      { max-width: 100% !important; padding: 120px 60px !important; }
+.layers-section   { max-width: 100% !important; padding: 120px 60px !important; }
+.facts-section    { max-width: 100% !important; padding: 120px 60px !important; }
+.world-section    { max-width: 100% !important; padding: 120px 60px !important; }
+.opinion-section  { max-width: 1100px !important; padding: 120px 60px !important; }
+
+/* ── CONCEPT CARDS ──────────────────────────────────────── */
+.concept-container {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 36px !important;
+    max-width: 100% !important;
+    padding: 0 60px !important;
+    margin: 0 !important;
+}
+.concept-card {
+    width: auto !important;
+    min-height: 280px !important;
+    padding: 64px 48px !important;
+    border-radius: 20px !important;
+    background: rgba(243,112,30,0.035) !important;
+    border: 1px solid rgba(243,112,30,0.25) !important;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+.concept-card h3 {
+    font-size: 20px !important;
+    margin-bottom: 20px !important;
+    color: #f3701e !important;
+    text-shadow: 0 0 20px rgba(243,112,30,0.6) !important;
+    line-height: 1.4 !important;
+}
+.concept-card p {
+    font-size: 17px !important;
+    line-height: 2 !important;
+    opacity: 0.72 !important;
+}
+
+/* ── STEP CARDS ─────────────────────────────────────────── */
+.steps-grid { gap: 36px !important; }
+.step-card {
+    min-height: 360px !important;
+    padding: 60px 40px !important;
+    border-radius: 20px !important;
+    background: rgba(243,112,30,0.03) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+.step-card h3 {
+    font-size: 18px !important;
+    margin-bottom: 18px !important;
+    line-height: 1.5 !important;
+}
+.step-card p  { font-size: 16px !important; line-height: 1.9 !important; opacity: 0.7 !important; }
+.step-number  { width: 64px !important; height: 64px !important; font-size: 24px !important; margin-bottom: 28px !important; }
+.step-icon    { margin-bottom: 20px !important; }
+
+/* ── LAYER CARDS ────────────────────────────────────────── */
+.layers-grid {
+    grid-template-columns: repeat(5, 1fr) !important;
+    gap: 28px !important;
+}
+.layer-card {
+    min-height: 300px !important;
+    padding: 48px 28px !important;
+    border-radius: 18px !important;
+    background: rgba(243,112,30,0.03) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+}
+.layer-card h3   { font-size: 16px !important; margin-bottom: 16px !important; letter-spacing: 3px !important; }
+.layer-card p    { font-size: 14px !important; line-height: 1.9 !important; opacity: 0.65 !important; }
+.layer-emoji     { font-size: 52px !important; margin-bottom: 24px !important; }
+.layer-tag       { font-size: 10px !important; margin-top: 18px !important; opacity: 0.6 !important; }
+
+/* ── FACT CARDS ─────────────────────────────────────────── */
+.facts-grid { gap: 32px !important; }
+.fact-card {
+    min-height: 280px !important;
+    padding: 52px 44px !important;
+    border-radius: 18px !important;
+    background: rgba(243,112,30,0.03) !important;
+    border: 1px solid rgba(243,112,30,0.15) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+}
+.fact-number  { font-size: 56px !important; margin-bottom: 16px !important; }
+.fact-card h4 {
+    font-size: 15px !important;
+    margin-bottom: 12px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+.fact-card p  { font-size: 15px !important; line-height: 1.9 !important; opacity: 0.65 !important; }
+
+/* ── WORLD CARDS ────────────────────────────────────────── */
+.world-grid { gap: 32px !important; }
+.world-card {
+    min-height: 320px !important;
+    padding: 60px 48px !important;
+    border-radius: 20px !important;
+    background: rgba(243,112,30,0.03) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+}
+.world-rank    { font-size: 88px !important; margin-bottom: 14px !important; line-height: 1 !important; }
+.world-card h4 {
+    font-size: 18px !important;
+    margin-bottom: 16px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+.world-card p  { font-size: 16px !important; line-height: 1.9 !important; opacity: 0.65 !important; }
+
+/* ── OPINION CARD ───────────────────────────────────────── */
+.opinion-card {
+    padding: 72px 64px !important;
+    border-radius: 24px !important;
+    background: rgba(243,112,30,0.025) !important;
+    border: 1px solid rgba(243,112,30,0.15) !important;
+}
+.opinion-question { font-size: 22px !important; margin-bottom: 12px !important; }
+.opinion-desc     { font-size: 15px !important; }
+
+/* ── HEADINGS ───────────────────────────────────────────── */
+.section-heading {
+    font-size: 48px !important;
+    margin-bottom: 80px !important;
+    letter-spacing: 4px !important;
+    line-height: 1.3 !important;
+}
+.section-label {
+    font-size: 12px !important;
+    letter-spacing: 8px !important;
+    margin-bottom: 24px !important;
+}
+.hero-title       { font-size: 110px !important; letter-spacing: 16px !important; }
+.hero-content h2  { font-size: 32px !important; }
+.hero-content p   { font-size: 20px !important; }
+
+/* ── GLOBAL.HTML CARDS ──────────────────────────────────── */
+.stats-grid {
+    max-width: 100% !important;
+    padding: 0 60px !important;
+    gap: 32px !important;
+}
+.stat-card {
+    min-height: 280px !important;
+    padding: 52px 40px !important;
+    border-radius: 22px !important;
+    background: rgba(8,14,26,0.92) !important;
+    border: 1px solid rgba(243,112,30,0.22) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+.stat-number  { font-size: 60px !important; margin-bottom: 16px !important; }
+.stat-label   { font-size: 14px !important; opacity: 0.6 !important; line-height: 1.6 !important; }
+
+.ripple-totals {
+    max-width: 100% !important;
+    padding: 0 60px !important;
+    gap: 24px !important;
+}
+.ripple-type {
+    min-height: 200px !important;
+    padding: 40px 24px !important;
+    border-radius: 18px !important;
+    background: rgba(8,14,26,0.92) !important;
+    border: 1px solid rgba(243,112,30,0.2) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+.ripple-type .count { font-size: 36px !important; font-weight: 800 !important; color: #f3701e !important; }
+.ripple-type .name  { font-size: 12px !important; text-transform: uppercase !important; letter-spacing: 1px !important; }
+.ripple-type .emoji { font-size: 36px !important; margin-bottom: 14px !important; }
+
+.why-grid {
+    max-width: 100% !important;
+    padding: 0 60px !important;
+    gap: 32px !important;
+}
+.why-card {
+    min-height: 300px !important;
+    padding: 56px 44px !important;
+    border-radius: 20px !important;
+    background: rgba(8,14,26,0.92) !important;
+    border: 1px solid rgba(243,112,30,0.15) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+}
+.why-card h3 { font-size: 18px !important; margin-bottom: 18px !important; }
+.why-card p  { font-size: 16px !important; line-height: 1.9 !important; opacity: 0.65 !important; }
+.why-icon    { margin-bottom: 24px !important; }
+
+.positioning-grid {
+    max-width: 100% !important;
+    padding: 0 60px !important;
+    gap: 28px !important;
+}
+.positioning-card {
+    min-height: 260px !important;
+    padding: 48px 36px !important;
+    border-radius: 20px !important;
+    background: rgba(8,14,26,0.92) !important;
+    border: 1px solid rgba(243,112,30,0.15) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+}
+.positioning-card h4 { font-size: 16px !important; margin-bottom: 14px !important; }
+.positioning-card p  { font-size: 15px !important; line-height: 1.9 !important; }
+.pos-icon { font-size: 44px !important; margin-bottom: 20px !important; }
+
+.global-header h1 { font-size: 80px !important; letter-spacing: 8px !important; }
+.global-header p  { font-size: 20px !important; max-width: 680px !important; }
+
+/* Map section */
+.map-section           { max-width: 100% !important; padding: 0 60px !important; }
+.indonesia-map-wrapper { padding: 56px !important; }
+#indonesia-canvas      { height: 360px !important; }
+
+/* Feed */
+.feed-container { max-width: 1100px !important; }
+
+/* CTA */
+.cta-quote { font-size: 32px !important; max-width: 900px !important; line-height: 1.7 !important; }
+.cta-sub   { font-size: 18px !important; }
+.cta-btn-primary, .cta-btn-secondary {
+    padding: 20px 60px !important;
+    font-size: 16px !important;
+    border-radius: 6px !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+}
+
+/* ── NEON GLOW CARDS ────────────────────────────────────── */
+.concept-card, .step-card, .layer-card, .fact-card,
+.world-card, .stat-card, .ripple-type, .why-card,
+.positioning-card, .opinion-card {
+    box-shadow:
+        0 0 0 1px rgba(243,112,30,0.07),
+        0 4px 20px rgba(0,0,0,0.35) !important;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.25s ease !important;
+}
+.concept-card:hover, .step-card:hover, .layer-card:hover,
+.fact-card:hover, .world-card:hover, .stat-card:hover,
+.ripple-type:hover, .why-card:hover, .positioning-card:hover {
+    box-shadow:
+        0 0 0 1px rgba(243,112,30,0.45),
+        0 8px 40px rgba(243,112,30,0.15),
+        0 0 60px rgba(243,112,30,0.08),
+        inset 0 0 24px rgba(243,112,30,0.04) !important;
+    border-color: rgba(243,112,30,0.5) !important;
+    transform: translateY(-6px) !important;
+}
+
+/* Scan line animasi di tiap card */
+.concept-card::after, .step-card::after, .layer-card::after,
+.world-card::after, .why-card::after, .positioning-card::after {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important; left: -100% !important;
+    bottom: auto !important; right: auto !important;
+    width: 60% !important; height: 1px !important;
+    background: linear-gradient(90deg, transparent, rgba(243,112,30,0.5), transparent) !important;
+    /* animation: scanLine 5s ease infinite !important; */ /* disabled */
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: 0 0 6px rgba(243,112,30,0.4) !important;
+}
+
+/* ── NEON TEXT GLOW ─────────────────────────────────────── */
+.hero-title {
+    text-shadow:
+        0 0 30px rgba(243,112,30,0.7),
+        0 0 60px rgba(243,112,30,0.35),
+        0 0 100px rgba(243,112,30,0.15) !important;
+}
+.stat-number, .fact-number, .world-rank {
+    text-shadow:
+        0 0 15px rgba(243,112,30,0.8),
+        0 0 30px rgba(243,112,30,0.4) !important;
+}
+.global-header h1 {
+    text-shadow:
+        0 0 25px rgba(243,112,30,0.5),
+        0 0 50px rgba(243,112,30,0.2) !important;
+}
+.sidebar-logo, .logo {
+    text-shadow:
+        0 0 12px rgba(243,112,30,0.9),
+        0 0 24px rgba(243,112,30,0.5) !important;
+}
+
+/* ── SIDEBAR NEON ───────────────────────────────────────── */
+.sidebar {
+    background: rgba(3,5,10,0.99) !important;
+    border-right: 1px solid rgba(243,112,30,0.18) !important;
+    box-shadow: 4px 0 24px rgba(243,112,30,0.06) !important;
+}
+.nav-item.active {
+    background: rgba(243,112,30,0.1) !important;
+    box-shadow: inset 3px 0 0 #f3701e !important;
+}
+
+/* ── TICKER NEON ────────────────────────────────────────── */
+.news-ticker {
+    background: rgba(3,5,10,0.99) !important;
+    border-bottom: 1px solid rgba(243,112,30,0.25) !important;
+    box-shadow: 0 1px 16px rgba(243,112,30,0.08) !important;
+}
+.ticker-label {
+    background: rgba(243,112,30,0.08) !important;
+    text-shadow: 0 0 8px rgba(243,112,30,0.7) !important;
+}
+
+/* ── SCROLL PROGRESS ────────────────────────────────────── */
+#scroll-progress {
+    box-shadow: 0 0 8px rgba(243,112,30,0.8), 0 0 16px rgba(243,112,30,0.4) !important;
+}
+
+/* ── SECTION HEADING UNDERLINE ──────────────────────────── */
+.section-heading::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 2px;
+    background: linear-gradient(90deg, #f3701e, #B83A2D);
+    margin: 16px auto 0;
+    border-radius: 2px;
+    box-shadow: 0 0 10px #f3701e, 0 0 20px rgba(243,112,30,0.4);
+}
+
+/* ── PULSE RING ─────────────────────────────────────────── */
+.neon-pulse-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(243,112,30,0.12);
+    pointer-events: none;
+    /* animation: neonRingExpand 4s ease-out infinite; */ /* disabled */
+}
+@keyframes neonRingExpand {
+    0%   { transform: scale(0.85); opacity: 0.7; }
+    100% { transform: scale(2.4); opacity: 0; }
+}
+
+/* ── NEON ORB ───────────────────────────────────────────── */
+.neon-orb {
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(50px);
+    /* animation: neonOrbFloat disabled */
+    opacity: 0.8;
+}
+@keyframes neonOrbFloat {
+    0%,100% { transform: translate(0,0) scale(1); }
+    33%      { transform: translate(var(--orb-x1,50px),var(--orb-y1,-60px)) scale(1.08); }
+    66%      { transform: translate(var(--orb-x2,-30px),var(--orb-y2,40px)) scale(0.94); }
+}
+
+/* ══════════════════════════════════════════════════════════
+   CONCEPT CARDS — neon sweep glow + SVG icons
+   ══════════════════════════════════════════════════════════ */
+
+.concept { padding: 80px 0 120px !important; }
+
+.concept-container {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 36px !important;
+    max-width: 100% !important;
+    padding: 0 60px !important;
+    margin: 0 !important;
+}
+
+.concept-card {
+    width: auto !important;
+    min-height: 420px !important;
+    padding: 72px 64px !important;
+    border-radius: 20px !important;
+    background: rgba(8,12,22,0.92) !important;
+    border: 1px solid rgba(243,112,30,0.2) !important;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative !important;
+    overflow: hidden !important;
+    transition: transform 0.3s ease, border-color 0.3s ease !important;
+    cursor: default !important;
+}
+
+.concept-icon {
+    margin-bottom: 36px;
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 0 12px rgba(243,112,30,0.5));
+    transition: filter 0.3s ease;
+}
+
+.concept-card:hover .concept-icon {
+    filter: drop-shadow(0 0 20px rgba(243,112,30,0.8));
+    transform: scale(1.05);
+}
+
+.concept-card h3 {
+    font-size: 19px !important;
+    font-weight: 700 !important;
+    letter-spacing: 4px !important;
+    text-transform: uppercase !important;
+    color: #f3701e !important;
+    text-shadow: 0 0 20px rgba(243,112,30,0.7) !important;
+    margin-bottom: 20px !important;
+    position: relative !important;
+    z-index: 2 !important;
+    line-height: 1.5 !important;
+}
+
+.concept-card p {
+    font-size: 17px !important;
+    line-height: 2 !important;
+    opacity: 0.75 !important;
+    position: relative !important;
+    z-index: 2 !important;
+    margin-bottom: 28px !important;
+}
+
+.concept-tag {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #f3701e;
+    border: 1px solid rgba(243,112,30,0.3);
+    padding: 5px 14px;
+    border-radius: 20px;
+    opacity: 0.7;
+    position: relative;
+    z-index: 2;
+    font-family: 'Inter', sans-serif;
+    transition: opacity 0.3s ease;
+}
+.concept-card:hover .concept-tag { opacity: 1; }
+
+/* ── NEON SWEEP GLOW — efek cahaya menyapu saat hover ──── */
+.neon-card::before {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    border-radius: 20px !important;
+    background: linear-gradient(
+        135deg,
+        transparent 0%,
+        rgba(243,112,30,0.0) 35%,
+        rgba(243,112,30,0.12) 50%,
+        rgba(243,112,30,0.0) 65%,
+        transparent 100%
+    ) !important;
+    background-size: 250% 250% !important;
+    background-position: 200% 200% !important;
+    transition: background-position 0.6s ease !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+    animation: none !important;
+    border: none !important;
+    width: auto !important; height: auto !important;
+    top: 0 !important; left: 0 !important;
+    bottom: 0 !important; right: 0 !important;
+}
+
+.neon-card:hover::before {
+    background-position: -50% -50% !important;
+}
+
+/* Glow border neon saat hover */
+.neon-card:hover {
+    border-color: rgba(243,112,30,0.55) !important;
+    box-shadow:
+        0 0 0 1px rgba(243,112,30,0.4),
+        0 0 30px rgba(243,112,30,0.2),
+        0 0 60px rgba(243,112,30,0.08),
+        inset 0 0 30px rgba(243,112,30,0.04) !important;
+    transform: translateY(-8px) !important;
+}
+
+/* Bottom scan line — neon orange menyapu dari kiri */
+.neon-card::after {
+    content: "" !important;
+    position: absolute !important;
+    bottom: 0 !important;
+    left: -100% !important;
+    top: auto !important; right: auto !important;
+    width: 100% !important;
+    height: 2px !important;
+    background: linear-gradient(90deg,
+        transparent,
+        rgba(243,112,30,0.7),
+        rgba(255,140,60,1),
+        rgba(243,112,30,0.7),
+        transparent) !important;
+    box-shadow: 0 0 12px rgba(243,112,30,0.8), 0 0 24px rgba(243,112,30,0.4) !important;
+    animation: none !important; /* neonSweep disabled */
+    border: none !important;
+    border-radius: 0 !important;
+}
+.neon-card:nth-child(2)::after { animation-delay: 0.8s !important; }
+.neon-card:nth-child(3)::after { animation-delay: 1.6s !important; }
+.neon-card:nth-child(4)::after { animation-delay: 2.4s !important; }
+.neon-card:nth-child(5)::after { animation-delay: 3.2s !important; }
+.neon-card:nth-child(6)::after { animation-delay: 0.4s !important; }
+
+@keyframes neonSweep {
+    0%   { left: -100%; opacity: 0; }
+    10%  { opacity: 1; }
+    90%  { opacity: 1; }
+    100% { left: 100%; opacity: 0; }
+}
+
+/* Apply neon-card style juga ke positioning-card di global.html */
+.positioning-card {
+    position: relative !important;
+    overflow: hidden !important;
+}
+.positioning-card::before {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    border-radius: inherit !important;
+    background: linear-gradient(135deg,
+        transparent 0%, rgba(243,112,30,0.08) 50%, transparent 100%) !important;
+    background-size: 250% 250% !important;
+    background-position: 200% 200% !important;
+    transition: background-position 0.6s ease !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+    animation: none !important;
+    border: none !important;
+}
+.positioning-card:hover::before {
+    background-position: -50% -50% !important;
+}
+.positioning-card::after {
+    content: "" !important;
+    position: absolute !important;
+    bottom: 0 !important; left: -100% !important;
+    top: auto !important; right: auto !important;
+    width: 100% !important; height: 2px !important;
+    background: linear-gradient(90deg,
+        transparent, rgba(243,112,30,0.7), rgba(255,140,60,1),
+        rgba(243,112,30,0.7), transparent) !important;
+    box-shadow: 0 0 10px rgba(243,112,30,0.7) !important;
+    animation: none !important; /* neonSweep disabled */
+    border: none !important; border-radius: 0 !important;
+}
+.positioning-card:nth-child(2)::after { animation-delay: 1.3s !important; }
+.positioning-card:nth-child(3)::after { animation-delay: 2.6s !important; }
+
+/* Neon sweep juga untuk fact-card, step-card, why-card, world-card */
+.fact-card, .step-card, .why-card, .world-card, .layer-card {
+    position: relative !important;
+    overflow: hidden !important;
+}
+.fact-card::after, .step-card::after, .why-card::after,
+.world-card::after, .layer-card::after {
+    content: "" !important;
+    position: absolute !important;
+    bottom: 0 !important; left: -100% !important;
+    top: auto !important; right: auto !important;
+    width: 100% !important; height: 2px !important;
+    background: linear-gradient(90deg,
+        transparent, rgba(243,112,30,0.6), rgba(255,140,60,0.9),
+        rgba(243,112,30,0.6), transparent) !important;
+    box-shadow: 0 0 10px rgba(243,112,30,0.6) !important;
+    animation: none !important; /* neonSweep disabled */
+    border: none !important; border-radius: 0 !important;
+}
+
+/* ── WHY GRID full width ──────────────────────────────────── */
+.why-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    max-width: 100% !important;
+    padding: 0 60px !important;
+    gap: 32px !important;
+    margin: 0 auto 80px !important;
+}
+.why-card {
+    min-height: 360px !important;
+    padding: 60px 44px !important;
+    border-radius: 20px !important;
+    background: rgba(8,12,22,0.92) !important;
+    border: 1px solid rgba(243,112,30,0.2) !important;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+.why-card h3 {
+    font-size: 17px !important;
+    letter-spacing: 3px !important;
+    text-transform: uppercase !important;
+    color: #f3701e !important;
+    text-shadow: 0 0 16px rgba(243,112,30,0.6) !important;
+    margin-bottom: 18px !important;
+}
+.why-card p { font-size: 16px !important; line-height: 1.9 !important; opacity: 0.7 !important; }
+.why-icon { margin-bottom: 28px !important; }
+
+/* ── RIPPLE TOTALS full width ─────────────────────────────── */
+.ripple-totals {
+    display: grid !important;
+    grid-template-columns: repeat(5, 1fr) !important;
+    max-width: 100% !important;
+    padding: 0 60px !important;
+    gap: 24px !important;
+    margin: 0 auto 80px !important;
+}
+.ripple-type {
+    min-height: 220px !important;
+    padding: 44px 24px !important;
+    border-radius: 18px !important;
+    background: rgba(8,12,22,0.92) !important;
+    border: 1px solid rgba(243,112,30,0.2) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+}
+.ripple-type .count { font-size: 38px !important; font-weight: 800 !important; color: #f3701e !important; text-shadow: 0 0 15px rgba(243,112,30,0.7) !important; }
+.ripple-type .name  { font-size: 12px !important; text-transform: uppercase !important; letter-spacing: 1px !important; margin-top: 8px !important; opacity: 0.7 !important; }
+.ripple-type .emoji { font-size: 40px !important; margin-bottom: 14px !important; }
+
+/* ── POSITIONING GRID full width ──────────────────────────── */
+.positioning-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    max-width: 100% !important;
+    padding: 0 60px !important;
+    gap: 28px !important;
+    margin: 0 auto 40px !important;
+}
+.positioning-card {
+    min-height: 300px !important;
+    padding: 52px 40px !important;
+    border-radius: 20px !important;
+    background: rgba(8,12,22,0.92) !important;
+    border: 1px solid rgba(243,112,30,0.18) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+}
+.positioning-card h4 {
+    font-size: 15px !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase !important;
+    color: #f3701e !important;
+    text-shadow: 0 0 14px rgba(243,112,30,0.5) !important;
+    margin-bottom: 14px !important;
+}
+.positioning-card p  { font-size: 15px !important; line-height: 1.9 !important; opacity: 0.65 !important; }
+.pos-icon { font-size: 48px !important; margin-bottom: 22px !important; }
+
+/* ── MAP SECTION — tidak terlalu besar ───────────────────── */
+.map-section {
+    max-width: 1000px !important;
+    margin: 0 auto 60px !important;
+    padding: 0 60px !important;
+}
+.indonesia-map-wrapper {
+    padding: 32px !important;
+    border-radius: 16px !important;
+}
+#indonesia-canvas {
+    height: 260px !important;
+}
+
+/* ── DUAL WORLD — hapus semua neon override, biarkan style asli ── */
+.world-stat-card,
+.world-stat-card.positive-card,
+.world-stat-card.negative-card {
+    box-shadow: none !important;
+    border-color: inherit !important;
+    transform: none !important;
+    transition: none !important;
+}
+.world-stat-card::before,
+.world-stat-card::after {
+    display: none !important;
+    content: none !important;
+    animation: none !important;
+}
+.world-stat-card:hover {
+    box-shadow: none !important;
+    border-color: inherit !important;
+    transform: none !important;
+}
+
+/* ══════════════════════════════════════════════════════
+   GLOBAL.HTML — FINAL CARD FIX
+   Lebar, tidak terlalu tinggi, memenuhi ruang
+   ══════════════════════════════════════════════════════ */
+
+/* Stats grid — 3 kolom lebar */
+.stats-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    max-width: 100% !important;
+    padding: 0 60px !important;
+    gap: 28px !important;
+    margin: 0 auto 60px !important;
+}
+.stat-card {
+    min-height: 220px !important;
+    max-height: 260px !important;
+    padding: 40px 36px !important;
+    border-radius: 18px !important;
+    background: rgba(8,12,22,0.92) !important;
+    border: 1px solid rgba(243,112,30,0.22) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+}
+.stat-number { font-size: 52px !important; margin-bottom: 10px !important; line-height: 1 !important; }
+.stat-icon   { margin-bottom: 14px !important; }
+.stat-label  { font-size: 13px !important; opacity: 0.6 !important; line-height: 1.5 !important; }
+
+/* Ripple totals — 5 kolom, tidak terlalu tinggi */
+.ripple-totals {
+    display: grid !important;
+    grid-template-columns: repeat(5, 1fr) !important;
+    max-width: 100% !important;
+    padding: 0 60px !important;
+    gap: 20px !important;
+    margin: 0 auto 60px !important;
+}
+.ripple-type {
+    min-height: 170px !important;
+    max-height: 200px !important;
+    padding: 28px 16px !important;
+    border-radius: 16px !important;
+    background: rgba(8,12,22,0.92) !important;
+    border: 1px solid rgba(243,112,30,0.2) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+}
+.ripple-type .emoji { font-size: 28px !important; margin-bottom: 10px !important; }
+.ripple-type .count { font-size: 28px !important; font-weight: 800 !important; color: #f3701e !important; line-height: 1.1 !important; }
+.ripple-type .name  { font-size: 11px !important; text-transform: uppercase !important; letter-spacing: 1px !important; margin-top: 6px !important; opacity: 0.6 !important; }
+
+/* Why cards — 3 kolom, tidak terlalu tinggi */
+.why-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    max-width: 100% !important;
+    padding: 0 60px !important;
+    gap: 28px !important;
+    margin: 0 auto 60px !important;
+}
+.why-card {
+    min-height: 280px !important;
+    max-height: 340px !important;
+    padding: 44px 36px !important;
+    border-radius: 18px !important;
+    background: rgba(8,12,22,0.92) !important;
+    border: 1px solid rgba(243,112,30,0.2) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+}
+.why-card h3 {
+    font-size: 15px !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase !important;
+    color: #f3701e !important;
+    margin-bottom: 14px !important;
+}
+.why-card p    { font-size: 15px !important; line-height: 1.8 !important; opacity: 0.7 !important; }
+.why-icon      { margin-bottom: 20px !important; }
+.why-icon svg  { width: 52px !important; height: 52px !important; }
+
+/* Positioning cards — 3 kolom */
+.positioning-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    max-width: 100% !important;
+    padding: 0 60px !important;
+    gap: 24px !important;
+    margin: 0 auto 40px !important;
+}
+.positioning-card {
+    min-height: 260px !important;
+    max-height: 320px !important;
+    padding: 44px 32px !important;
+    border-radius: 18px !important;
+    background: rgba(8,12,22,0.92) !important;
+    border: 1px solid rgba(243,112,30,0.18) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+}
+.positioning-card h4 {
+    font-size: 14px !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase !important;
+    color: #f3701e !important;
+    margin-bottom: 12px !important;
+}
+.positioning-card p { font-size: 14px !important; line-height: 1.8 !important; opacity: 0.65 !important; }
+.pos-icon { font-size: 40px !important; margin-bottom: 16px !important; }
+
+/* Peta lebih compact */
+.map-section {
+    max-width: 100% !important;
+    padding: 0 60px !important;
+    margin: 0 auto 50px !important;
+}
+.indonesia-map-wrapper {
+    padding: 28px 32px !important;
+    border-radius: 14px !important;
+}
+#indonesia-canvas { height: 230px !important; }
+
+/* Extra impact grid cards — sama proporsional */
+.impact-grid .why-card {
+    min-height: 260px !important;
+    max-height: 320px !important;
+    padding: 44px 40px !important;
+}

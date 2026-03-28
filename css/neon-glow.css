@@ -1,0 +1,460 @@
+/* neon-glow.css LITE — tanpa scan line loop, hanya glow statis + hover */
+
+/* Base card glow */
+.concept-card,
+.step-card,
+.layer-card,
+.fact-card,
+.world-card,
+.opinion-card {
+    border: 1px solid rgba(243, 112, 30, 0.28) !important;
+    box-shadow:
+        0 0 12px rgba(243, 112, 30, 0.08),
+        inset 0 0 18px rgba(243, 112, 30, 0.03) !important;
+    background: linear-gradient(145deg, rgba(13, 19, 36, 0.9), rgba(9, 13, 24, 0.95)) !important;
+    transition: border-color .3s ease, box-shadow .3s ease, transform .3s cubic-bezier(.23, 1, .32, 1) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* Hover — neon menyala */
+.concept-card:hover,
+.step-card:hover,
+.layer-card:hover,
+.fact-card:hover,
+.world-card:hover,
+.opinion-card:hover {
+    border-color: rgba(243, 112, 30, 0.75) !important;
+    box-shadow:
+        0 0 18px rgba(243, 112, 30, 0.4),
+        0 0 40px rgba(243, 112, 30, 0.18),
+        inset 0 0 24px rgba(243, 112, 30, 0.07) !important;
+    transform: translateY(-7px) !important;
+}
+
+/* Corner neon — CSS only, pulse ringan */
+.concept-card::before,
+.step-card::before,
+.fact-card::before,
+.world-card::before,
+.layer-card::before {
+    content: "" !important;
+    position: absolute !important;
+    top: -1px !important;
+    left: -1px !important;
+    width: 28px !important;
+    height: 28px !important;
+    border-top: 2px solid rgba(243, 112, 30, 0.7) !important;
+    border-left: 2px solid rgba(243, 112, 30, 0.7) !important;
+    background: none !important;
+    opacity: 0.85 !important;
+    z-index: 3 !important;
+    right: auto !important;
+    bottom: auto !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+.concept-card::after,
+.step-card::after,
+.fact-card::after,
+.world-card::after,
+.layer-card::after {
+    content: "" !important;
+    position: absolute !important;
+    bottom: -1px !important;
+    right: -1px !important;
+    width: 28px !important;
+    height: 28px !important;
+    border-bottom: 2px solid rgba(243, 112, 30, 0.7) !important;
+    border-right: 2px solid rgba(243, 112, 30, 0.7) !important;
+    background: none !important;
+    opacity: 0.85 !important;
+    z-index: 3 !important;
+    top: auto !important;
+    left: auto !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+/* Stagger per card — berbeda timing, tidak sync = lebih hidup */
+.concept-card:nth-child(2)::before {
+    animation-delay: .5s !important;
+}
+
+.concept-card:nth-child(3)::before {
+    animation-delay: 1s !important;
+}
+
+.concept-card:nth-child(4)::before {
+    animation-delay: 1.5s !important;
+}
+
+.concept-card:nth-child(5)::before {
+    animation-delay: 2s !important;
+}
+
+.concept-card:nth-child(6)::before {
+    animation-delay: 2.5s !important;
+}
+
+.fact-card:nth-child(2)::before {
+    animation-delay: .6s !important;
+}
+
+.fact-card:nth-child(3)::before {
+    animation-delay: 1.2s !important;
+}
+
+.fact-card:nth-child(4)::before {
+    animation-delay: 1.8s !important;
+}
+
+.fact-card:nth-child(5)::before {
+    animation-delay: 2.4s !important;
+}
+
+.fact-card:nth-child(6)::before {
+    animation-delay: .3s !important;
+}
+
+.layer-card:nth-child(2)::before {
+    animation-delay: .7s !important;
+}
+
+.layer-card:nth-child(3)::before {
+    animation-delay: 1.4s !important;
+}
+
+.layer-card:nth-child(4)::before {
+    animation-delay: 2.1s !important;
+}
+
+.layer-card:nth-child(5)::before {
+    animation-delay: 2.8s !important;
+}
+
+@keyframes cornerPulse {
+
+    0%,
+    100% {
+        opacity: .4;
+    }
+
+    50% {
+        opacity: 1;
+        box-shadow: 0 0 12px rgba(243, 112, 30, 0.6);
+    }
+}
+
+/* Layer card — warna berbeda */
+.layer-card:nth-child(1) {
+    border-color: rgba(255, 220, 50, 0.3) !important;
+}
+
+.layer-card:nth-child(2) {
+    border-color: rgba(48, 243, 160, 0.28) !important;
+}
+
+.layer-card:nth-child(3) {
+    border-color: rgba(243, 180, 30, 0.3) !important;
+}
+
+.layer-card:nth-child(4) {
+    border-color: rgba(48, 200, 80, 0.28) !important;
+}
+
+.layer-card:nth-child(5) {
+    border-color: rgba(75, 143, 243, 0.3) !important;
+}
+
+.layer-card:nth-child(1)::before,
+.layer-card:nth-child(1)::after {
+    border-color: rgba(255, 220, 50, 0.6) !important;
+}
+
+.layer-card:nth-child(2)::before,
+.layer-card:nth-child(2)::after {
+    border-color: rgba(48, 243, 160, 0.55) !important;
+}
+
+.layer-card:nth-child(3)::before,
+.layer-card:nth-child(3)::after {
+    border-color: rgba(243, 180, 30, 0.6) !important;
+}
+
+.layer-card:nth-child(4)::before,
+.layer-card:nth-child(4)::after {
+    border-color: rgba(48, 200, 80, 0.55) !important;
+}
+
+.layer-card:nth-child(5)::before,
+.layer-card:nth-child(5)::after {
+    border-color: rgba(75, 143, 243, 0.6) !important;
+}
+
+/* Fact numbers glow */
+.fact-number {
+    text-shadow: 0 0 18px rgba(243, 112, 30, 0.7), 0 0 36px rgba(243, 112, 30, 0.3) !important;
+}
+
+/* Step number glow */
+.step-number {
+    box-shadow: 0 0 0 2px rgba(243, 112, 30, 0.4), 0 0 14px rgba(243, 112, 30, 0.3) !important;
+}
+
+/* World rank glow */
+.world-rank {
+    text-shadow: 0 0 18px currentColor, 0 0 36px currentColor !important;
+}
+
+/* Layer card hover warna */
+.layer-card:nth-child(1):hover {
+    box-shadow: 0 0 20px rgba(255, 220, 50, 0.35), 0 0 45px rgba(255, 220, 50, 0.12) !important;
+}
+
+.layer-card:nth-child(2):hover {
+    box-shadow: 0 0 20px rgba(48, 243, 160, 0.3), 0 0 45px rgba(48, 243, 160, 0.10) !important;
+}
+
+.layer-card:nth-child(3):hover {
+    box-shadow: 0 0 20px rgba(243, 180, 30, 0.35), 0 0 45px rgba(243, 180, 30, 0.12) !important;
+}
+
+.layer-card:nth-child(4):hover {
+    box-shadow: 0 0 20px rgba(48, 200, 80, 0.3), 0 0 45px rgba(48, 200, 80, 0.10) !important;
+}
+
+.layer-card:nth-child(5):hover {
+    box-shadow: 0 0 20px rgba(75, 143, 243, 0.35), 0 0 45px rgba(75, 143, 243, 0.12) !important;
+}
+
+/* Fix layer-card opacity conflict dari landing.css */
+.layer-card {
+    opacity: 1 !important;
+}
+
+.layer-card.ppt-zoom:not(.ppt-visible) {
+    opacity: 0 !important;
+    transform: scale(0.78) translateY(24px) !important;
+}
+
+/* ══════════════════════════════════════════════════════════
+   NEON ALWAYS ON — nyala terus, tidak tergantung hover
+   ══════════════════════════════════════════════════════════ */
+
+/* Border neon terang terus */
+.concept-card,
+.step-card,
+.layer-card,
+.fact-card,
+.world-card,
+.opinion-card {
+    border-color: rgba(243, 112, 30, 0.55) !important;
+    box-shadow:
+        0 0 8px rgba(243, 112, 30, 0.20),
+        0 0 20px rgba(243, 112, 30, 0.10),
+        inset 0 0 15px rgba(243, 112, 30, 0.04) !important;
+}
+
+/* Corner neon — terang terus, pulse naik-turun */
+.concept-card::before,
+.step-card::before,
+.fact-card::before,
+.world-card::before,
+.layer-card::before,
+.concept-card::after,
+.step-card::after,
+.fact-card::after,
+.world-card::after,
+.layer-card::after {
+    opacity: 1 !important;
+    box-shadow: 0 0 8px rgba(243, 112, 30, 0.6) !important;
+}
+
+/* Pulse lebih dramatis */
+@keyframes cornerPulse {
+
+    0%,
+    100% {
+        opacity: 0.7;
+        box-shadow: 0 0 6px rgba(243, 112, 30, 0.4);
+    }
+
+    50% {
+        opacity: 1;
+        box-shadow: 0 0 16px rgba(243, 112, 30, 0.9),
+            0 0 28px rgba(243, 112, 30, 0.4);
+    }
+}
+
+/* Layer card corner warna sesuai */
+.layer-card:nth-child(1) {
+    border-color: rgba(255, 220, 50, 0.5) !important;
+    box-shadow: 0 0 12px rgba(255, 220, 50, 0.15), inset 0 0 15px rgba(255, 220, 50, 0.03) !important;
+}
+
+.layer-card:nth-child(2) {
+    border-color: rgba(48, 243, 160, 0.45) !important;
+    box-shadow: 0 0 12px rgba(48, 243, 160, 0.12), inset 0 0 15px rgba(48, 243, 160, 0.03) !important;
+}
+
+.layer-card:nth-child(3) {
+    border-color: rgba(243, 180, 30, 0.5) !important;
+    box-shadow: 0 0 12px rgba(243, 180, 30, 0.15), inset 0 0 15px rgba(243, 180, 30, 0.03) !important;
+}
+
+.layer-card:nth-child(4) {
+    border-color: rgba(48, 200, 80, 0.45) !important;
+    box-shadow: 0 0 12px rgba(48, 200, 80, 0.12), inset 0 0 15px rgba(48, 200, 80, 0.03) !important;
+}
+
+.layer-card:nth-child(5) {
+    border-color: rgba(75, 143, 243, 0.5) !important;
+    box-shadow: 0 0 12px rgba(75, 143, 243, 0.15), inset 0 0 15px rgba(75, 143, 243, 0.03) !important;
+}
+
+/* Hover — makin terang lagi */
+.concept-card:hover,
+.step-card:hover,
+.fact-card:hover,
+.world-card:hover {
+    border-color: rgba(243, 112, 30, 0.9) !important;
+    box-shadow:
+        0 0 20px rgba(243, 112, 30, 0.5),
+        0 0 45px rgba(243, 112, 30, 0.22),
+        inset 0 0 25px rgba(243, 112, 30, 0.08) !important;
+}
+
+/* ══════════════════════════════════════════════════════════
+   FACT NUMBERS — lebih terang + pulse kuat
+   ══════════════════════════════════════════════════════════ */
+.fact-number {
+    color: #f3701e !important;
+    text-shadow:
+        0 0 20px rgba(243, 112, 30, 1),
+        0 0 40px rgba(243, 112, 30, 0.7),
+        0 0 80px rgba(243, 112, 30, 0.4),
+        0 0 120px rgba(243, 112, 30, 0.2) !important;
+    /* animation: factBright disabled */
+}
+
+@keyframes factBright {
+
+    0%,
+    100% {
+        text-shadow:
+            0 0 15px rgba(243, 112, 30, 0.9),
+            0 0 35px rgba(243, 112, 30, 0.6),
+            0 0 65px rgba(243, 112, 30, 0.3);
+        filter: brightness(1);
+    }
+
+    50% {
+        text-shadow:
+            0 0 25px rgba(255, 140, 50, 1),
+            0 0 50px rgba(243, 112, 30, 0.9),
+            0 0 90px rgba(243, 112, 30, 0.5),
+            0 0 140px rgba(243, 112, 30, 0.25);
+        filter: brightness(1.25);
+    }
+}
+
+/* Fact card icon visual juga terang */
+.fact-card-visual {
+    filter: drop-shadow(0 0 8px rgba(243, 112, 30, 0.7)) !important;
+    /* animation: iconGlow disabled */
+}
+
+@keyframes iconGlow {
+
+    0%,
+    100% {
+        filter: drop-shadow(0 0 6px rgba(243, 112, 30, 0.5));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 14px rgba(243, 112, 30, 0.9));
+    }
+}
+
+/* Fact bg num lebih terang */
+.fact-bg-num {
+    color: rgba(243, 112, 30, 0.10) !important;
+    text-shadow: 0 0 30px rgba(243, 112, 30, 0.15) !important;
+}
+
+/* ══════════════════════════════════════════════════════════
+   SEMUA CARD — neon lebih terang
+   ══════════════════════════════════════════════════════════ */
+.concept-card,
+.step-card,
+.fact-card,
+.world-card,
+.opinion-card {
+    border-color: rgba(243, 112, 30, 0.65) !important;
+    box-shadow:
+        0 0 10px rgba(243, 112, 30, 0.28),
+        0 0 25px rgba(243, 112, 30, 0.14),
+        0 0 50px rgba(243, 112, 30, 0.06),
+        inset 0 0 20px rgba(243, 112, 30, 0.05) !important;
+}
+
+.concept-card:hover,
+.step-card:hover,
+.fact-card:hover,
+.world-card:hover {
+    border-color: rgba(243, 112, 30, 1) !important;
+    box-shadow:
+        0 0 22px rgba(243, 112, 30, 0.65),
+        0 0 50px rgba(243, 112, 30, 0.30),
+        0 0 90px rgba(243, 112, 30, 0.12),
+        inset 0 0 28px rgba(243, 112, 30, 0.10) !important;
+}
+
+/* Corner neon terang */
+.concept-card::before,
+.step-card::before,
+.fact-card::before,
+.world-card::before,
+.layer-card::before,
+.concept-card::after,
+.step-card::after,
+.fact-card::after,
+.world-card::after,
+.layer-card::after {
+    box-shadow: 0 0 12px rgba(243, 112, 30, 0.8), 0 0 24px rgba(243, 112, 30, 0.4) !important;
+}
+
+@keyframes cornerPulse {
+
+    0%,
+    100% {
+        opacity: 0.75;
+        box-shadow: 0 0 10px rgba(243, 112, 30, 0.6), 0 0 20px rgba(243, 112, 30, 0.3);
+    }
+
+    50% {
+        opacity: 1;
+        box-shadow: 0 0 20px rgba(243, 112, 30, 1), 0 0 40px rgba(243, 112, 30, 0.6), 0 0 60px rgba(243, 112, 30, 0.25);
+    }
+}
+
+/* Step number terang */
+.step-number {
+    box-shadow:
+        0 0 0 2px rgba(243, 112, 30, 0.8),
+        0 0 18px rgba(243, 112, 30, 0.6),
+        0 0 36px rgba(243, 112, 30, 0.3) !important;
+    color: #f3701e !important;
+    text-shadow: 0 0 12px rgba(243, 112, 30, 0.9) !important;
+}
+
+/* World rank terang */
+.world-rank {
+    text-shadow:
+        0 0 20px currentColor,
+        0 0 40px currentColor,
+        0 0 70px currentColor !important;
+    filter: brightness(1.2) !important;
+}

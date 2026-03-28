@@ -1,0 +1,454 @@
+/* ============================================================
+   RIPPLE — patch.css  (v3)
+   1. News Ticker  → horizontal kiri→kanan (CSS pure, loop)
+   2. Live Feed    → conveyor belt vertikal terus-menerus
+   3. Hero Map     → lebih dramatis
+   ============================================================ */
+
+/* ══════════════════════════════════════════════════════════
+   1. NEWS TICKER — horizontal scroll, CSS only
+   ══════════════════════════════════════════════════════════ */
+
+/* Pastikan ticker layout tetap row */
+.news-ticker {
+    flex-direction: row !important;
+}
+
+.ticker-track {
+    overflow: hidden !important;
+    height: 34px !important;
+    position: relative;
+}
+
+/* Hapus override vertikal — kembalikan ke flex row horizontal */
+.ticker-inner {
+    display: flex !important;
+    flex-direction: row !important;
+    white-space: nowrap !important;
+    gap: 0 !important;
+    width: max-content;
+    animation: tickerHorizontal 45s linear infinite !important;
+}
+
+.ticker-inner span {
+    display: inline-flex !important;
+    align-items: center;
+    height: 34px;
+    padding: 0 36px !important;
+    font-size: 12px;
+    color: rgba(232, 216, 201, 0.75);
+    white-space: nowrap;
+    flex-shrink: 0;
+    flex-direction: row;
+    border-bottom: none;
+}
+
+.ticker-inner span::before { display: none !important; }
+.ticker-inner span::after {
+    content: "◆" !important;
+    display: inline !important;
+    position: static !important;
+    transform: none !important;
+    color: rgba(243, 112, 30, 0.45);
+    font-size: 6px;
+    margin-left: 36px;
+    text-shadow: 0 0 6px rgba(243, 112, 30, 0.6);
+}
+
+@keyframes tickerHorizontal {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Fade mask kiri kanan */
+.ticker-track::before,
+.ticker-track::after {
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 40px;
+    z-index: 2;
+    pointer-events: none;
+}
+.ticker-track::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(6,9,16,0.95), transparent);
+}
+.ticker-track::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(6,9,16,0.95), transparent);
+}
+
+/* Pause saat hover */
+.ticker-inner:hover {
+    animation-play-state: paused !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════
+   2. LIVE FEED — conveyor belt vertikal terus-menerus
+   Container jadi fixed height, inner scroll naik terus
+   ══════════════════════════════════════════════════════════ */
+
+.feed-container {
+    max-width: 700px !important;
+    margin: 0 auto 60px !important;
+    height: 420px !important;          /* tampilkan ~6 item */
+    overflow: hidden !important;
+    position: relative !important;
+    display: block !important;
+    gap: 0 !important;
+}
+
+/* Mask fade atas & bawah container feed */
+.feed-container::before,
+.feed-container::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0;
+    height: 60px;
+    z-index: 3;
+    pointer-events: none;
+}
+.feed-container::before {
+    top: 0;
+    background: linear-gradient(to bottom, rgba(6,9,16,1) 0%, transparent 100%);
+}
+.feed-container::after {
+    bottom: 0;
+    background: linear-gradient(to top, rgba(6,9,16,1) 0%, transparent 100%);
+}
+
+/* Inner scrolling belt */
+#feed-belt {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 8px 0;
+    animation: feedBeltScroll var(--feed-duration, 60s) linear infinite;
+    will-change: transform;
+}
+
+#feed-belt:hover {
+    animation-play-state: paused;
+}
+
+@keyframes feedBeltScroll {
+    0%   { transform: translateY(0); }
+    100% { transform: translateY(var(--feed-offset, -50%)); }
+}
+
+/* Item di dalam belt — styling sama seperti semula */
+.feed-belt-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: rgba(13, 26, 46, 0.85);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 12px;
+    padding: 16px 20px;
+    backdrop-filter: blur(10px);
+    flex-shrink: 0;
+    transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    cursor: default;
+}
+
+.feed-belt-item:hover {
+    border-color: rgba(243,112,30,0.3);
+    box-shadow: 0 0 20px rgba(243,112,30,0.08), inset 0 0 20px rgba(243,112,30,0.03);
+    transform: translateX(4px);
+}
+
+.feed-belt-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    animation: dotGlow 2s ease infinite;
+}
+.feed-belt-dot.green { background: #f3701e; }
+.feed-belt-dot.blue  { background: #4b607f; animation-delay: 0.7s; }
+.feed-belt-dot.red   { background: #ff4c6a; animation-delay: 1.4s; }
+
+.feed-belt-text {
+    font-size: 14px;
+    opacity: 0.85;
+    flex: 1;
+    line-height: 1.5;
+}
+.feed-belt-text span {
+    color: #f3701e;
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(243,112,30,0.5);
+}
+
+.feed-belt-badge {
+    font-size: 10px;
+    letter-spacing: 1px;
+    padding: 3px 8px;
+    border-radius: 20px;
+    background: rgba(243,112,30,0.08);
+    border: 1px solid rgba(243,112,30,0.2);
+    color: rgba(243,112,30,0.7);
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+.feed-belt-badge.blue {
+    background: rgba(75,96,127,0.08);
+    border-color: rgba(75,96,127,0.2);
+    color: rgba(75,96,127,0.9);
+}
+.feed-belt-badge.red {
+    background: rgba(255,76,106,0.08);
+    border-color: rgba(255,76,106,0.2);
+    color: rgba(255,76,106,0.7);
+}
+
+
+/* ══════════════════════════════════════════════════════════
+   3. HERO MAP — lebih dramatis
+   ══════════════════════════════════════════════════════════ */
+
+.ripple-background { opacity: 0.72 !important; }
+
+.land {
+    fill: #1e2540 !important;
+    stroke: #2d3a5c !important;
+    stroke-width: 1px !important;
+    filter: drop-shadow(0 0 3px rgba(75, 96, 127, 0.4));
+    transition: fill 0.4s ease;
+}
+.land:hover {
+    fill: #263060 !important;
+    stroke: rgba(243, 112, 30, 0.5) !important;
+    cursor: crosshair;
+}
+
+.map-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%; height: 80%;
+    background: radial-gradient(ellipse at center,
+        rgba(243,112,30,0.055) 0%, rgba(75,96,127,0.03) 40%, transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.indonesia-point {
+    filter: drop-shadow(0 0 12px #f3701e) drop-shadow(0 0 28px rgba(243,112,30,0.7)) !important;
+}
+#ring1 { stroke-width: 2.5 !important; }
+#ring2 { stroke-width: 1.8 !important; }
+#ring3 { stroke-width: 1.2 !important; }
+
+.map-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 2px; height: 100%;
+    background: linear-gradient(to bottom,
+        transparent 0%, rgba(243,112,30,0.15) 40%,
+        rgba(243,112,30,0.35) 50%, rgba(243,112,30,0.15) 60%, transparent 100%);
+    animation: mapRadarScan 6s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+@keyframes mapRadarScan {
+    0%   { left: -2px; opacity: 0; }
+    5%   { opacity: 1; }
+    95%  { opacity: 1; }
+    100% { left: 100%; opacity: 0; }
+}
+
+
+/* ══════════════════════════════════════════════════════════
+   PERFORMANCE OVERRIDES — Reduce animation lag
+   ══════════════════════════════════════════════════════════ */
+
+/* Slow down non-essential infinite animations */
+.iso-anim-cube,
+.iso-anim-rings,
+.iso-anim-pyramid,
+.iso-anim-helix,
+.iso-anim-portal,
+.iso-anim-network,
+.iso-spin,
+.iso-spin-fast,
+.iso-spin-rev,
+.iso-float,
+.iso-float-slow,
+.iso-pulse-core,
+.anim-cap,
+.anim-leaf,
+.anim-walk,
+.anim-butterfly,
+.anim-wing-l,
+.anim-wing-r,
+.anim-bolt,
+.anim-bolt-glow,
+.anim-chain-node,
+.anim-arm-l, .anim-arm-r,
+.anim-leg-l, .anim-leg-r {
+    animation-play-state: paused !important;
+}
+
+/* Re-enable only on hover for explicit interaction */
+.c3d-card-premium:hover .iso-spin,
+.c3d-card-premium:hover .iso-spin-fast,
+.c3d-card-premium:hover .iso-float,
+.c3d-card-premium:hover .iso-pulse-core {
+    animation-play-state: running !important;
+}
+
+/* Disable backdrop-filter on items not in viewport (saves GPU) */
+.card, .em-card, .layer-card {
+    will-change: auto;
+}
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+/* ══════════════════════════════════════════════════════════
+   WORLD-SECTION PERFORMANCE FIX — "Indonesia di Mata Dunia"
+   ══════════════════════════════════════════════════════════ */
+
+/* Stop cornerPulse infinite animation on card corners */
+.world-card::before,
+.world-card::after {
+    animation: none !important;
+    opacity: 0.7 !important;
+    box-shadow: 0 0 6px rgba(243, 112, 30, 0.4) !important;
+}
+
+/* Simplify box-shadow from 4 layers to 1 layer (reduces GPU compositing) */
+.world-card {
+    box-shadow: 0 0 12px rgba(243, 112, 30, 0.15) !important;
+    transition: box-shadow 0.25s ease, transform 0.25s ease !important;
+    will-change: auto !important;
+}
+.world-card:hover {
+    box-shadow: 0 0 22px rgba(243, 112, 30, 0.35) !important;
+    transform: translateY(-4px) !important;
+}
+
+/* Remove filter:brightness on world-rank (triggers GPU layer) */
+.world-rank {
+    filter: none !important;
+    text-shadow: 0 0 16px currentColor !important; /* single shadow, not 3 layers */
+}
+
+/* ls-stat-dot — stop dotGlow infinite pulse */
+.ls-stat-dot {
+    animation: none !important;
+}
+
+/* world-card-deco SVG — static, no animation needed */
+.world-card-deco {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Disable dotC keyframe on inline circles in facts-section */
+circle[style*="dotC"],
+.fact-card-visual circle {
+    animation: none !important;
+}
+
+/* Simplify fact-card box-shadows too (same section scroll area) */
+.fact-card {
+    box-shadow: 0 0 10px rgba(243, 112, 30, 0.12) !important;
+    will-change: auto !important;
+    transition: box-shadow 0.25s ease, transform 0.25s ease !important;
+}
+.fact-card:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 0 18px rgba(243, 112, 30, 0.28) !important;
+}
+.fact-card::before,
+.fact-card::after {
+    animation: none !important;
+}
+
+/* ══════════════════════════════════════════════════════════
+   FACTS-SECTION PERFORMANCE FIX — "Fakta Yang Bikin Kamu Mikir"
+   ══════════════════════════════════════════════════════════ */
+
+/* Fact numbers: reduce from 4-layer to 1-layer text-shadow */
+.fact-number {
+    text-shadow: 0 0 18px rgba(243, 112, 30, 0.7) !important;
+}
+
+/* Remove drop-shadow filter on fact icons (GPU composite layer) */
+.fact-card-visual {
+    filter: none !important;
+}
+
+/* Simplify fact-bg-num (large translucent number behind card) */
+.fact-bg-num {
+    text-shadow: none !important;
+    opacity: 0.06 !important;
+}
+
+/* Fact-card source text — no glow needed */
+.fact-source {
+    text-shadow: none !important;
+}
+
+/* Simplify PPT transition duration on fact-cards (scroll-triggered) */
+.fact-card.ppt-right,
+.fact-card.ppt-left,
+.fact-card.ppt-card {
+    transition-duration: 0.35s !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════
+   LAYERS-SECTION PERFORMANCE FIX — "5 Lapisan Yang Membentuk Dunia"
+   ══════════════════════════════════════════════════════════ */
+
+/* Stop infinite cornerPulse on all layer-card corners */
+.layer-card::before,
+.layer-card::after {
+    animation: none !important;
+    opacity: 0.6 !important;
+    box-shadow: none !important;
+}
+
+/* Simplify per-card box-shadow (was multi-layer per nth-child) */
+.layer-card,
+.layer-card:nth-child(1),
+.layer-card:nth-child(2),
+.layer-card:nth-child(3),
+.layer-card:nth-child(4),
+.layer-card:nth-child(5) {
+    box-shadow: 0 0 10px rgba(243, 112, 30, 0.1) !important;
+    will-change: auto !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+/* Hover — lighter effect */
+.layer-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 0 18px rgba(243, 112, 30, 0.25) !important;
+}
+
+/* Layer emoji — no hover scale animation */
+.layer-emoji {
+    transition: none !important;
+}
+
+/* Speed up ppt-zoom scroll reveal */
+.layer-card.ppt-zoom {
+    transition-duration: 0.3s !important;
+}
+
+

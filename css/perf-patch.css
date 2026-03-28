@@ -1,0 +1,319 @@
+/* ============================================================
+   PERF-PATCH.CSS — Performance & Layout Fixes + Light Mode Fix
+   Loaded LAST. Surgical overrides — no broad * selectors.
+   ============================================================ */
+
+/* ── 1. Disable the neon sweep line (biggest visual lag offender) ── */
+.neon-card::after { display: none !important; }
+
+/* ── 2. Kill infinite float/bob animations on decorative elements only ── */
+.landing-scroll-hint,
+.scroll-arrow,
+.ai-bubble-dot,
+.globe-tag {
+  animation: none !important;
+}
+
+/* ── 3. SVG animate tags inside heavy stat cards & chains ── */
+.ripple-totals svg animate,
+.butterfly-chain svg animate,
+.why-icon svg animate,
+.why-icon svg animateTransform,
+.impact-grid svg animate {
+  display: none !important;
+}
+
+/* ── 4. Make g-reveal elements always visible (don't wait for JS scroll trigger) ── */
+.g-reveal,
+.g-reveal-scale,
+.g-reveal-stagger {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+/* ── 5. Slow down ticker scrolling — reduces constant reflow ── */
+.ticker-track        { animation-duration: 50s !important; }
+.bottom-ticker-track { animation-duration: 50s !important; }
+
+/* ── 6. Orbit rings — slow GPU draw ── */
+.ring-1 { animation-duration: 30s !important; }
+.ring-2 { animation-duration: 50s !important; }
+.ring-3 { animation-duration: 90s !important; }
+
+/* ── 7. Reduce transition duration to 180ms max on interactive elements only ── */
+a, button,
+.btn, .card,
+.neon-card,
+.why-card,
+.intent-card,
+.flip-front, .flip-back,
+.img-step-card-inner,
+.world-btn,
+.opinion-slider,
+.cta-btn-primary, .cta-btn-secondary {
+  transition-duration: 180ms !important;
+}
+
+/* ── 8. TYPOGRAPHY — Bigger headings across all sections ── */
+
+.landing-hero-title {
+  font-size: clamp(2.8rem, 6vw, 5rem) !important;
+}
+
+section:not(#section-focus) .section-heading {
+  font-size: clamp(2rem, 4.5vw, 3.6rem) !important;
+  line-height: 1.12 !important;
+}
+
+.about-card h3 { font-size: 1.45rem !important; }
+.profile-title { font-size: 2.2rem !important; }
+.opinion-section h2 { font-size: clamp(2rem, 4vw, 3rem) !important; }
+.section-label { font-size: 1rem !important; letter-spacing: 0.12em !important; }
+
+/* ═══════════════════════════════════════════════════════
+   LIGHT MODE — COMPREHENSIVE FIXES
+   Covers all hard-coded dark rgba() colors that don't
+   respond to data-theme="light" via CSS variables
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Body & Base ── */
+[data-theme="light"] body {
+  background: #f1f5f9;
+  color: #0f172a;
+  font-weight: 500;
+}
+
+/* ── Navbar ── */
+[data-theme="light"] #nav {
+  background: rgba(248, 250, 252, 0.98) !important;
+  border-bottom: 1px solid rgba(0,0,0,0.1) !important;
+}
+[data-theme="light"] .nav-link-btn { color: #334155 !important; font-weight: 600; }
+[data-theme="light"] .nav-link-btn:hover { background: rgba(0,0,0,0.06) !important; color: #0f172a !important; }
+[data-theme="light"] .nav-link-btn.active { color: #f97316 !important; }
+[data-theme="light"] .nav-profile-name { color: #0f172a !important; }
+
+/* ── Ticker ── */
+[data-theme="light"] .top-ticker,
+[data-theme="light"] .bottom-ticker {
+  background: #f1f5f9 !important;
+  border-color: rgba(0,0,0,0.1) !important;
+  color: #475569 !important;
+}
+[data-theme="light"] .live-badge { background: #f97316 !important; color: #fff !important; }
+
+/* ── Landing / Home sections ── */
+[data-theme="light"] #section-home {
+  background: #f1f5f9 !important;
+}
+[data-theme="light"] .landing-hero-title { color: #0f172a !important; }
+[data-theme="light"] .landing-hero-desc { color: #475569 !important; }
+[data-theme="light"] .gradient-text {
+  background: linear-gradient(135deg, #ea580c 0%, #f97316 60%, #fb923c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Section headings & labels ── */
+[data-theme="light"] h1, [data-theme="light"] h2,
+[data-theme="light"] h3, [data-theme="light"] h4 {
+  color: #0f172a !important;
+  font-weight: 800 !important;
+}
+[data-theme="light"] .section-heading { color: #0f172a !important; }
+[data-theme="light"] .section-label { color: #f97316 !important; }
+[data-theme="light"] p { color: #475569; }
+
+/* ── Cards (generic) ── */
+[data-theme="light"] .card {
+  background: #ffffff !important;
+  border: 1.5px solid rgba(0,0,0,0.12) !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08) !important;
+  color: #0f172a !important;
+}
+
+/* ── Neon / Why cards ── */
+[data-theme="light"] .neon-card,
+[data-theme="light"] .why-card,
+[data-theme="light"] .positioning-card,
+[data-theme="light"] .ripple-type {
+  background: #ffffff !important;
+  border: 1.5px solid rgba(0,0,0,0.14) !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07) !important;
+  color: #0f172a !important;
+}
+[data-theme="light"] .neon-card h3,
+[data-theme="light"] .why-card h3 { color: #0f172a !important; }
+[data-theme="light"] .neon-card p,
+[data-theme="light"] .why-card p { color: #475569 !important; }
+
+/* ── Flip cards ── */
+[data-theme="light"] .flip-front {
+  background: #ffffff !important;
+  border: 1.5px solid rgba(0,0,0,0.12) !important;
+}
+[data-theme="light"] .img-step-body h3 { color: #0f172a !important; }
+[data-theme="light"] .img-step-body p { color: #475569 !important; }
+
+/* ── Ripple steps (4 Langkah) ── */
+[data-theme="light"] .ripple-step-card {
+  background: #ffffff !important;
+  border: 1.5px solid rgba(0,0,0,0.12) !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06) !important;
+}
+[data-theme="light"] .ripple-step-card h3 { color: #0f172a !important; }
+[data-theme="light"] .ripple-step-card p { color: #475569 !important; }
+
+/* ── Section divider ── */
+[data-theme="light"] .section-divider {
+  background: rgba(0,0,0,0.08) !important;
+}
+
+/* ── Earth Mirror ── */
+[data-theme="light"] .em-card {
+  background: #ffffff !important;
+  border: 2px solid rgba(0,0,0,0.12) !important;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.08) !important;
+}
+[data-theme="light"] .em-dim-card,
+[data-theme="light"] .em-fact-box,
+[data-theme="light"] .em-collective {
+  background: #f1f5f9 !important;
+  border: 1.5px solid rgba(0,0,0,0.12) !important;
+}
+[data-theme="light"] .em-ai-response {
+  background: #f1f5f9 !important;
+  border: 1.5px solid rgba(0,0,0,0.12) !important;
+  color: #0f172a !important;
+}
+[data-theme="light"] .em-chat-input {
+  background: #ffffff !important;
+  border: 2px solid rgba(0,0,0,0.15) !important;
+  color: #0f172a !important;
+}
+[data-theme="light"] .em-pulse-stats {
+  background: #f8fafc !important;
+  border: 2px solid rgba(0,0,0,0.12) !important;
+}
+[data-theme="light"] .em-feed-item { border-bottom-color: rgba(0,0,0,0.06) !important; }
+[data-theme="light"] .em-card-title { color: #f97316 !important; }
+[data-theme="light"] .em-fact-text,
+[data-theme="light"] .em-feed-text { color: #334155 !important; font-weight: 600; }
+
+/* ── Opinion section ── */
+[data-theme="light"] .opinion-card {
+  background: #ffffff !important;
+  border: 1.5px solid rgba(0,0,0,0.12) !important;
+}
+[data-theme="light"] .opinion-question { color: #0f172a !important; font-weight: 700 !important; }
+[data-theme="light"] .opinion-meta { color: #f97316 !important; }
+[data-theme="light"] .slider-track { background: rgba(0,0,0,0.08) !important; }
+
+/* ── CTA section ── */
+[data-theme="light"] .cta-section { background: #e2e8f0 !important; }
+[data-theme="light"] .cta-quote { color: #0f172a !important; font-weight: 700 !important; }
+[data-theme="light"] .cta-sub { color: #475569 !important; }
+
+/* ── Transparency data section ── */
+[data-theme="light"] section[style*="padding:60px"] > div {
+  background: #ffffff !important;
+  border: 1.5px solid rgba(0,0,0,0.12) !important;
+}
+
+/* ── Global Impact section ── */
+[data-theme="light"] #section-global { background: #f1f5f9 !important; }
+[data-theme="light"] .world-panel { color: #0f172a !important; }
+[data-theme="light"] .world-stat-card {
+  background: #ffffff !important;
+  border: 1.5px solid rgba(0,0,0,0.1) !important;
+}
+[data-theme="light"] .world-stat-label { color: #475569 !important; font-weight: 600; }
+[data-theme="light"] .world-narrative { color: #334155 !important; font-weight: 600; }
+[data-theme="light"] .world-headline { font-weight: 800 !important; }
+[data-theme="light"] .dual-world-section { background: #e2e8f0 !important; border-color: rgba(0,0,0,0.1) !important; }
+[data-theme="light"] .world-btn { background: #fff !important; color: #334155 !important; border: 1.5px solid rgba(0,0,0,0.15) !important; }
+[data-theme="light"] .world-btn.active { background: #f97316 !important; color: #fff !important; border-color: #f97316 !important; }
+
+/* ── Profile section ── */
+[data-theme="light"] .p-card {
+  background: #ffffff !important;
+  border: 1.5px solid rgba(0,0,0,0.12) !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07) !important;
+}
+[data-theme="light"] .p-card h3 { color: #0f172a !important; }
+[data-theme="light"] .p-stat-label { color: #475569 !important; font-weight: 600; }
+[data-theme="light"] .p-stat-val { color: #0f172a !important; font-weight: 800 !important; }
+[data-theme="light"] .p-meta { color: #475569 !important; }
+[data-theme="light"] .pt-content { background: #f8fafc !important; border-color: rgba(0,0,0,0.08) !important; }
+[data-theme="light"] .pt-header h4 { color: #0f172a !important; }
+[data-theme="light"] .pt-content p { color: #475569 !important; }
+[data-theme="light"] .p-search-box { background: #f8fafc !important; border-color: rgba(0,0,0,0.15) !important; }
+[data-theme="light"] .p-search-box input { color: #0f172a !important; }
+[data-theme="light"] .profile-title { color: #0f172a !important; }
+
+/* ── About section ── */
+[data-theme="light"] .about-card {
+  background: #ffffff !important;
+  border: 1.5px solid rgba(0,0,0,0.12) !important;
+}
+[data-theme="light"] .about-hero-desc { color: #475569 !important; }
+
+/* ── Daily input section ── */
+[data-theme="light"] .dim-card {
+  background: #ffffff !important;
+  border: 1.5px solid rgba(0,0,0,0.12) !important;
+}
+[data-theme="light"] .dim-title { color: #0f172a !important; font-weight: 700; }
+[data-theme="light"] .dim-sub { color: #475569 !important; }
+[data-theme="light"] .f-label { color: #334155 !important; font-weight: 600; }
+[data-theme="light"] .pill {
+  background: #f1f5f9 !important;
+  border: 1.5px solid rgba(0,0,0,0.12) !important;
+  color: #334155 !important;
+}
+[data-theme="light"] .pill.active { background: rgba(249,115,22,0.15) !important; border-color: #f97316 !important; color: #f97316 !important; }
+
+/* ── Auth pages ── */
+[data-theme="light"] .auth-wrapper {
+  background: linear-gradient(145deg, #f1f5f9, #e2e8f0) !important;
+}
+[data-theme="light"] .auth-input {
+  background: #ffffff !important;
+  border: 1.5px solid rgba(0,0,0,0.15) !important;
+  color: #0f172a !important;
+}
+[data-theme="light"] .auth-input::placeholder { color: #94a3b8 !important; }
+
+/* ── Manifesto quote (Global section) ── */
+[data-theme="light"] .manifesto {
+  background: #e2e8f0 !important;
+  border-color: rgba(0,0,0,0.08) !important;
+}
+[data-theme="light"] .manifesto p { color: #0f172a !important; font-weight: 700 !important; }
+
+/* ── Focus mode ── */
+[data-theme="light"] #section-focus {
+  background: #f1f5f9 !important;
+}
+[data-theme="light"] #section-focus .focus-step {
+  background: #ffffff !important;
+  border-color: rgba(0,0,0,0.12) !important;
+}
+[data-theme="light"] #section-focus .focus-step-title { color: #0f172a !important; }
+[data-theme="light"] #section-focus .focus-step-desc { color: #475569 !important; }
+[data-theme="light"] #section-focus .section-heading { color: #0f172a !important; }
+
+/* ── Onboarding ── */
+[data-theme="light"] .onboarding-box {
+  background: #ffffff !important;
+  border: 1.5px solid rgba(0,0,0,0.12) !important;
+}
+
+/* ── Team chat widget (keep dark even in light mode — looks better) ── */
+[data-theme="light"] .team-chat-window {
+  background: rgba(248,250,252,0.98) !important;
+  border-color: rgba(0,0,0,0.15) !important;
+}
+[data-theme="light"] .tc-received .tc-bubble { background: #e2e8f0 !important; color: #0f172a !important; }

@@ -1,0 +1,460 @@
+/* ================================================================
+   global-enhanced.css  v5 — KHUSUS global.html
+   MINIMAL — Tidak menimpa neon.css. Background = cyber-dust-bg
+   Hanya menambah: neon dividers, scroll transitions, section accents,
+   colored stat numbers, dual world animations
+   ================================================================ */
+
+/* ────────────────────────────────────────────────────────────────
+   1. CONTENT Z-INDEX
+   ──────────────────────────────────────────────────────────────── */
+.global-hero {
+    position: relative;
+    z-index: 5;
+}
+
+/* ────────────────────────────────────────────────────────────────
+   2. NEON DIVIDERS — garis neon berwarna antar section
+   ──────────────────────────────────────────────────────────────── */
+.g-divider {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: 2px;
+    margin: 30px 0;
+    overflow: visible;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+.g-divider.g-divider-active { opacity: 1; }
+
+.g-divider::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 5%; right: 5%;
+    height: 2px;
+    background: linear-gradient(90deg,
+        transparent, var(--dc, #f3701e), #fff, var(--dc, #f3701e), transparent);
+    box-shadow: 0 0 25px var(--dc, #f3701e), 0 0 50px var(--dg, rgba(243,112,30,0.4));
+    animation: divGlow 3s ease-in-out infinite;
+}
+.g-divider::after {
+    content: "";
+    position: absolute;
+    top: -5px; left: 50%; transform: translateX(-50%);
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--dc, #f3701e);
+    box-shadow: 0 0 15px var(--dc, #f3701e), 0 0 30px var(--dc, #f3701e);
+    animation: divDot 3s ease-in-out infinite;
+}
+@keyframes divGlow { 0%,100%{opacity:0.5} 50%{opacity:1} }
+@keyframes divDot  { 0%,100%{transform:translateX(-50%) scale(1)} 50%{transform:translateX(-50%) scale(1.8)} }
+
+.g-divider.orange { --dc:#f3701e; --dg:rgba(243,112,30,0.5); }
+.g-divider.blue   { --dc:#4b8ff3; --dg:rgba(75,143,243,0.5); }
+.g-divider.green  { --dc:#30f3a0; --dg:rgba(48,243,160,0.5); }
+.g-divider.purple { --dc:#b06aff; --dg:rgba(176,106,255,0.5); }
+.g-divider.red    { --dc:#ff4c6a; --dg:rgba(255,76,106,0.5); }
+
+/* ────────────────────────────────────────────────────────────────
+   3. PPT SCROLL TRANSITIONS
+   ──────────────────────────────────────────────────────────────── */
+
+/* Default: slide up */
+.g-reveal {
+    opacity: 0 !important;
+    transform: translateY(80px) !important;
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+.g-reveal.g-visible {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+/* Stagger children — cards slide in one by one */
+.g-reveal-stagger {
+    visibility: visible !important;
+}
+.g-reveal-stagger > * {
+    opacity: 0 !important;
+    transform: translateY(60px) scale(0.95) !important;
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.7s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+.g-reveal-stagger.g-visible > *:nth-child(1) { opacity: 1 !important; transform: none !important; transition-delay: 0s !important; }
+.g-reveal-stagger.g-visible > *:nth-child(2) { opacity: 1 !important; transform: none !important; transition-delay: 0.15s !important; }
+.g-reveal-stagger.g-visible > *:nth-child(3) { opacity: 1 !important; transform: none !important; transition-delay: 0.3s !important; }
+.g-reveal-stagger.g-visible > *:nth-child(4) { opacity: 1 !important; transform: none !important; transition-delay: 0.45s !important; }
+.g-reveal-stagger.g-visible > *:nth-child(5) { opacity: 1 !important; transform: none !important; transition-delay: 0.6s !important; }
+
+/* Scale up variant */
+.g-reveal-scale {
+    opacity: 0 !important;
+    transform: scale(0.8) !important;
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+.g-reveal-scale.g-visible {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+/* Slide from left */
+.g-reveal-left {
+    opacity: 0 !important;
+    transform: translateX(-100px) !important;
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+.g-reveal-left.g-visible { opacity: 1 !important; transform: none !important; }
+
+/* Slide from right */
+.g-reveal-right {
+    opacity: 0 !important;
+    transform: translateX(100px) !important;
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+.g-reveal-right.g-visible { opacity: 1 !important; transform: none !important; }
+
+/* ────────────────────────────────────────────────────────────────
+   4. DUAL WORLD PANEL ANIMATIONS
+   ──────────────────────────────────────────────────────────────── */
+@keyframes panelIn {
+    0%   { opacity: 0; transform: translateY(30px) scale(0.96); }
+    100% { opacity: 1; transform: none; }
+}
+@keyframes panelOut {
+    0%   { opacity: 1; transform: none; }
+    100% { opacity: 0; transform: translateY(-20px) scale(0.96); }
+}
+
+.world-panel {
+    animation: panelIn 0.5s cubic-bezier(0.22,1,0.36,1) !important;
+}
+
+.world-btn {
+    transition: all 0.35s cubic-bezier(0.22,1,0.36,1) !important;
+}
+.world-btn.active {
+    box-shadow: 0 0 25px rgba(243,112,30,0.3), inset 0 0 15px rgba(243,112,30,0.05) !important;
+    text-shadow: 0 0 10px rgba(243,112,30,0.7) !important;
+}
+
+.world-stat-card {
+    transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s ease !important;
+}
+.world-stat-card:hover {
+    transform: translateY(-8px) scale(1.03) !important;
+}
+.positive-card:hover {
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4), 0 0 25px rgba(48,243,160,0.15) !important;
+}
+.negative-card:hover {
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4), 0 0 25px rgba(255,76,106,0.15) !important;
+}
+
+.hidden { display: none !important; }
+
+/* ────────────────────────────────────────────────────────────────
+   5. COLORED STAT NUMBERS (unique neon per card)
+   ──────────────────────────────────────────────────────────────── */
+.stat-card:nth-child(1) .stat-number { color: #f3701e !important; text-shadow: 0 0 20px rgba(243,112,30,0.9), 0 0 50px rgba(243,112,30,0.4) !important; }
+.stat-card:nth-child(2) .stat-number { color: #4b8ff3 !important; text-shadow: 0 0 20px rgba(75,143,243,0.9), 0 0 50px rgba(75,143,243,0.4) !important; }
+.stat-card:nth-child(3) .stat-number { color: #30f3a0 !important; text-shadow: 0 0 20px rgba(48,243,160,0.9), 0 0 50px rgba(48,243,160,0.4) !important; }
+
+.stat-icon svg {
+    filter: drop-shadow(0 0 10px rgba(243,112,30,0.5));
+    animation: iconFloat 3.5s ease-in-out infinite;
+}
+.stat-card:nth-child(2) .stat-icon svg { filter: drop-shadow(0 0 10px rgba(75,143,243,0.5)); animation-delay: 1s; }
+.stat-card:nth-child(3) .stat-icon svg { filter: drop-shadow(0 0 10px rgba(48,243,160,0.5)); animation-delay: 2s; }
+@keyframes iconFloat {
+    0%,100% { transform: translateY(0); }
+    50%      { transform: translateY(-6px); }
+}
+
+/* ────────────────────────────────────────────────────────────────
+   6. COLORED RIPPLE CHIPS
+   ──────────────────────────────────────────────────────────────── */
+.ripple-type:nth-child(2) .count { color: #4b8ff3 !important; text-shadow: 0 0 15px rgba(75,143,243,0.7) !important; }
+.ripple-type:nth-child(3) .count { color: #30f3a0 !important; text-shadow: 0 0 15px rgba(48,243,160,0.7) !important; }
+.ripple-type:nth-child(4) .count { color: #b06aff !important; text-shadow: 0 0 15px rgba(176,106,255,0.7) !important; }
+.ripple-type:nth-child(5) .count { color: #ff4c6a !important; text-shadow: 0 0 15px rgba(255,76,106,0.7) !important; }
+
+/* ────────────────────────────────────────────────────────────────
+   7. SECTION ACCENT NEON LIGHTS
+   ──────────────────────────────────────────────────────────────── */
+
+/* Feed terminal header */
+.feed-container::before {
+    content: "◉  RIPPLE LIVE DATA — REAL-TIME STREAM" !important;
+    display: block !important;
+    padding: 14px 24px !important;
+    background: rgba(75,143,243,0.06) !important;
+    border-bottom: 1px solid rgba(75,143,243,0.2) !important;
+    font-family: 'Orbitron', monospace !important;
+    font-size: 9px !important;
+    letter-spacing: 4px !important;
+    color: rgba(75,143,243,0.65) !important;
+    text-transform: uppercase !important;
+}
+
+/* Manifesto big quote */
+.manifesto {
+    position: relative !important;
+    overflow: hidden !important;
+}
+.manifesto::after {
+    content: '"' !important;
+    position: absolute !important;
+    top: -50px !important; left: 20px !important;
+    font-family: Georgia, serif !important;
+    font-size: 320px !important;
+    line-height: 1 !important;
+    color: rgba(243,112,30,0.04) !important;
+    pointer-events: none !important;
+}
+
+/* Hope card green top glow */
+.hope-card {
+    position: relative !important;
+    overflow: hidden !important;
+}
+.hope-card::after {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important; left: 15% !important; right: 15% !important;
+    height: 2px !important;
+    background: linear-gradient(90deg, transparent, #30f3a0, transparent) !important;
+    box-shadow: 0 0 15px #30f3a0 !important;
+    animation: neonPulse 3s ease-in-out infinite !important;
+    pointer-events: none !important;
+}
+
+/* Section title glow */
+.section-title {
+    animation: titleGlow 4s ease-in-out infinite !important;
+}
+@keyframes titleGlow {
+    0%,100% { text-shadow: 0 0 8px rgba(243,112,30,0.3); }
+    50%      { text-shadow: 0 0 20px rgba(243,112,30,0.8), 0 0 40px rgba(243,112,30,0.3); }
+}
+
+@keyframes neonPulse {
+    0%,100% { opacity: 0.4; }
+    50%      { opacity: 1; }
+}
+
+/* ────────────────────────────────────────────────────────────────
+   8. SCROLLBAR
+   ──────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #050709; }
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #f3701e, #b06aff, #4b8ff3);
+    border-radius: 3px;
+    box-shadow: 0 0 8px rgba(243,112,30,0.6);
+}
+
+/* ────────────────────────────────────────────────────────────────
+   10. NEON CARD EFFECTS — via box-shadow & transitions 
+       (neon.css owns ::before/::after, so we use box-shadow,
+        border-color animation, and enable neonSweep scan line)
+   ──────────────────────────────────────────────────────────────── */
+
+/* ═══ ENABLE NEON SCAN LINE on all neon-cards ═══ */
+.global-hero .neon-card::after {
+    animation: neonSweep 4s ease-in-out infinite !important;
+}
+.global-hero .neon-card:nth-child(2)::after { animation-delay: 0.8s !important; }
+.global-hero .neon-card:nth-child(3)::after { animation-delay: 1.6s !important; }
+.global-hero .neon-card:nth-child(4)::after { animation-delay: 2.4s !important; }
+.global-hero .neon-card:nth-child(5)::after { animation-delay: 3.2s !important; }
+
+/* ═══ STAT CARDS — breathing neon glow ═══ */
+.stat-card {
+    transition: transform 0.5s cubic-bezier(0.22,1,0.36,1),
+                box-shadow 0.5s ease,
+                border-color 0.5s ease !important;
+    animation: cardBreathe1 4s ease-in-out infinite !important;
+}
+.stat-card:nth-child(2) { animation: cardBreathe2 4s ease-in-out infinite 1.3s !important; }
+.stat-card:nth-child(3) { animation: cardBreathe3 4s ease-in-out infinite 2.6s !important; }
+
+@keyframes cardBreathe1 {
+    0%, 100% { box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 0 0 1px rgba(243,112,30,0.1); }
+    50%      { box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 0 30px rgba(243,112,30,0.12), 0 0 60px rgba(243,112,30,0.06); border-color: rgba(243,112,30,0.45); }
+}
+@keyframes cardBreathe2 {
+    0%, 100% { box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 0 0 1px rgba(75,143,243,0.1); }
+    50%      { box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 0 30px rgba(75,143,243,0.12), 0 0 60px rgba(75,143,243,0.06); border-color: rgba(75,143,243,0.45); }
+}
+@keyframes cardBreathe3 {
+    0%, 100% { box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 0 0 1px rgba(48,243,160,0.1); }
+    50%      { box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 0 30px rgba(48,243,160,0.12), 0 0 60px rgba(48,243,160,0.06); border-color: rgba(48,243,160,0.45); }
+}
+
+/* Stat card hover — neon explosion */
+.stat-card:hover {
+    transform: translateY(-14px) scale(1.02) !important;
+    animation: none !important;
+    box-shadow:
+        0 30px 60px rgba(0,0,0,0.6),
+        0 0 40px rgba(243,112,30,0.25),
+        0 0 80px rgba(243,112,30,0.1),
+        inset 0 0 40px rgba(243,112,30,0.04) !important;
+    border-color: rgba(243,112,30,0.6) !important;
+}
+.stat-card:nth-child(2):hover {
+    animation: none !important;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.6), 0 0 40px rgba(75,143,243,0.25), 0 0 80px rgba(75,143,243,0.1), inset 0 0 40px rgba(75,143,243,0.04) !important;
+    border-color: rgba(75,143,243,0.6) !important;
+}
+.stat-card:nth-child(3):hover {
+    animation: none !important;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.6), 0 0 40px rgba(48,243,160,0.25), 0 0 80px rgba(48,243,160,0.1), inset 0 0 40px rgba(48,243,160,0.04) !important;
+    border-color: rgba(48,243,160,0.6) !important;
+}
+
+/* ═══ WHY CARDS — color-coded breathing + hover ═══ */
+.why-card {
+    transition: transform 0.5s cubic-bezier(0.22,1,0.36,1),
+                box-shadow 0.5s ease,
+                border-color 0.5s ease !important;
+}
+
+.why-grid > .why-card:nth-child(1) { animation: cardBreathe1 4s ease-in-out infinite !important; }
+.why-grid > .why-card:nth-child(2) { animation: cardBreathe2 4s ease-in-out infinite 1s !important; }
+.why-grid > .why-card:nth-child(3) { animation: cardBreathePurple 4s ease-in-out infinite 2s !important; }
+
+@keyframes cardBreathePurple {
+    0%, 100% { box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 0 0 1px rgba(176,106,255,0.1); }
+    50%      { box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 0 30px rgba(176,106,255,0.12), 0 0 60px rgba(176,106,255,0.06); border-color: rgba(176,106,255,0.45); }
+}
+
+/* Why card hover */
+.why-grid > .why-card:nth-child(1):hover { animation: none !important; transform: translateY(-14px) !important; box-shadow: 0 30px 60px rgba(0,0,0,0.6), 0 0 40px rgba(243,112,30,0.2), inset 0 0 30px rgba(243,112,30,0.03) !important; border-color: rgba(243,112,30,0.55) !important; }
+.why-grid > .why-card:nth-child(2):hover { animation: none !important; transform: translateY(-14px) !important; box-shadow: 0 30px 60px rgba(0,0,0,0.6), 0 0 40px rgba(75,143,243,0.2), inset 0 0 30px rgba(75,143,243,0.03) !important; border-color: rgba(75,143,243,0.55) !important; }
+.why-grid > .why-card:nth-child(3):hover { animation: none !important; transform: translateY(-14px) !important; box-shadow: 0 30px 60px rgba(0,0,0,0.6), 0 0 40px rgba(176,106,255,0.2), inset 0 0 30px rgba(176,106,255,0.03) !important; border-color: rgba(176,106,255,0.55) !important; }
+
+/* Why card titles => colored glow */
+.why-grid > .why-card:nth-child(1) h3 { color: #f3701e !important; text-shadow: 0 0 15px rgba(243,112,30,0.6) !important; }
+.why-grid > .why-card:nth-child(2) h3 { color: #4b8ff3 !important; text-shadow: 0 0 15px rgba(75,143,243,0.6) !important; }
+.why-grid > .why-card:nth-child(3) h3 { color: #b06aff !important; text-shadow: 0 0 15px rgba(176,106,255,0.6) !important; }
+
+/* ═══ IMPACT CARDS — breathing + hover ═══ */
+@keyframes cardBreatheRed {
+    0%, 100% { box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,76,106,0.1); }
+    50%      { box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 0 30px rgba(255,76,106,0.12), 0 0 60px rgba(255,76,106,0.06); border-color: rgba(255,76,106,0.45); }
+}
+
+.impact-grid > .why-card:nth-child(1) { animation: cardBreatheRed 4s ease-in-out infinite !important; }
+.impact-grid > .why-card:nth-child(2) { animation: cardBreathe1 4s ease-in-out infinite 0.8s !important; }
+.impact-grid > .why-card:nth-child(3) { animation: cardBreathe2 4s ease-in-out infinite 1.6s !important; }
+.impact-grid > .why-card:nth-child(4) { animation: cardBreathe3 4s ease-in-out infinite 2.4s !important; }
+
+.impact-grid > .why-card:hover { animation: none !important; transform: translateY(-14px) !important; box-shadow: 0 30px 60px rgba(0,0,0,0.6), 0 0 35px rgba(255,76,106,0.2) !important; border-color: rgba(255,76,106,0.5) !important; }
+
+/* ═══ RIPPLE TYPE CHIPS — colored borders + hover ═══ */
+.ripple-type {
+    transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s ease, border-color 0.4s ease !important;
+}
+.ripple-type:nth-child(1) { border-color: rgba(243,112,30,0.3) !important; }
+.ripple-type:nth-child(2) { border-color: rgba(75,143,243,0.3) !important; }
+.ripple-type:nth-child(3) { border-color: rgba(48,243,160,0.3) !important; }
+.ripple-type:nth-child(4) { border-color: rgba(176,106,255,0.3) !important; }
+.ripple-type:nth-child(5) { border-color: rgba(255,76,106,0.3) !important; }
+
+.ripple-type:nth-child(1):hover { border-color: #f3701e !important; box-shadow: 0 15px 40px rgba(0,0,0,0.5), 0 0 25px rgba(243,112,30,0.2) !important; transform: translateY(-10px) scale(1.03) !important; }
+.ripple-type:nth-child(2):hover { border-color: #4b8ff3 !important; box-shadow: 0 15px 40px rgba(0,0,0,0.5), 0 0 25px rgba(75,143,243,0.2) !important; transform: translateY(-10px) scale(1.03) !important; }
+.ripple-type:nth-child(3):hover { border-color: #30f3a0 !important; box-shadow: 0 15px 40px rgba(0,0,0,0.5), 0 0 25px rgba(48,243,160,0.2) !important; transform: translateY(-10px) scale(1.03) !important; }
+.ripple-type:nth-child(4):hover { border-color: #b06aff !important; box-shadow: 0 15px 40px rgba(0,0,0,0.5), 0 0 25px rgba(176,106,255,0.2) !important; transform: translateY(-10px) scale(1.03) !important; }
+.ripple-type:nth-child(5):hover { border-color: #ff4c6a !important; box-shadow: 0 15px 40px rgba(0,0,0,0.5), 0 0 25px rgba(255,76,106,0.2) !important; transform: translateY(-10px) scale(1.03) !important; }
+
+/* ═══ POSITIONING CARDS (timeline) — breathing + hover ═══ */
+.positioning-card {
+    transition: transform 0.5s cubic-bezier(0.22,1,0.36,1), box-shadow 0.5s ease, border-color 0.5s ease !important;
+    animation: cardBreathe1 4s ease-in-out infinite !important;
+}
+.positioning-card:nth-child(2) { animation-delay: 1s !important; }
+.positioning-card:nth-child(3) { animation-delay: 2s !important; }
+.positioning-card:hover {
+    animation: none !important;
+    transform: translateY(-12px) scale(1.02) !important;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.5), 0 0 30px rgba(243,112,30,0.15), inset 0 0 25px rgba(243,112,30,0.03) !important;
+    border-color: rgba(243,112,30,0.5) !important;
+}
+
+/* ────────────────────────────────────────────────────────────────
+   11. MEGA MANIFESTO SECTION (Animated Typography)
+   ──────────────────────────────────────────────────────────────── */
+.mega-neon-title {
+    font-family: 'Orbitron', sans-serif !important;
+    font-size: 110px !important;
+    font-weight: 900 !important;
+    color: transparent !important;
+    -webkit-text-stroke: 2px #f3701e !important;
+    margin: 0 !important;
+    line-height: 1 !important;
+    letter-spacing: 5px !important;
+    position: relative !important;
+    animation: neonBlinkMega 4s infinite alternate !important;
+    text-shadow: 0 0 40px rgba(243,112,30,0.4) !important;
+}
+
+.mega-neon-title::before, .mega-neon-title::after {
+    content: attr(data-text) !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    color: #f3701e !important;
+    -webkit-text-stroke: 0px transparent !important;
+    opacity: 0.8 !important;
+    filter: blur(12px) !important;
+    z-index: -1 !important;
+    animation: pulseGlowMega 2s ease-in-out infinite alternate !important;
+}
+
+.mega-subtitle {
+    font-family: 'Orbitron', sans-serif !important;
+    font-size: 24px !important;
+    letter-spacing: 12px !important;
+    color: #fff !important;
+    margin-top: 10px !important;
+    text-shadow: 0 0 10px rgba(255,255,255,0.5) !important;
+    animation: slideUpFadeMega 1s ease-out forwards !important;
+}
+
+.mega-paragraph {
+    animation: slideUpFadeMega 1.5s ease-out forwards !important;
+}
+
+@keyframes spinSlow { 
+    to { transform: rotate(360deg); } 
+}
+
+@keyframes neonBlinkMega {
+    0%, 100% { -webkit-text-stroke: 2px #f3701e; text-shadow: 0 0 40px rgba(243,112,30,0.4); }
+    50% { -webkit-text-stroke: 3px #B83A2D; text-shadow: 0 0 80px rgba(184,58,45,0.8), 0 0 20px #f3701e; color: rgba(243,112,30,0.1); }
+}
+
+@keyframes pulseGlowMega {
+    0% { transform: scale(1); opacity: 0.6; }
+    100% { transform: scale(1.05); opacity: 1; filter: blur(20px); }
+}
+
+@keyframes slideUpFadeMega {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Fix mobile scaling for huge text */
+@media (max-width: 768px) {
+    .mega-neon-title { font-size: 60px !important; }
+    .mega-subtitle { font-size: 14px !important; letter-spacing: 6px !important; margin-top: 5px !important; }
+}

@@ -1,0 +1,608 @@
+/* ============================================================
+   RIPPLE — wow.css
+   1. RIPPLE title 3D mouse tracking
+   2. Kiri-kanan filler dekoratif
+   3. Card transisi PPT-style saat scroll
+   ============================================================ */
+
+/* ══════════════════════════════════════════════════════════
+   1. HERO TITLE 3D
+   ══════════════════════════════════════════════════════════ */
+.hero-title {
+    transform-style: preserve-3d !important;
+    transform: perspective(400px) rotateX(0deg) rotateY(0deg);
+    display: inline-block !important;
+    cursor: default !important;
+    will-change: transform !important;
+    transition: none !important;
+}
+
+.hero-title .ripple-letter {
+    display: inline-block !important;
+    transform-style: preserve-3d !important;
+    will-change: transform !important;
+    transition: none !important;
+    /* Initial depth offset biar langsung keliatan 3D */
+}
+
+/* Initial 3D depth per letter — sebelum mouse gerak */
+.hero-title .ripple-letter:nth-child(1) { transform: translateZ(54px); }
+.hero-title .ripple-letter:nth-child(2) { transform: translateZ(18px); }
+.hero-title .ripple-letter:nth-child(3) { transform: translateZ(-18px); }
+.hero-title .ripple-letter:nth-child(4) { transform: translateZ(-36px); }
+.hero-title .ripple-letter:nth-child(5) { transform: translateZ(-18px); }
+.hero-title .ripple-letter:nth-child(6) { transform: translateZ(36px); }
+
+/* ══════════════════════════════════════════════════════════
+   2. DEKORASI KIRI & KANAN — fixed visual elements
+   ══════════════════════════════════════════════════════════ */
+
+/* Left decoration — vertical neon line + dots */
+.deco-left {
+    position: fixed;
+    left: 200px; /* setelah sidebar */
+    top: 0;
+    width: 24px;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 0;
+    gap: 0;
+}
+
+.deco-left::before {
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 50%;
+    width: 1px;
+    background: linear-gradient(180deg,
+        transparent 0%,
+        rgba(243,112,30,0.15) 20%,
+        rgba(243,112,30,0.3) 50%,
+        rgba(243,112,30,0.15) 80%,
+        transparent 100%);
+}
+
+/* Right decoration */
+.deco-right {
+    position: fixed;
+    right: 12px;
+    top: 0;
+    width: 24px;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 0;
+}
+
+.deco-right::before {
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 50%;
+    width: 1px;
+    background: linear-gradient(180deg,
+        transparent 0%,
+        rgba(243,112,30,0.12) 20%,
+        rgba(243,112,30,0.25) 50%,
+        rgba(243,112,30,0.12) 80%,
+        transparent 100%);
+}
+
+/* Scroll progress indicator kanan */
+.deco-scroll-progress {
+    position: fixed;
+    right: 12px;
+    top: 0;
+    width: 1px;
+    height: 0%;
+    background: linear-gradient(180deg, #f3701e, #B83A2D);
+    z-index: 6;
+    transition: height 0.1s linear;
+    box-shadow: 0 0 6px rgba(243,112,30,0.6);
+}
+
+/* Dot animasi di sisi kiri */
+.deco-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: rgba(243,112,30,0.5);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: decoDotFloat 3s ease-in-out infinite;
+    box-shadow: 0 0 6px rgba(243,112,30,0.4);
+}
+.deco-dot:nth-child(1) { top: 20%; animation-delay: 0s; }
+.deco-dot:nth-child(2) { top: 40%; animation-delay: 0.8s; width:3px; height:3px; }
+.deco-dot:nth-child(3) { top: 60%; animation-delay: 1.6s; }
+.deco-dot:nth-child(4) { top: 80%; animation-delay: 0.4s; width:3px; height:3px; }
+
+@keyframes decoDotFloat {
+    0%,100% { opacity: 0.4; transform: translateX(-50%) scale(1); }
+    50%      { opacity: 1;   transform: translateX(-50%) scale(1.4); box-shadow: 0 0 10px rgba(243,112,30,0.7); }
+}
+
+/* Section number indicator kanan */
+.deco-section-num {
+    position: fixed;
+    right: 32px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 6;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    pointer-events: none;
+}
+
+.deco-pip {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    border: 1px solid rgba(243,112,30,0.35);
+    background: transparent;
+    transition: all 0.3s ease;
+}
+.deco-pip.active {
+    background: #f3701e;
+    border-color: #f3701e;
+    box-shadow: 0 0 8px rgba(243,112,30,0.6);
+    transform: scale(1.4);
+}
+
+/* ══════════════════════════════════════════════════════════
+   3. PPT-STYLE CARD TRANSITIONS saat scroll
+   ══════════════════════════════════════════════════════════ */
+
+/* Base — semua card mulai invisible */
+.ppt-card {
+    opacity: 0;
+    transform: translateY(60px) scale(0.95);
+    transition:
+        opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform, opacity;
+}
+
+/* PPT slide dari kiri */
+.ppt-left {
+    opacity: 0;
+    transform: translateX(-80px) rotateY(8deg);
+    transition:
+        opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* PPT slide dari kanan */
+.ppt-right {
+    opacity: 0;
+    transform: translateX(80px) rotateY(-8deg);
+    transition:
+        opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* PPT zoom dari belakang */
+.ppt-zoom {
+    opacity: 0;
+    transform: scale(0.75) translateY(30px);
+    transition:
+        opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* PPT flip dari bawah */
+.ppt-flip {
+    opacity: 0;
+    transform: perspective(800px) rotateX(25deg) translateY(40px);
+    transition:
+        opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Visible state */
+.ppt-visible {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+/* Stagger */
+.ppt-d1 { transition-delay: 0.05s !important; }
+.ppt-d2 { transition-delay: 0.12s !important; }
+.ppt-d3 { transition-delay: 0.19s !important; }
+.ppt-d4 { transition-delay: 0.26s !important; }
+.ppt-d5 { transition-delay: 0.33s !important; }
+.ppt-d6 { transition-delay: 0.40s !important; }
+
+/* ══════════════════════════════════════════════════════════
+   4. HERO SECTION — lebih berisi
+   ══════════════════════════════════════════════════════════ */
+
+/* Floating stats di samping hero content */
+.hero-stat-float {
+    position: absolute !important;
+    z-index: 10 !important;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(10,14,26,0.85);
+    border: 1px solid rgba(243,112,30,0.2);
+    border-radius: 12px;
+    padding: 12px 18px;
+    pointer-events: none;
+    z-index: 3;
+    animation: floatStat 4s ease-in-out infinite;
+}
+/* posisi diset via JS inline style */
+
+@keyframes floatStat {
+    0%,100% { transform: translateY(0); }
+    50%      { transform: translateY(-8px); }
+}
+
+.hero-stat-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #f3701e;
+    box-shadow: 0 0 8px rgba(243,112,30,0.7);
+    flex-shrink: 0;
+    animation: dotPulse2 1.5s ease-in-out infinite;
+}
+@keyframes dotPulse2 {
+    0%,100% { opacity: 1; transform: scale(1); }
+    50%      { opacity: 0.5; transform: scale(0.7); }
+}
+
+.hero-stat-text {
+    font-size: 12px;
+    color: rgba(232,216,201,0.8);
+    font-family: 'Inter', sans-serif;
+    white-space: nowrap;
+}
+.hero-stat-num {
+    font-size: 15px;
+    font-weight: 700;
+    color: #f3701e;
+    font-family: 'Inter', sans-serif;
+    display: block;
+    text-shadow: 0 0 10px rgba(243,112,30,0.5);
+}
+
+/* ══════════════════════════════════════════════════════════
+   HAPUS SEMUA BLUR — card tidak blur
+   ══════════════════════════════════════════════════════════ */
+.concept-card, .step-card, .layer-card, .fact-card,
+.world-card, .opinion-card, .stat-card, .ripple-type,
+.why-card, .positioning-card, .pos-card-anim,
+.feed-belt-item, .hope-card, .indonesia-map-wrapper {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+/* ══════════════════════════════════════════════════════════
+   PPT TRANSITIONS — semua section index.html
+   Section heading juga ikut animasi
+   ══════════════════════════════════════════════════════════ */
+
+/* SECTION HEADING — slide up */
+.section-heading, .section-label {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .6s cubic-bezier(.22,1,.36,1),
+                transform .6s cubic-bezier(.22,1,.36,1);
+}
+.ppt-heading-show {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+/* Garis neon tumbuh di bawah heading */
+.section-heading::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #f3701e, #B83A2D, transparent);
+    margin: 12px auto 0;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(243,112,30,0.5);
+    transition: width .9s cubic-bezier(.22,1,.36,1) .2s;
+}
+.ppt-heading-show::after {
+    width: 100px !important;
+}
+
+/* CONCEPT CARDS — flip masuk dari bawah */
+.ppt-flip {
+    opacity: 0;
+    transform: perspective(800px) rotateX(30deg) translateY(50px);
+    transition: opacity .65s cubic-bezier(.22,1,.36,1),
+                transform .65s cubic-bezier(.22,1,.36,1);
+}
+
+/* STEP CARDS — slide dari kiri dengan tilt */
+.ppt-left {
+    opacity: 0;
+    transform: translateX(-70px) rotateY(12deg);
+    transition: opacity .6s cubic-bezier(.22,1,.36,1),
+                transform .6s cubic-bezier(.22,1,.36,1);
+}
+
+/* LAYER CARDS — zoom masuk */
+.ppt-zoom {
+    opacity: 0;
+    transform: scale(0.78) translateY(24px);
+    transition: opacity .55s cubic-bezier(.22,1,.36,1),
+                transform .55s cubic-bezier(.22,1,.36,1);
+}
+
+/* FACT CARDS — slide dari kanan */
+.ppt-right {
+    opacity: 0;
+    transform: translateX(70px) rotateY(-12deg);
+    transition: opacity .6s cubic-bezier(.22,1,.36,1),
+                transform .6s cubic-bezier(.22,1,.36,1);
+}
+
+/* WORLD CARDS — rise up dramatis */
+.ppt-card {
+    opacity: 0;
+    transform: translateY(60px) scale(0.96);
+    transition: opacity .7s cubic-bezier(.22,1,.36,1),
+                transform .7s cubic-bezier(.22,1,.36,1);
+}
+
+/* Visible — semua kembali normal */
+.ppt-visible {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+/* Stagger delays */
+.ppt-d1 { transition-delay: .05s !important; }
+.ppt-d2 { transition-delay: .12s !important; }
+.ppt-d3 { transition-delay: .19s !important; }
+.ppt-d4 { transition-delay: .26s !important; }
+.ppt-d5 { transition-delay: .33s !important; }
+.ppt-d6 { transition-delay: .40s !important; }
+
+/* ══════════════════════════════════════════════════════════
+   NUCLEAR BLUR FIX — matikan semua blur di index
+   ══════════════════════════════════════════════════════════ */
+.hero-title,
+.hero-title .ripple-letter,
+.hero-content,
+.ripple-background,
+.map-wrapper,
+#world-svg,
+.land {
+    filter: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    -webkit-filter: none !important;
+}
+
+/* Orb neon — matikan blur */
+.neon-orb {
+    filter: none !important;
+}
+
+/* Neon particles canvas — pastikan tidak blur */
+#neon-particles {
+    filter: none !important;
+}
+
+/* Semua elemen yang mungkin kena blur */
+* {
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ══════════════════════════════════════════════════════════
+   BIDIRECTIONAL — exit animasi lebih cepat dari enter
+   ══════════════════════════════════════════════════════════ */
+.ppt-flip:not(.ppt-visible),
+.ppt-left:not(.ppt-visible),
+.ppt-right:not(.ppt-visible),
+.ppt-zoom:not(.ppt-visible),
+.ppt-card:not(.ppt-visible) {
+    transition-delay: 0s !important;
+    transition-duration: 0.35s !important;
+}
+
+.section-heading:not(.ppt-heading-show),
+.section-label:not(.ppt-heading-show) {
+    transition-delay: 0s !important;
+    transition-duration: 0.3s !important;
+}
+
+/* ══════════════════════════════════════════════════════════
+   ROOT CAUSE FIX — hero-title gradient text yang bikin blur
+   landing.css pakai -webkit-text-fill-color: transparent
+   yang bikin RIPPLE tidak kelihatan saat di-wrap jadi span
+   ══════════════════════════════════════════════════════════ */
+.hero-title {
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    background-clip: unset !important;
+    -webkit-text-fill-color: #f3701e !important;
+    color: #f3701e !important;
+    text-shadow: 0 0 40px rgba(243,112,30,0.6),
+                 0 0 80px rgba(243,112,30,0.25) !important;
+}
+
+.hero-title .ripple-letter {
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    background-clip: unset !important;
+    -webkit-text-fill-color: #f3701e !important;
+    color: #f3701e !important;
+    display: inline-block !important;
+}
+
+/* ══════════════════════════════════════════════════════════
+   PPT HEADING BASE — semua heading mulai invisible
+   ══════════════════════════════════════════════════════════ */
+.ppt-heading-base {
+    opacity: 0 !important;
+    transform: translateY(28px) !important;
+    transition: opacity .55s cubic-bezier(.22,1,.36,1),
+                transform .55s cubic-bezier(.22,1,.36,1) !important;
+}
+.ppt-heading-base.ppt-heading-show {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+/* Section divider juga kena */
+.section-divider {
+    opacity: 0;
+    transform: scaleX(0.3);
+    transition: opacity .5s ease, transform .7s cubic-bezier(.22,1,.36,1);
+    transform-origin: center;
+}
+.section-divider.ppt-visible {
+    opacity: 0.75 !important;
+    transform: scaleX(1) !important;
+}
+
+/* Pastikan card yang belum masuk benar-benar invisible */
+.ppt-flip:not(.ppt-visible),
+.ppt-left:not(.ppt-visible),
+.ppt-right:not(.ppt-visible),
+.ppt-zoom:not(.ppt-visible),
+.ppt-card:not(.ppt-visible) {
+    pointer-events: none;
+}
+
+/* ══════════════════════════════════════════════════════════
+   FIX CONCEPT CARD — override neon-card yang block animasi
+   ══════════════════════════════════════════════════════════ */
+.concept-card.ppt-flip,
+.concept-card.ppt-left,
+.concept-card.ppt-zoom,
+.concept-card.ppt-right,
+.concept-card.ppt-card {
+    opacity: 0 !important;
+}
+.concept-card.ppt-flip:not(.ppt-visible) {
+    transform: perspective(800px) rotateX(30deg) translateY(50px) !important;
+}
+.concept-card.ppt-visible {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+/* Scroll UP fix — saat card keluar dari atas, transition cepat */
+.ppt-flip:not(.ppt-visible),
+.ppt-left:not(.ppt-visible),
+.ppt-right:not(.ppt-visible),
+.ppt-zoom:not(.ppt-visible),
+.ppt-card:not(.ppt-visible) {
+    transition-duration: 0.4s !important;
+    transition-delay: 0s !important;
+}
+
+/* Saat masuk (visible), pakai durasi normal + stagger */
+.ppt-flip.ppt-visible  { transition-duration: 0.65s !important; }
+.ppt-left.ppt-visible  { transition-duration: 0.6s !important; }
+.ppt-right.ppt-visible { transition-duration: 0.6s !important; }
+.ppt-zoom.ppt-visible  { transition-duration: 0.55s !important; }
+.ppt-card.ppt-visible  { transition-duration: 0.7s !important; }
+
+/* ══════════════════════════════════════════════════════════
+   NUCLEAR FIX — force semua card invisible sebelum visible
+   Override neon-card, concept-card, semua class apapun
+   ══════════════════════════════════════════════════════════ */
+.concept-card.ppt-flip:not(.ppt-visible),
+.step-card.ppt-left:not(.ppt-visible),
+.layer-card.ppt-zoom:not(.ppt-visible),
+.fact-card.ppt-right:not(.ppt-visible),
+.world-card.ppt-card:not(.ppt-visible),
+.opinion-card.ppt-zoom:not(.ppt-visible) {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+.concept-card.ppt-flip:not(.ppt-visible) {
+    transform: perspective(800px) rotateX(30deg) translateY(50px) !important;
+}
+.step-card.ppt-left:not(.ppt-visible) {
+    transform: translateX(-70px) rotateY(12deg) !important;
+}
+.layer-card.ppt-zoom:not(.ppt-visible) {
+    transform: scale(0.78) translateY(24px) !important;
+}
+.fact-card.ppt-right:not(.ppt-visible) {
+    transform: translateX(70px) rotateY(-12deg) !important;
+}
+.world-card.ppt-card:not(.ppt-visible) {
+    transform: translateY(60px) scale(0.96) !important;
+}
+
+/* Visible — semua kembali normal */
+.concept-card.ppt-visible,
+.step-card.ppt-visible,
+.layer-card.ppt-visible,
+.fact-card.ppt-visible,
+.world-card.ppt-visible,
+.opinion-card.ppt-visible {
+    opacity: 1 !important;
+    transform: none !important;
+    pointer-events: auto !important;
+}
+
+/* ── HERO STAT FLOAT FIX ─────────────────────────────────── */
+.hero-stat-float {
+    position: absolute !important;
+    z-index: 10 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    background: rgba(6,10,20,0.88) !important;
+    border: 1px solid rgba(243,112,30,0.28) !important;
+    border-radius: 10px !important;
+    padding: 10px 16px !important;
+    pointer-events: none !important;
+    box-shadow: 0 0 14px rgba(243,112,30,0.1) !important;
+    animation: none !important; /* No float animation — always visible */
+    backdrop-filter: none !important;
+    min-width: 140px !important;
+    max-width: 180px !important;
+}
+
+.hero-stat-dot {
+    width: 8px !important;
+    height: 8px !important;
+    border-radius: 50% !important;
+    background: #f3701e !important;
+    box-shadow: 0 0 8px rgba(243,112,30,0.8) !important;
+    flex-shrink: 0 !important;
+}
+
+.hero-stat-num {
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    color: #f3701e !important;
+    display: block !important;
+    line-height: 1.2 !important;
+    text-shadow: 0 0 10px rgba(243,112,30,0.5) !important;
+    font-family: 'Inter', sans-serif !important;
+}
+
+.hero-stat-text {
+    font-size: 11px !important;
+    color: rgba(232,216,201,0.6) !important;
+    display: block !important;
+    letter-spacing: 0.5px !important;
+    font-family: 'Inter', sans-serif !important;
+    white-space: nowrap !important;
+}
